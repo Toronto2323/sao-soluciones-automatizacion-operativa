@@ -9,17 +9,7 @@ const tiltCards = document.querySelectorAll(".tilt-card");
 const canvas = document.querySelector("#particles");
 const ctx = canvas.getContext("2d");
 
-const hoursInput = document.querySelector("#hoursInput");
-const methodInput = document.querySelector("#methodInput");
-const frequencyInput = document.querySelector("#frequencyInput");
-const savingPercent = document.querySelector("#savingPercent");
-const savingBar = document.querySelector("#savingBar");
-const hoursSaved = document.querySelector("#hoursSaved");
-const recommendedMethod = document.querySelector("#recommendedMethod");
-const simulatorInsight = document.querySelector("#simulatorInsight");
-
 let particles = [];
-let animationFrameId;
 
 const revealOnScroll = () => {
   revealElements.forEach((element) => {
@@ -57,51 +47,27 @@ const animateCounters = () => {
   });
 };
 
-const animateNumber = (element, target) => {
-  if (!element) return;
-
-  const start = Number(element.textContent) || 0;
-  const duration = 380;
-  const startTime = performance.now();
-
-  const tick = (now) => {
-    const progress = Math.min((now - startTime) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const value = Math.round(start + (target - start) * eased);
-
-    element.textContent = value;
-
-    if (progress < 1) {
-      requestAnimationFrame(tick);
-    }
-  };
-
-  requestAnimationFrame(tick);
-};
-
 const handleMouseMove = (event) => {
   const x = event.clientX;
   const y = event.clientY;
 
-  spotlight?.style.setProperty("--x", `${x}px`);
-  spotlight?.style.setProperty("--y", `${y}px`);
+  spotlight.style.setProperty("--x", `${x}px`);
+  spotlight.style.setProperty("--y", `${y}px`);
 
-  if (cursorDot && cursorRing) {
-    cursorDot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
-    cursorRing.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
-  }
+  cursorDot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+  cursorRing.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
 };
 
 const setupCursorInteractions = () => {
-  const interactiveElements = document.querySelectorAll("a, button, select, .tilt-card");
+  const interactiveElements = document.querySelectorAll("a, button, .tilt-card");
 
   interactiveElements.forEach((element) => {
     element.addEventListener("mouseenter", () => {
-      cursorRing?.classList.add("active");
+      cursorRing.classList.add("active");
     });
 
     element.addEventListener("mouseleave", () => {
-      cursorRing?.classList.remove("active");
+      cursorRing.classList.remove("active");
     });
   });
 };
@@ -157,102 +123,7 @@ const drawParticles = () => {
     ctx.fill();
   });
 
-  animationFrameId = requestAnimationFrame(drawParticles);
-};
-
-const calculateSimulator = () => {
-  if (!hoursInput || !methodInput || !frequencyInput) return;
-
-  const hours = Number(hoursInput.value);
-  const method = methodInput.value;
-  const frequency = frequencyInput.value;
-
-  const methodProfiles = {
-    manual: {
-      score: 28,
-      route: "Macro inteligente",
-      insight: "Hay alta oportunidad en eliminar copias, validaciones manuales y consolidaciones repetitivas."
-    },
-    excel: {
-      score: 24,
-      route: "Excel automatizado",
-      insight: "La mejora puede venir de macros, formularios, reglas de validacion y reportes que se actualicen solos."
-    },
-    email: {
-      score: 26,
-      route: "Flujo + alertas",
-      insight: "Cuando el proceso vive en correos y adjuntos, conviene centralizar la captura y automatizar avisos."
-    },
-    shared: {
-      score: 18,
-      route: "Repositorio + flujo",
-      insight: "La prioridad es ordenar responsables, versiones, estados y trazabilidad del proceso."
-    },
-    forms: {
-      score: 14,
-      route: "Power Automate",
-      insight: "Ya existe captura de datos; el siguiente salto es conectar aprobaciones, alertas y reportes."
-    },
-    system: {
-      score: 9,
-      route: "Dashboard / integracion",
-      insight: "El mayor valor puede estar en conectar datos, crear indicadores y reducir reprocesos entre areas."
-    },
-    erp: {
-      score: 12,
-      route: "SAP + analitica",
-      insight: "Conviene extraer datos clave, cruzarlos con archivos operativos y convertirlos en indicadores accionables."
-    },
-    dashboard: {
-      score: 6,
-      route: "Alertas + gobierno",
-      insight: "Si ya existen reportes, el valor esta en automatizar actualizaciones, alertas y seguimiento."
-    }
-  };
-
-  const frequencyProfiles = {
-    multiple_daily: { score: 22, multiplier: 1.18 },
-    daily: { score: 18, multiplier: 1 },
-    weekly: { score: 12, multiplier: 0.82 },
-    biweekly: { score: 8, multiplier: 0.68 },
-    monthly: { score: 5, multiplier: 0.52 },
-    on_demand: { score: 3, multiplier: 0.42 }
-  };
-
-  let hoursScore = 4;
-
-  if (hours >= 10) hoursScore = 8;
-  if (hours >= 20) hoursScore = 14;
-  if (hours >= 35) hoursScore = 22;
-  if (hours >= 60) hoursScore = 28;
-
-  const selectedMethod = methodProfiles[method] || methodProfiles.manual;
-  const selectedFrequency = frequencyProfiles[frequency] || frequencyProfiles.daily;
-
-  const score = 24 + hoursScore + selectedMethod.score + selectedFrequency.score;
-  const finalSaving = Math.min(score, 88);
-  const monthlyHours = Math.round(hours * 4 * selectedFrequency.multiplier);
-  const savedHours = Math.max(1, Math.round(monthlyHours * (finalSaving / 100)));
-
-  animateNumber(savingPercent, finalSaving);
-  animateNumber(hoursSaved, savedHours);
-
-  if (savingBar) {
-    savingBar.style.width = `${finalSaving}%`;
-  }
-
-  let recommendedRoute = selectedMethod.route;
-
-  if ((frequency === "daily" || frequency === "multiple_daily") && hours >= 20 && method !== "system" && method !== "dashboard") {
-    recommendedRoute = "App + flujo automatico";
-  }
-
-  if (hours <= 5 && (method === "manual" || method === "excel")) {
-    recommendedRoute = "Macro rapida";
-  }
-
-  recommendedMethod.textContent = recommendedRoute;
-  simulatorInsight.textContent = selectedMethod.insight;
+  requestAnimationFrame(drawParticles);
 };
 
 menuToggle?.addEventListener("click", () => {
@@ -265,18 +136,12 @@ mobileMenu?.querySelectorAll("a").forEach((link) => {
   });
 });
 
-[hoursInput, methodInput, frequencyInput].forEach((input) => {
-  input?.addEventListener("change", calculateSimulator);
-});
-
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("mousemove", handleMouseMove);
 
 window.addEventListener("resize", () => {
-  cancelAnimationFrame(animationFrameId);
   resizeCanvas();
   createParticles();
-  drawParticles();
 });
 
 window.addEventListener("load", () => {
@@ -287,7 +152,6 @@ window.addEventListener("load", () => {
   resizeCanvas();
   createParticles();
   drawParticles();
-  calculateSimulator();
 
   if (window.lucide) {
     lucide.createIcons({
@@ -296,4 +160,222 @@ window.addEventListener("load", () => {
       }
     });
   }
+});
+
+const hoursInput = document.querySelector("#hoursInput");
+const methodInput = document.querySelector("#methodInput");
+const frequencyInput = document.querySelector("#frequencyInput");
+const savingPercent = document.querySelector("#savingPercent");
+const hoursSaved = document.querySelector("#hoursSaved");
+const recommendedMethod = document.querySelector("#recommendedMethod");
+
+const calculateSimulator = () => {
+  if (!hoursInput || !methodInput || !frequencyInput) return;
+
+  const hours = Number(hoursInput.value);
+  const method = methodInput.value;
+  const frequency = frequencyInput.value;
+
+  let baseSaving = 35;
+
+  if (method === "manual") baseSaving += 25;
+  if (method === "semi") baseSaving += 15;
+  if (method === "system") baseSaving += 8;
+
+  if (frequency === "daily") baseSaving += 15;
+  if (frequency === "weekly") baseSaving += 8;
+  if (frequency === "monthly") baseSaving += 3;
+
+  const finalSaving = Math.min(baseSaving, 82);
+  const monthlyHours = hours * 4;
+  const savedHours = Math.round(monthlyHours * (finalSaving / 100));
+
+  savingPercent.textContent = finalSaving;
+  hoursSaved.textContent = savedHours;
+
+  if (hours <= 10 && method !== "system") {
+    recommendedMethod.textContent = "Macro inteligente";
+  } else if (method === "system") {
+    recommendedMethod.textContent = "Dashboard / integración";
+  } else {
+    recommendedMethod.textContent = "App + flujo automático";
+  }
+};
+
+[hoursInput, methodInput, frequencyInput].forEach((input) => {
+  input?.addEventListener("change", calculateSimulator);
+});
+
+calculateSimulator();
+
+// Global navigation and profile preview v2
+const setupProfessionalNavigation = () => {
+  const dropdowns = Array.from(document.querySelectorAll('.nav-dropdown'));
+  const header = document.querySelector('.header-pro');
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('#mobileMenu');
+  let closeTimer = null;
+
+  if (!dropdowns.length) return;
+
+  const isTouchLike = () => window.matchMedia('(hover: none), (pointer: coarse)').matches;
+
+  const closeAllDropdowns = (except = null) => {
+    dropdowns.forEach((dropdown) => {
+      if (dropdown === except) return;
+      dropdown.classList.remove('open', 'is-open', 'is-closing');
+      dropdown.querySelector('.nav-drop-trigger')?.setAttribute('aria-expanded', 'false');
+    });
+  };
+
+  const openDropdown = (dropdown) => {
+    window.clearTimeout(closeTimer);
+    closeAllDropdowns(dropdown);
+    dropdown.classList.add('open', 'is-open');
+    dropdown.classList.remove('is-closing');
+    dropdown.querySelector('.nav-drop-trigger')?.setAttribute('aria-expanded', 'true');
+  };
+
+  const closeDropdown = (dropdown, delay = 110) => {
+    window.clearTimeout(closeTimer);
+    dropdown.classList.add('is-closing');
+    closeTimer = window.setTimeout(() => {
+      dropdown.classList.remove('open', 'is-open', 'is-closing');
+      dropdown.querySelector('.nav-drop-trigger')?.setAttribute('aria-expanded', 'false');
+    }, delay);
+  };
+
+  dropdowns.forEach((dropdown) => {
+    const trigger = dropdown.querySelector('.nav-drop-trigger');
+    const menuPanel = dropdown.querySelector('.nav-dropdown-menu');
+    if (!trigger || !menuPanel) return;
+
+    dropdown.addEventListener('mouseenter', () => {
+      if (!isTouchLike()) openDropdown(dropdown);
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+      if (!isTouchLike()) closeDropdown(dropdown);
+    });
+
+    dropdown.addEventListener('focusin', () => openDropdown(dropdown));
+    dropdown.addEventListener('focusout', (event) => {
+      if (!dropdown.contains(event.relatedTarget)) closeDropdown(dropdown, 70);
+    });
+
+    trigger.addEventListener('click', (event) => {
+      event.stopPropagation();
+
+      if (!isTouchLike()) {
+        openDropdown(dropdown);
+        return;
+      }
+
+      const shouldOpen = !dropdown.classList.contains('is-open');
+      closeAllDropdowns();
+      if (shouldOpen) openDropdown(dropdown);
+    });
+
+    menuPanel.addEventListener('mouseenter', () => window.clearTimeout(closeTimer));
+    menuPanel.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => closeAllDropdowns());
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!header?.contains(event.target)) closeAllDropdowns();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeAllDropdowns();
+  });
+
+  toggle?.addEventListener('click', () => {
+    toggle.setAttribute('aria-expanded', String(menu?.classList.contains('open')));
+    closeAllDropdowns();
+  });
+};
+
+const setupProfilePreview = () => {
+  const modal = document.querySelector('#profileModal');
+  if (!modal) return;
+
+  const openButtons = document.querySelectorAll('[data-profile-open]');
+  const closeButtons = document.querySelectorAll('[data-profile-close]');
+  const form = document.querySelector('#profilePreviewForm');
+  const note = document.querySelector('#profileFormNote');
+  const nameInput = document.querySelector('#profileName');
+  const emailInput = document.querySelector('#profileEmail');
+  const typeInput = document.querySelector('#profileType');
+  const profileButtons = document.querySelectorAll('.profile-entry-btn span, .mobile-profile-btn');
+
+  const updateButtonState = () => {
+    try {
+      const saved = JSON.parse(localStorage.getItem('saoProfilePreview') || 'null');
+      if (!saved?.name) return;
+      profileButtons.forEach((button) => {
+        button.textContent = button.classList?.contains('mobile-profile-btn') ? `Perfil: ${saved.name}` : saved.name.split(' ')[0];
+      });
+    } catch (error) {
+      return;
+    }
+  };
+
+  const openModal = () => {
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => nameInput?.focus(), 80);
+  };
+
+  const closeModal = () => {
+    modal.hidden = true;
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  openButtons.forEach((button) => button.addEventListener('click', openModal));
+  closeButtons.forEach((button) => button.addEventListener('click', closeModal));
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modal.hidden) closeModal();
+  });
+
+  try {
+    const saved = JSON.parse(localStorage.getItem('saoProfilePreview') || 'null');
+    if (saved) {
+      if (nameInput) nameInput.value = saved.name || '';
+      if (emailInput) emailInput.value = saved.email || '';
+      if (typeInput) typeInput.value = saved.type || 'pyme';
+      if (note) {
+        note.textContent = 'Vista previa de perfil guardada en este navegador.';
+        note.classList.add('is-saved');
+      }
+    }
+  } catch (error) {
+    // Ignore malformed localStorage data.
+  }
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const payload = {
+      name: nameInput?.value?.trim() || 'Perfil SAO',
+      email: emailInput?.value?.trim() || '',
+      type: typeInput?.value || 'pyme',
+      updatedAt: new Date().toISOString()
+    };
+    localStorage.setItem('saoProfilePreview', JSON.stringify(payload));
+    if (note) {
+      note.textContent = 'Perfil de prueba guardado. En la siguiente etapa lo conectaremos con Google.';
+      note.classList.add('is-saved');
+    }
+    updateButtonState();
+  });
+
+  updateButtonState();
+};
+
+window.addEventListener('load', () => {
+  setupProfessionalNavigation();
+  setupProfilePreview();
 });
