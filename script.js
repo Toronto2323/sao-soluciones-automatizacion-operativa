@@ -325,7 +325,7 @@ const setupProfilePreview = () => {
     modal.hidden = false;
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-    setTimeout(() => nameInput?.focus(), 80);
+    setTimeout(() => document.querySelector('[data-google-login]')?.focus(), 80);
   };
 
   const closeModal = () => {

@@ -1,4 +1,5 @@
 const CATALOG_PROFILE_KEY = 'saoProfilePreview';
+const CATALOG_FIREBASE_USER_KEY = 'saoFirebaseUser';
 
 const catalogState = {
   items: [],
@@ -23,7 +24,7 @@ const normalizeText = (value) => String(value || '')
 
 const getCatalogProfile = () => {
   try {
-    return JSON.parse(localStorage.getItem(CATALOG_PROFILE_KEY) || 'null');
+    return JSON.parse(localStorage.getItem(CATALOG_FIREBASE_USER_KEY) || 'null');
   } catch (error) {
     return null;
   }
@@ -48,18 +49,19 @@ const setCatalogAccess = () => {
   const title = document.querySelector('#catalogAccessTitle');
   const text = document.querySelector('#catalogAccessText');
 
-  if (profile?.name) {
+  if (profile?.name || profile?.uid) {
+    const displayName = profile.name || profile.email || 'Perfil SAO';
     if (lockedPanel) lockedPanel.hidden = true;
     if (content) content.hidden = false;
-    if (title) title.textContent = `Acceso activo: ${profile.name}`;
-    if (text) text.textContent = 'Catálogo desbloqueado en vista previa local. Explora paquetes por grupo de trabajo y consulta con contexto.';
+    if (title) title.textContent = `Sesión activa: ${displayName}`;
+    if (text) text.textContent = 'Catálogo habilitado para la experiencia de usuario con Google. Los datos siguen disponibles desde JSON público por decisión comercial.';
     return true;
   }
 
   if (lockedPanel) lockedPanel.hidden = false;
   if (content) content.hidden = true;
   if (title) title.textContent = 'Pendiente de perfil';
-  if (text) text.textContent = 'Crea o guarda tu perfil gratuito para explorar paquetes, precios base, alcance y exclusiones.';
+  if (text) text.textContent = 'Inicia sesión con Google para activar la experiencia de catálogo con usuario real.';
   return false;
 };
 
@@ -295,8 +297,12 @@ window.addEventListener('sao-profile-updated', () => {
   if (setCatalogAccess()) renderCatalog();
 });
 
+window.addEventListener('sao-auth-changed', () => {
+  if (setCatalogAccess()) renderCatalog();
+});
+
 window.addEventListener('storage', (event) => {
-  if (event.key === CATALOG_PROFILE_KEY && setCatalogAccess()) renderCatalog();
+  if ((event.key === CATALOG_PROFILE_KEY || event.key === CATALOG_FIREBASE_USER_KEY) && setCatalogAccess()) renderCatalog();
 });
 
 document.addEventListener('DOMContentLoaded', initCatalog);

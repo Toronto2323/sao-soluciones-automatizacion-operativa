@@ -10532,3 +10532,102 @@ body.pyme-modal-open {
     white-space: normal;
   }
 }
+
+
+/* ===============================
+   Firebase Google Auth V1
+   =============================== */
+.profile-entry-btn.is-authenticated {
+  border-color: rgba(255, 177, 139, 0.42);
+  background: linear-gradient(135deg, rgba(255, 109, 41, 0.2), rgba(255, 255, 255, 0.07));
+}
+
+.profile-auth-card {
+  max-width: min(980px, calc(100vw - 36px));
+}
+
+.profile-auth-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.78fr);
+}
+
+.profile-auth-panel {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255, 109, 41, 0.16), transparent 36%),
+    rgba(10, 9, 10, 0.44);
+}
+
+.auth-state-card,
+.auth-user-card {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 13px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.auth-state-card strong,
+.auth-user-card strong {
+  display: block;
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.auth-state-card small,
+.auth-user-card small,
+.auth-user-card span {
+  color: var(--color-muted);
+  font-size: 12px;
+  line-height: 1.42;
+}
+
+.auth-user-card img {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  object-fit: cover;
+  background: rgba(255, 109, 41, 0.14);
+  box-shadow: 0 0 0 1px rgba(255, 177, 139, 0.22), 0 14px 40px rgba(0, 0, 0, 0.2);
+}
+
+.google-login-btn,
+.auth-actions .btn {
+  width: 100%;
+}
+
+.auth-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.profile-form-note.is-error {
+  color: #ffd2c2;
+  border-color: rgba(255, 109, 41, 0.34);
+  background: rgba(255, 109, 41, 0.08);
+}
+
+.mobile-profile-btn.is-authenticated {
+  border-color: rgba(255, 177, 139, 0.34);
+  color: var(--color-text);
+  background: rgba(255, 109, 41, 0.13);
+}
+
+@media (max-width: 840px) {
+  .profile-auth-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-auth-panel {
+    padding: 14px;
+  }
+}
