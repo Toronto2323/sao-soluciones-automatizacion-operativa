@@ -4629,3 +4629,211 @@ main {
     width: 100%;
   }
 }
+
+/* =========================================================
+   Etapa 8.1 · Home hero SAO minimal corporativo
+   Objetivo: logotipo principal protagonista sin marcas gigantes de fondo.
+   Mantiene la arquitectura existente y aplica solo overrides finales.
+   ========================================================= */
+
+.home-hero,
+.home-hero-logo-motion {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+/* Elimina duplicados ambientales del logo para conservar elegancia visual. */
+.home-scroll-logo,
+.home-hero::before,
+.home-hero-logo-motion::before,
+.home-bridge::before,
+.home-guide-panel::after {
+  display: none !important;
+  content: none !important;
+  background-image: none !important;
+}
+
+.home-hero::after {
+  content: "";
+  position: absolute;
+  width: clamp(260px, 28vw, 520px);
+  height: clamp(260px, 28vw, 520px);
+  left: 10%;
+  top: 36%;
+  z-index: -2;
+  pointer-events: none;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 109, 41, 0.13), transparent 68%);
+  filter: blur(34px);
+  opacity: 0.72;
+}
+
+.home-hero .hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+.home-logo-presence,
+.home-logo-showcase {
+  position: relative;
+  width: min(700px, 100%);
+  margin: 0 0 30px;
+  padding: clamp(16px, 2vw, 24px) clamp(18px, 2.4vw, 30px);
+  border: 1px solid rgba(255, 177, 139, 0.18);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 16% 46%, rgba(255, 109, 41, 0.14), transparent 42%),
+    linear-gradient(135deg, rgba(255, 109, 41, 0.07), rgba(255, 255, 255, 0.03)),
+    rgba(18, 14, 16, 0.46);
+  box-shadow:
+    0 24px 82px rgba(0, 0, 0, 0.24),
+    0 0 48px rgba(255, 109, 41, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(18px);
+  overflow: hidden;
+}
+
+.home-logo-presence::before,
+.home-logo-showcase::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.055), transparent 32%, transparent 74%, rgba(255, 109, 41, 0.055));
+  opacity: 0.72;
+}
+
+.home-logo-presence::after,
+.home-logo-showcase::after {
+  content: "";
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  right: -72px;
+  top: -92px;
+  pointer-events: none;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 109, 41, 0.15), transparent 66%);
+  filter: blur(18px);
+}
+
+.home-logo-kicker {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 0 0 11px;
+  color: rgba(255, 177, 139, 0.82);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.home-logo-presence img,
+.home-logo-showcase img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: min(590px, 100%);
+  height: auto;
+  margin-inline: auto;
+  object-fit: contain;
+  opacity: 0.97;
+  filter:
+    drop-shadow(0 15px 30px rgba(0, 0, 0, 0.46))
+    drop-shadow(0 0 18px rgba(255, 109, 41, 0.1));
+}
+
+.home-guide-panel {
+  position: relative;
+  z-index: 2;
+  border-color: rgba(255, 177, 139, 0.13);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.032)),
+    rgba(12, 10, 10, 0.58);
+}
+
+.home-guide-panel::before {
+  background-image: url("assets/brand/isotipo_transparente_512.png") !important;
+  opacity: 0.034 !important;
+  filter: blur(0.3px) drop-shadow(0 0 42px rgba(255, 109, 41, 0.18));
+}
+
+.guide-brand-seal {
+  border-color: rgba(255, 177, 139, 0.14);
+  background:
+    radial-gradient(circle at 14% 50%, rgba(255, 109, 41, 0.1), transparent 42%),
+    rgba(255, 255, 255, 0.035);
+  opacity: 0.9;
+}
+
+.home-bridge {
+  padding-top: 58px;
+}
+
+@media (min-width: 960px) {
+  .home-logo-presence,
+  .home-logo-showcase {
+    transition: transform 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease;
+  }
+
+  .home-logo-presence:hover,
+  .home-logo-showcase:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 177, 139, 0.24);
+    box-shadow:
+      0 30px 92px rgba(0, 0, 0, 0.28),
+      0 0 58px rgba(255, 109, 41, 0.07),
+      inset 0 1px 0 rgba(255, 255, 255, 0.065);
+  }
+}
+
+@media (max-width: 1100px) {
+  .home-logo-presence,
+  .home-logo-showcase {
+    width: min(650px, 100%);
+  }
+
+  .home-hero::after {
+    left: 2%;
+    top: 28%;
+  }
+}
+
+@media (max-width: 720px) {
+  .home-logo-presence,
+  .home-logo-showcase {
+    width: 100%;
+    margin-bottom: 22px;
+    padding: 15px 16px;
+    border-radius: 22px;
+  }
+
+  .home-logo-kicker {
+    margin-bottom: 9px;
+    font-size: 8.5px;
+    letter-spacing: 0.1em;
+  }
+
+  .home-logo-presence img,
+  .home-logo-showcase img {
+    width: 100%;
+  }
+
+  .home-hero::after {
+    width: 280px;
+    height: 280px;
+    left: -90px;
+    top: 22%;
+    opacity: 0.48;
+  }
+
+  .home-guide-panel::before {
+    opacity: 0.026 !important;
+  }
+}
+
