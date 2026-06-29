@@ -4,18 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Diagnóstico para empresas | SAO</title>
-  <link rel="icon" type="image/svg+xml" href="assets/icons/11_favicon_sao.svg" />
-  <link rel="shortcut icon" href="assets/icons/11_favicon_sao.svg" type="image/svg+xml" />
+  <title>Diagn&oacute;stico para empresas | SAO</title>
+  <meta
+    name="description"
+    content="Diagn&oacute;stico guiado para empresas. Identifica oportunidades de automatizaci&oacute;n en procesos internos, reportes, aprobaciones, datos, solicitudes de clientes, cotizaciones y seguimiento comercial."
+  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
 
+  <link rel="icon" type="image/png" href="assets/brand/isotipo_transparente_128.png">
+  <link rel="preload" as="image" href="assets/brand/isotipo_transparente_128.png">
+  <link rel="preload" as="image" href="assets/brand/logo_sin_descriptor_transparente_400px.png">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
 
@@ -24,60 +28,277 @@
   <div class="spotlight"></div>
   <canvas id="particles"></canvas>
 
-  <header class="header">
-    <a href="index.html#inicio" class="brand brand-logo" aria-label="Ir al inicio">
-      <span class="brand-mark" aria-hidden="true">
-        <img src="assets/icons/05_isotipo_sao.svg" alt="" />
+  <header class="header header-pro">
+    <a href="index.html#inicio" class="brand brand-with-logo brand-full-mark nav-brand-pro" aria-label="Ir al inicio">
+      <span class="brand-logo-frame">
+        <img src="assets/brand/isotipo_transparente_128.png" alt="Isotipo SAO">
       </span>
       <span class="brand-short">SAO</span>
     </a>
 
-    <nav class="nav">
-      <a href="index.html#inicio">Inicio</a>
-      <a href="soluciones.html" class="nav-active">Soluciones</a>
-      <a href="identidad.html">Qué hacemos</a>
-      <a href="experiencias.html">Experiencias</a>
-      <a href="quienes-somos.html">Quiénes somos</a>
-      <a href="index.html#contacto">Contacto</a>
-    </nav>
+    <nav class="nav nav-pro" aria-label="Navegaci&oacute;n principal">
+      <a href="index.html#inicio" class="nav-link">Inicio</a>
 
-    <button class="menu-toggle" aria-label="Abrir menú">
-      <i data-lucide="menu"></i>
-    </button>
-  </header>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html#inicio">Inicio</a>
-    <a href="soluciones.html" class="nav-active">Soluciones</a>
-    <a href="identidad.html">Qué hacemos</a>
-    <a href="experiencias.html">Experiencias</a>
-    <a href="quienes-somos.html">Quiénes somos</a>
-    <a href="index.html#contacto">Contacto</a>
-  </div>
-
-  <main class="diagnostic-main">
-    <section class="page-hero diagnostic-hero reveal">
-      <div class="page-hero-content">
-        <span class="eyebrow">
-          <i data-lucide="building-2"></i>
-          Empresas · procesos · experiencia de cliente
-        </span>
-        <h1>Define una automatización según el frente que quieres mejorar.</h1>
-        <p>
-          Selecciona si la prioridad está en procesos internos o en interacciones de cara al cliente.
-          El diagnóstico propone una ruta inicial, aplicaciones posibles y beneficios esperados.
-        </p>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-drop-trigger nav-active" aria-haspopup="true" aria-expanded="false">
+          Soluciones
+          <i data-lucide="chevron-down"></i>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="soluciones.html" role="menuitem">
+            <span>Vista general</span>
+            <small>Todas las rutas SAO</small>
+          </a>
+          <a href="pymes.html" role="menuitem">
+            <span>Pyme o emprendedor</span>
+            <small>Agenda, ventas, pedidos y clientes</small>
+          </a>
+          <a href="empresas.html?tipo=interno" role="menuitem">
+            <span>Empresa interna</span>
+            <small>Reportes, aprobaciones y control</small>
+          </a>
+          <a href="empresas.html?tipo=externo" role="menuitem">
+            <span>Cliente externo</span>
+            <small>Solicitudes, cotizaciones y seguimiento</small>
+          </a>
+        </div>
       </div>
 
-      <aside class="mini-summary tilt-card">
-        <span><i data-lucide="workflow"></i></span>
-        <strong>Dos caminos</strong>
-        <p>Operación interna o experiencia externa, ambos con recomendación dinámica.</p>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
+          Diagn&oacute;sticos
+          <i data-lucide="chevron-down"></i>
+        </button>
+        <div class="nav-dropdown-menu nav-dropdown-menu-compact" role="menu">
+          <a href="pymes.html#diagnostico-pyme" role="menuitem">
+            <span>Diagn&oacute;stico pyme</span>
+            <small>Respuesta r&aacute;pida para negocios peque&ntilde;os</small>
+          </a>
+          <a href="empresas.html#diagnostico-empresa" role="menuitem">
+            <span>Diagn&oacute;stico empresa</span>
+            <small>Proceso interno o cliente externo</small>
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button type="button" class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
+          Qu&eacute; hacemos
+          <i data-lucide="chevron-down"></i>
+        </button>
+        <div class="nav-dropdown-menu nav-dropdown-menu-compact" role="menu">
+          <a href="identidad.html" role="menuitem">
+            <span>Identidad y servicios</span>
+            <small>Qu&eacute; construimos y c&oacute;mo lo hacemos</small>
+          </a>
+          <a href="experiencias.html" role="menuitem">
+            <span>Experiencias</span>
+            <small>Trabajo aplicado en operaci&oacute;n real</small>
+          </a>
+          <a href="quienes-somos.html" role="menuitem">
+            <span>Qui&eacute;nes somos</span>
+            <small>Perfil, enfoque y forma de trabajo</small>
+          </a>
+        </div>
+      </div>
+
+      <a href="pymes.html#laboratorio-pyme" class="nav-link">Laboratorio</a>
+      <a href="index.html#contacto" class="nav-link">Contacto</a>
+    </nav>
+
+    <div class="header-actions-pro">
+      <button type="button" class="profile-entry-btn" data-profile-open>
+        <i data-lucide="circle-user-round"></i>
+        <span>Crear perfil</span>
+      </button>
+
+      <button class="menu-toggle" aria-label="Abrir men&uacute;" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu mobile-menu-pro" id="mobileMenu">
+    <a href="index.html#inicio" class="">Inicio</a>
+    <span class="mobile-menu-label">Soluciones</span>
+    <a href="soluciones.html" class="nav-active">Vista general</a>
+    <a href="pymes.html">Pyme o emprendedor</a>
+    <a href="empresas.html?tipo=interno">Empresa interna</a>
+    <a href="empresas.html?tipo=externo">Cliente externo</a>
+    <span class="mobile-menu-label">Diagn&oacute;sticos</span>
+    <a href="pymes.html#diagnostico-pyme">Diagn&oacute;stico pyme</a>
+    <a href="empresas.html#diagnostico-empresa">Diagn&oacute;stico empresa</a>
+    <span class="mobile-menu-label">Marca y confianza</span>
+    <a href="identidad.html" class="">Qu&eacute; hacemos</a>
+    <a href="experiencias.html" class="">Experiencias</a>
+    <a href="quienes-somos.html" class="">Qui&eacute;nes somos</a>
+    <a href="index.html#contacto">Contacto</a>
+    <button type="button" class="mobile-profile-btn" data-profile-open>Crear perfil gratuito</button>
+  </div>
+
+  
+  <div class="profile-modal" id="profileModal" hidden aria-hidden="true">
+    <div class="profile-modal-backdrop" data-profile-close></div>
+    <section class="profile-modal-card" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
+      <button type="button" class="profile-modal-close" aria-label="Cerrar perfil" data-profile-close>
+        <i data-lucide="x"></i>
+      </button>
+
+      <div class="profile-modal-grid">
+        <div class="profile-modal-copy">
+          <span class="eyebrow"><i data-lucide="user-round-plus"></i> Perfil gratuito SAO</span>
+          <h2 id="profileModalTitle">Pronto podr&aacute;s guardar tus diagn&oacute;sticos y continuar desde tu perfil.</h2>
+          <p>
+            Esta primera versi&oacute;n prepara la experiencia de usuario. Por ahora todo sigue siendo gratis y sin cuenta obligatoria.
+            En la siguiente etapa conectaremos el inicio real con Google para guardar avances, rutas y planes.
+          </p>
+
+          <div class="profile-benefits-grid">
+            <article><strong>Diagn&oacute;sticos guardados</strong><span>Pyme, empresa interna o cliente externo.</span></article>
+            <article><strong>Ruta recomendada</strong><span>Soluci&oacute;n sugerida y siguiente paso.</span></article>
+            <article><strong>Planes futuros</strong><span>Gratis, pro o empresa cuando est&eacute;n activos.</span></article>
+          </div>
+        </div>
+
+        <form class="profile-preview-form" id="profilePreviewForm">
+          <div class="google-preview-card">
+            <span class="google-preview-icon">G</span>
+            <div>
+              <strong>Continuar con Google</strong>
+              <small>Conexi&oacute;n real pendiente para la etapa Firebase.</small>
+            </div>
+          </div>
+
+          <label>
+            <span>Nombre o empresa</span>
+            <input id="profileName" type="text" placeholder="Ej. SAO Demo" autocomplete="name">
+          </label>
+
+          <label>
+            <span>Correo de contacto</span>
+            <input id="profileEmail" type="email" placeholder="nombre@empresa.com" autocomplete="email">
+          </label>
+
+          <label>
+            <span>Tipo de perfil</span>
+            <select id="profileType">
+              <option value="pyme">Pyme o emprendedor</option>
+              <option value="empresa">Empresa</option>
+              <option value="consultor">Consultor o aliado</option>
+              <option value="explorando">Estoy explorando soluciones</option>
+            </select>
+          </label>
+
+          <button type="submit" class="btn btn-primary profile-save-btn">
+            Guardar vista previa
+            <i data-lucide="check"></i>
+          </button>
+
+          <p class="profile-form-note" id="profileFormNote">
+            Se guardar&aacute; solo en este navegador. No se env&iacute;a informaci&oacute;n a ning&uacute;n servidor todav&iacute;a.
+          </p>
+        </form>
+      </div>
+    </section>
+  </div>
+
+<main class="diagnostic-main enterprise-v2-main">
+    <section class="enterprise-v2-hero reveal" aria-labelledby="enterpriseHeroTitle">
+      <div class="enterprise-v2-copy">
+        <div class="enterprise-v2-brandline" aria-label="SAO - Soluciones y Automatizaciones Operativas">
+          <img src="assets/brand/logo_sin_descriptor_transparente_400px.png" alt="SAO">
+          <span>Diagn&oacute;stico empresarial</span>
+        </div>
+
+        <span class="eyebrow">
+          <i data-lucide="building-2"></i>
+          Empresas &middot; procesos internos &middot; cliente externo
+        </span>
+
+        <h1 id="enterpriseHeroTitle">Encuentra el proceso de tu empresa que vale la pena ordenar primero.</h1>
+
+        <p>
+          No todas las tareas necesitan una gran plataforma. A veces el primer avance es convertir un reporte,
+          una aprobaci&oacute;n, una solicitud o un seguimiento repetido en una herramienta clara para el equipo.
+        </p>
+
+        <div class="enterprise-v2-hero-actions">
+          <a href="#diagnostico-empresa" class="btn btn-primary">
+            Iniciar diagn&oacute;stico
+            <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="#empresa-lab" class="btn btn-secondary">
+            Ver laboratorio empresarial
+          </a>
+        </div>
+      </div>
+
+      <aside class="enterprise-v2-console tilt-card" aria-label="Resumen del enfoque empresarial">
+        <div class="enterprise-v2-console-top">
+          <span></span><span></span><span></span>
+          <small>Ruta empresarial</small>
+        </div>
+
+        <div class="enterprise-v2-console-body">
+          <div class="enterprise-v2-orbit" aria-hidden="true">
+            <img src="assets/brand/isotipo_transparente_512.png" alt="">
+          </div>
+
+          <small>Qu&eacute; buscamos definir</small>
+          <h2>Un caso de uso claro: f&aacute;cil de explicar, construir y medir.</h2>
+          <p>
+            La idea es priorizar una mejora concreta: menos reproceso, mejor seguimiento, datos m&aacute;s confiables
+            o una atenci&oacute;n m&aacute;s ordenada para clientes y equipos internos.
+          </p>
+
+          <div class="enterprise-v2-mini-grid enterprise-v3-mini-grid">
+            <div><strong>Visibilidad</strong><span>qu&eacute; pasa y d&oacute;nde se detiene</span></div>
+            <div><strong>Control</strong><span>responsables, estados y tiempos</span></div>
+            <div><strong>Datos</strong><span>menos archivos dispersos</span></div>
+            <div><strong>Decisi&oacute;n</strong><span>prioridades para actuar</span></div>
+          </div>
+        </div>
       </aside>
     </section>
 
-    <section class="section reveal">
-      <div class="business-tabs" role="tablist" aria-label="Tipo de proceso empresarial">
+    <section class="enterprise-v2-strip reveal" aria-label="Beneficios del diagn&oacute;stico empresarial">
+      <article>
+        <i data-lucide="scan-search"></i>
+        <div>
+          <strong>1. Elegimos por d&oacute;nde empezar</strong>
+          <p>Definimos si el valor est&aacute; dentro del equipo o en la relaci&oacute;n con clientes.</p>
+        </div>
+      </article>
+      <article>
+        <i data-lucide="workflow"></i>
+        <div>
+          <strong>2. Convertimos la tarea en flujo</strong>
+          <p>Identificamos entradas, responsables, reglas, estados y salidas esperadas.</p>
+        </div>
+      </article>
+      <article>
+        <i data-lucide="bar-chart-3"></i>
+        <div>
+          <strong>3. Dejamos una primera ruta</strong>
+          <p>Proponemos una versi&oacute;n inicial que pueda probarse, ajustarse y escalarse.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section enterprise-v2-diagnostic reveal" id="diagnostico-empresa">
+      <div class="section-heading enterprise-v2-heading">
+        <span class="eyebrow">
+          <i data-lucide="split"></i>
+          Diagn&oacute;stico guiado
+        </span>
+        <h2>Selecciona la ruta que m&aacute;s se parece al problema actual de tu empresa.</h2>
+        <p>
+          La recomendaci&oacute;n cambia seg&uacute;n tus respuestas. El objetivo es llegar a una conversaci&oacute;n m&aacute;s clara:
+          proceso, herramienta posible, beneficio esperado y siguiente paso.
+        </p>
+      </div>
+
+      <div class="business-tabs enterprise-v2-tabs" role="tablist" aria-label="Tipo de proceso empresarial">
         <button type="button" class="business-tab active" data-mode="interno">
           <i data-lucide="settings-2"></i>
           Procesos internos
@@ -88,49 +309,49 @@
         </button>
       </div>
 
-      <div class="diagnostic-shell enterprise-shell">
-        <div class="diagnostic-form-panel enterprise-mode-panel active" data-panel="interno">
-          <div class="panel-label">
+      <div class="diagnostic-shell enterprise-shell enterprise-v2-shell">
+        <div class="diagnostic-form-panel enterprise-mode-panel enterprise-v2-form active" data-panel="interno">
+          <div class="panel-label enterprise-v2-panel-label">
             <span class="eyebrow"><i data-lucide="list-checks"></i> Ruta interna</span>
-            <h2>Automatización de procesos internos</h2>
-            <p>Reportes, aprobaciones, seguimiento, consolidación, datos y control entre áreas.</p>
+            <h2>Procesos que se repiten dentro del equipo.</h2>
+            <p>Reportes, aprobaciones, consolidaci&oacute;n, datos, seguimiento y control entre &aacute;reas.</p>
           </div>
 
-          <label class="field-card">
+          <label class="field-card enterprise-v2-field">
             <span class="field-index">01</span>
             <span class="field-content">
-              <span class="field-title">¿Qué área quieres mejorar?</span>
+              <span class="field-title">&iquest;Qu&eacute; &aacute;rea quieres mejorar?</span>
               <select id="enterpriseArea">
                 <option value="operations">Operaciones</option>
                 <option value="sales">Comercial</option>
                 <option value="finance">Finanzas</option>
-                <option value="logistics">Logística</option>
+                <option value="logistics">Log&iacute;stica</option>
                 <option value="hr">Recursos humanos</option>
                 <option value="service">Servicio al cliente</option>
-                <option value="management">Dirección o gerencia</option>
+                <option value="management">Direcci&oacute;n o gerencia</option>
               </select>
             </span>
           </label>
 
-          <label class="field-card">
+          <label class="field-card enterprise-v2-field">
             <span class="field-index">02</span>
             <span class="field-content">
-              <span class="field-title">¿Qué proceso deseas automatizar?</span>
+              <span class="field-title">&iquest;Qu&eacute; proceso deseas ordenar?</span>
               <select id="enterpriseProcess">
                 <option value="reports">Reportes recurrentes</option>
                 <option value="approvals">Aprobaciones internas</option>
-                <option value="files">Consolidación de archivos</option>
+                <option value="files">Consolidaci&oacute;n de archivos</option>
                 <option value="tracking">Seguimiento de tareas</option>
                 <option value="inventory">Inventario o pedidos</option>
-                <option value="analytics">Extracción o análisis de datos</option>
+                <option value="analytics">Extracci&oacute;n o an&aacute;lisis de datos</option>
               </select>
             </span>
           </label>
 
-          <label class="field-card">
+          <label class="field-card enterprise-v2-field">
             <span class="field-index">03</span>
             <span class="field-content">
-              <span class="field-title">¿Qué herramientas usa tu equipo?</span>
+              <span class="field-title">&iquest;Qu&eacute; herramientas usa hoy el equipo?</span>
               <select id="enterpriseTools">
                 <option value="excel">Excel</option>
                 <option value="powerbi">Power BI</option>
@@ -142,49 +363,54 @@
             </span>
           </label>
 
-          <label class="field-card">
+          <label class="field-card enterprise-v2-field">
             <span class="field-index">04</span>
             <span class="field-content">
-              <span class="field-title">¿Cuánto tiempo consume?</span>
+              <span class="field-title">&iquest;Cu&aacute;nto tiempo consume hoy?</span>
               <select id="enterpriseHours">
                 <option value="5">Menos de 5 horas semanales</option>
                 <option value="15" selected>5 a 15 horas semanales</option>
                 <option value="30">15 a 30 horas semanales</option>
-                <option value="55">Más de 30 horas semanales</option>
+                <option value="55">M&aacute;s de 30 horas semanales</option>
               </select>
             </span>
           </label>
+
+          <div class="enterprise-v2-form-note">
+            <i data-lucide="info"></i>
+            <p>Una buena automatizaci&oacute;n interna suele empezar por un proceso repetido, con responsables claros y datos que se actualizan con frecuencia.</p>
+          </div>
         </div>
 
-        <div class="diagnostic-form-panel enterprise-mode-panel" data-panel="externo">
-          <div class="panel-label">
+        <div class="diagnostic-form-panel enterprise-mode-panel enterprise-v2-form" data-panel="externo">
+          <div class="panel-label enterprise-v2-panel-label">
             <span class="eyebrow"><i data-lucide="list-checks"></i> Ruta externa</span>
-            <h2>Mejora de procesos de cara al cliente</h2>
-            <p>Solicitudes, cotizaciones, atención, seguimiento comercial, formularios y portales simples.</p>
+            <h2>Procesos que empiezan desde clientes o solicitudes.</h2>
+            <p>Cotizaciones, pedidos, formularios, atenci&oacute;n, posventa y seguimiento comercial.</p>
           </div>
 
-          <label class="field-card">
+          <label class="field-card enterprise-v2-field">
             <span class="field-index">01</span>
             <span class="field-content">
-              <span class="field-title">¿Qué interacción quieres mejorar?</span>
+              <span class="field-title">&iquest;Qu&eacute; interacci&oacute;n quieres mejorar?</span>
               <select id="externalInteraction">
                 <option value="requests">Solicitudes de clientes</option>
                 <option value="quotes">Cotizaciones</option>
                 <option value="sales_followup">Seguimiento comercial</option>
-                <option value="after_sales">Atención posventa</option>
+                <option value="after_sales">Atenci&oacute;n posventa</option>
                 <option value="orders">Registro de pedidos</option>
                 <option value="forms">Formularios externos</option>
               </select>
             </span>
           </label>
 
-          <label class="field-card">
+          <label class="field-card enterprise-v2-field">
             <span class="field-index">02</span>
             <span class="field-content">
-              <span class="field-title">¿Dónde ocurre hoy ese proceso?</span>
+              <span class="field-title">&iquest;D&oacute;nde ocurre hoy ese proceso?</span>
               <select id="externalChannel">
                 <option value="whatsapp">WhatsApp</option>
-                <option value="email">Correo electrónico</option>
+                <option value="email">Correo electr&oacute;nico</option>
                 <option value="calls">Llamadas</option>
                 <option value="excel">Excel</option>
                 <option value="manual_form">Formulario manual</option>
@@ -193,28 +419,28 @@
             </span>
           </label>
 
-          <label class="field-card">
+          <label class="field-card enterprise-v2-field">
             <span class="field-index">03</span>
             <span class="field-content">
-              <span class="field-title">¿Qué problema se repite más?</span>
+              <span class="field-title">&iquest;Qu&eacute; problema se repite m&aacute;s?</span>
               <select id="externalProblem">
                 <option value="lost">Se pierden solicitudes</option>
                 <option value="slow">Hay respuestas lentas</option>
                 <option value="traceability">No hay trazabilidad</option>
-                <option value="incomplete">La información llega incompleta</option>
+                <option value="incomplete">La informaci&oacute;n llega incompleta</option>
                 <option value="duplicate">Se duplican tareas</option>
                 <option value="no_reports">No hay reportes claros</option>
               </select>
             </span>
           </label>
 
-          <label class="field-card">
+          <label class="field-card enterprise-v2-field">
             <span class="field-index">04</span>
             <span class="field-content">
-              <span class="field-title">¿Cuál sería el resultado ideal?</span>
+              <span class="field-title">&iquest;Cu&aacute;l ser&iacute;a el resultado ideal?</span>
               <select id="externalGoal">
-                <option value="speed">Responder más rápido</option>
-                <option value="register">Registrar todo automáticamente</option>
+                <option value="speed">Responder m&aacute;s r&aacute;pido</option>
+                <option value="register">Registrar todo autom&aacute;ticamente</option>
                 <option value="quote">Cotizar con menos errores</option>
                 <option value="measure">Medir solicitudes y clientes</option>
                 <option value="followup">Dar seguimiento comercial</option>
@@ -222,54 +448,225 @@
               </select>
             </span>
           </label>
+
+          <div class="enterprise-v2-form-note">
+            <i data-lucide="info"></i>
+            <p>Una buena soluci&oacute;n externa mejora la entrada de datos, reduce mensajes repetidos y deja trazabilidad desde el primer contacto.</p>
+          </div>
         </div>
 
-        <aside class="diagnostic-result-panel enterprise-result-panel">
+        <aside class="diagnostic-result-panel enterprise-result-panel enterprise-v2-result" aria-live="polite">
           <div class="result-topline">
             <span id="enterpriseModeLabel">Ruta interna</span>
             <i data-lucide="sparkles"></i>
           </div>
 
           <h2 id="enterpriseSolution">Dashboard ejecutivo en Power BI</h2>
-          <p id="enterpriseSummary">Una solución para consolidar indicadores, responsables y reportes recurrentes.</p>
+          <p id="enterpriseSummary">Una soluci&oacute;n para consolidar indicadores, responsables y reportes recurrentes.</p>
 
-          <div class="impact-meter">
+          <div class="impact-meter enterprise-v2-impact">
             <div class="impact-head">
-              <span>Potencial visual</span>
-              <strong><span id="enterprisePotential">0</span>%</strong>
+              <span>Potencial estimado</span>
+              <strong class="enterprise-score"><span id="enterprisePotential">0</span><em>%</em></strong>
             </div>
             <div class="meter-track">
               <div class="meter-fill" id="enterpriseBar"></div>
             </div>
           </div>
 
-          <div class="estimate-box">
+          <div class="estimate-box enterprise-v2-estimate">
             <span id="enterpriseEstimateLabel">Tiempo recuperable estimado</span>
             <strong id="enterpriseImpact">30 a 90 h / mes</strong>
-            <small id="enterpriseSubtext">Estimación orientativa según tus respuestas.</small>
+            <small id="enterpriseSubtext">Estimaci&oacute;n orientativa seg&uacute;n tus respuestas.</small>
           </div>
 
-          <div class="result-section">
-            <span class="result-label">Aplicaciones posibles</span>
+          <div class="result-section enterprise-v2-result-section">
+            <span class="result-label">Primera versi&oacute;n posible</span>
             <div class="pill-list" id="enterpriseApps"></div>
           </div>
 
-          <div class="result-section">
+          <div class="result-section enterprise-v2-result-section">
             <span class="result-label">Beneficios esperados</span>
             <ul class="benefit-list" id="enterpriseBenefits"></ul>
           </div>
 
-          <a id="enterpriseCta" class="btn btn-primary diagnostic-cta" href="#" target="_blank">
-            Solicitar revisión por WhatsApp
+          <div class="enterprise-v2-blueprint">
+            <i data-lucide="route"></i>
+            <p>El siguiente paso ser&iacute;a revisar responsables, archivos, frecuencia del proceso y datos disponibles.</p>
+          </div>
+
+          <a id="enterpriseCta" class="btn btn-primary diagnostic-cta enterprise-v2-cta" href="#" target="_blank" rel="noopener">
+            Solicitar revisi&oacute;n por WhatsApp
             <i data-lucide="send"></i>
           </a>
         </aside>
       </div>
     </section>
+
+    <section class="section enterprise-v2-lab-invite reveal">
+      <div class="enterprise-v2-lab-card">
+        <div>
+          <span class="eyebrow"><i data-lucide="boxes"></i> Laboratorio empresarial</span>
+          <h2>Explora c&oacute;mo podr&iacute;a verse una primera soluci&oacute;n empresarial.</h2>
+          <p>
+            El laboratorio muestra ejemplos m&aacute;s cercanos a una empresa real: indicadores, alertas, priorizaci&oacute;n,
+            responsables, tiempos de atenci&oacute;n y decisiones sugeridas.
+          </p>
+        </div>
+
+        <div class="enterprise-v2-lab-preview" aria-hidden="true">
+          <div><strong>Indicadores</strong><span>cumplimiento, riesgo y carga</span></div>
+          <div><strong>Operaci&oacute;n</strong><span>casos, estados y responsables</span></div>
+          <div><strong>Alertas</strong><span>SLA, aprobaciones y bloqueos</span></div>
+          <div><strong>Decisiones</strong><span>prioridad y siguiente acci&oacute;n</span></div>
+        </div>
+
+        <a href="#empresa-lab" class="btn btn-secondary">Abrir laboratorio</a>
+      </div>
+    </section>
+
+    <section class="cta enterprise-v2-final reveal">
+      <span class="eyebrow"><i data-lucide="rocket"></i> Siguiente paso</span>
+      <h2>La mejor automatizaci&oacute;n empresarial empieza por un caso de uso claro.</h2>
+      <p>
+        Usa el diagn&oacute;stico, revisa la recomendaci&oacute;n y solicita una revisi&oacute;n para aterrizar alcance,
+        responsables, datos y una primera versi&oacute;n construible.
+      </p>
+      <div class="enterprise-v2-final-actions">
+        <a href="#diagnostico-empresa" class="btn btn-primary">Volver al diagn&oacute;stico <i data-lucide="arrow-up"></i></a>
+        <a href="soluciones.html" class="btn btn-secondary">Ver rutas</a>
+      </div>
+    </section>
+
+    <section id="empresa-lab" class="enterprise-lab-modal enterprise-lab-modal-v3" aria-label="Laboratorio empresarial SAO">
+      <a class="enterprise-lab-backdrop" href="#diagnostico-empresa" aria-label="Cerrar laboratorio"></a>
+      <div class="enterprise-lab-dialog enterprise-lab-dialog-v3" role="dialog" aria-modal="true" aria-labelledby="enterpriseLabTitle">
+        <div class="enterprise-lab-head enterprise-lab-head-v3">
+          <div>
+            <span class="eyebrow"><i data-lucide="boxes"></i> Laboratorio empresarial</span>
+            <h2 id="enterpriseLabTitle">Una muestra de c&oacute;mo una empresa podr&iacute;a leer, priorizar y actuar.</h2>
+            <p>
+              Estos ejemplos no son plantillas cerradas. Son una forma visual de explicar c&oacute;mo SAO podr&iacute;a convertir
+              datos dispersos, solicitudes, aprobaciones y seguimientos en una herramienta ejecutiva y operativa.
+            </p>
+          </div>
+          <a class="enterprise-lab-close" href="#diagnostico-empresa" aria-label="Cerrar laboratorio"><i data-lucide="x"></i></a>
+        </div>
+
+        <div class="enterprise-lab-kpi-row" aria-label="Indicadores de ejemplo para decisi&oacute;n empresarial">
+          <article>
+            <small>Casos abiertos</small>
+            <strong>128</strong>
+            <span>32 requieren revisi&oacute;n hoy</span>
+          </article>
+          <article>
+            <small>SLA en riesgo</small>
+            <strong>18%</strong>
+            <span>principalmente log&iacute;stica</span>
+          </article>
+          <article>
+            <small>Horas recuperables</small>
+            <strong>46 h</strong>
+            <span>estimadas al mes</span>
+          </article>
+          <article>
+            <small>Decisi&oacute;n sugerida</small>
+            <strong>Priorizar</strong>
+            <span>aprobaciones y reportes</span>
+          </article>
+        </div>
+
+        <div class="enterprise-lab-decision-layout">
+          <article class="enterprise-lab-panel enterprise-lab-panel-wide">
+            <div class="enterprise-lab-panel-head">
+              <div>
+                <span>01 &middot; Tablero corporativo</span>
+                <h3>Una vista para saber qu&eacute; est&aacute; pasando y qu&eacute; necesita acci&oacute;n.</h3>
+              </div>
+              <small>Actualizado hace 4 min</small>
+            </div>
+
+            <div class="enterprise-lab-dashboard-grid">
+              <div class="enterprise-chart-card">
+                <div class="enterprise-chart-head">
+                  <strong>Solicitudes por etapa</strong>
+                  <span>Semana actual</span>
+                </div>
+                <div class="enterprise-bar-chart" aria-hidden="true">
+                  <div><span>Nuevas</span><i style="--value: 82%"></i><strong>42</strong></div>
+                  <div><span>En gesti&oacute;n</span><i style="--value: 64%"></i><strong>33</strong></div>
+                  <div><span>En riesgo</span><i style="--value: 38%"></i><strong>18</strong></div>
+                  <div><span>Cerradas</span><i style="--value: 76%"></i><strong>39</strong></div>
+                </div>
+              </div>
+
+              <div class="enterprise-donut-card">
+                <strong>Control del proceso</strong>
+                <div class="enterprise-donut" aria-hidden="true"><span>72%</span></div>
+                <p>Porcentaje de casos con responsable, fecha y estado claro.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="enterprise-lab-panel">
+            <span>02 &middot; Matriz de prioridad</span>
+            <h3>Qu&eacute; atender primero sin revisar todo manualmente.</h3>
+            <div class="enterprise-priority-list">
+              <div><strong>Alta</strong><span>Aprobaciones vencidas</span><em>12 casos</em></div>
+              <div><strong>Media</strong><span>Datos incompletos</span><em>21 casos</em></div>
+              <div><strong>Baja</strong><span>Seguimiento informativo</span><em>37 casos</em></div>
+            </div>
+          </article>
+
+          <article class="enterprise-lab-panel">
+            <span>03 &middot; Flujo automatizado</span>
+            <h3>Una regla simple puede evitar correos y reprocesos.</h3>
+            <div class="enterprise-flow-map">
+              <div>Entrada<br><small>solicitud o archivo</small></div>
+              <i data-lucide="arrow-right"></i>
+              <div>Regla<br><small>validar datos</small></div>
+              <i data-lucide="arrow-right"></i>
+              <div>Acci&oacute;n<br><small>alerta + tarea</small></div>
+            </div>
+          </article>
+
+          <article class="enterprise-lab-panel enterprise-lab-panel-wide">
+            <div class="enterprise-lab-panel-head">
+              <div>
+                <span>04 &middot; Lectura para gerencia</span>
+                <h3>El resultado no debe ser solo registrar datos, sino decidir mejor.</h3>
+              </div>
+            </div>
+            <div class="enterprise-decision-table">
+              <div class="enterprise-decision-row enterprise-decision-row-head">
+                <span>Hallazgo</span><span>Impacto</span><span>Acci&oacute;n sugerida</span>
+              </div>
+              <div class="enterprise-decision-row">
+                <span>Reportes se arman manualmente</span><span>Alto</span><strong>Automatizar consolidaci&oacute;n</strong>
+              </div>
+              <div class="enterprise-decision-row">
+                <span>Aprobaciones no tienen trazabilidad</span><span>Medio alto</span><strong>Crear flujo con estados</strong>
+              </div>
+              <div class="enterprise-decision-row">
+                <span>Solicitudes llegan incompletas</span><span>Medio</span><strong>Usar formulario inteligente</strong>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="enterprise-lab-footer-note">
+          <p>
+            Una versi&oacute;n real podr&iacute;a conectarse con Excel, SharePoint, Power BI, Power Apps, Power Automate,
+            ERP, formularios web o bases internas. El alcance depende de los datos, responsables y reglas del proceso.
+          </p>
+          <a class="btn btn-primary" href="#diagnostico-empresa">Volver al diagn&oacute;stico <i data-lucide="arrow-up"></i></a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
-    <p>© 2026 Soluciones de Automatización Operativa. Automatización, datos y productividad.</p>
+    <p>&copy; 2026 Soluciones de Automatizaci&oacute;n Operativa. Automatizaci&oacute;n, datos y productividad.</p>
   </footer>
 
   <script src="https://unpkg.com/lucide@latest"></script>

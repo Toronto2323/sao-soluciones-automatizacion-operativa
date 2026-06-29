@@ -28,38 +28,181 @@
   <div class="spotlight"></div>
   <canvas id="particles"></canvas>
 
-  <header class="header">
-    <a href="index.html#inicio" class="brand brand-with-logo brand-full-mark" aria-label="Ir al inicio">
+  <header class="header header-pro">
+    <a href="index.html#inicio" class="brand brand-with-logo brand-full-mark nav-brand-pro" aria-label="Ir al inicio">
       <span class="brand-logo-frame">
         <img src="assets/brand/isotipo_transparente_128.png" alt="Isotipo SAO">
       </span>
       <span class="brand-short">SAO</span>
     </a>
 
-    <nav class="nav" aria-label="Navegaci&oacute;n principal">
-      <a href="index.html#inicio">Inicio</a>
-      <a href="soluciones.html" class="nav-active">Soluciones</a>
-      <a href="identidad.html">Qu&eacute; hacemos</a>
-      <a href="experiencias.html">Experiencias</a>
-      <a href="quienes-somos.html">Qui&eacute;nes somos</a>
-      <a href="index.html#contacto">Contacto</a>
+    <nav class="nav nav-pro" aria-label="Navegaci&oacute;n principal">
+      <a href="index.html#inicio" class="nav-link">Inicio</a>
+
+      <div class="nav-dropdown">
+        <button type="button" class="nav-drop-trigger nav-active" aria-haspopup="true" aria-expanded="false">
+          Soluciones
+          <i data-lucide="chevron-down"></i>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="soluciones.html" role="menuitem">
+            <span>Vista general</span>
+            <small>Todas las rutas SAO</small>
+          </a>
+          <a href="pymes.html" role="menuitem">
+            <span>Pyme o emprendedor</span>
+            <small>Agenda, ventas, pedidos y clientes</small>
+          </a>
+          <a href="empresas.html?tipo=interno" role="menuitem">
+            <span>Empresa interna</span>
+            <small>Reportes, aprobaciones y control</small>
+          </a>
+          <a href="empresas.html?tipo=externo" role="menuitem">
+            <span>Cliente externo</span>
+            <small>Solicitudes, cotizaciones y seguimiento</small>
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button type="button" class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
+          Diagn&oacute;sticos
+          <i data-lucide="chevron-down"></i>
+        </button>
+        <div class="nav-dropdown-menu nav-dropdown-menu-compact" role="menu">
+          <a href="pymes.html#diagnostico-pyme" role="menuitem">
+            <span>Diagn&oacute;stico pyme</span>
+            <small>Respuesta r&aacute;pida para negocios peque&ntilde;os</small>
+          </a>
+          <a href="empresas.html#diagnostico-empresa" role="menuitem">
+            <span>Diagn&oacute;stico empresa</span>
+            <small>Proceso interno o cliente externo</small>
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button type="button" class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
+          Qu&eacute; hacemos
+          <i data-lucide="chevron-down"></i>
+        </button>
+        <div class="nav-dropdown-menu nav-dropdown-menu-compact" role="menu">
+          <a href="identidad.html" role="menuitem">
+            <span>Identidad y servicios</span>
+            <small>Qu&eacute; construimos y c&oacute;mo lo hacemos</small>
+          </a>
+          <a href="experiencias.html" role="menuitem">
+            <span>Experiencias</span>
+            <small>Trabajo aplicado en operaci&oacute;n real</small>
+          </a>
+          <a href="quienes-somos.html" role="menuitem">
+            <span>Qui&eacute;nes somos</span>
+            <small>Perfil, enfoque y forma de trabajo</small>
+          </a>
+        </div>
+      </div>
+
+      <a href="pymes.html#laboratorio-pyme" class="nav-link">Laboratorio</a>
+      <a href="index.html#contacto" class="nav-link">Contacto</a>
     </nav>
 
-    <button class="menu-toggle" aria-label="Abrir men&uacute;">
-      <i data-lucide="menu"></i>
-    </button>
+    <div class="header-actions-pro">
+      <button type="button" class="profile-entry-btn" data-profile-open>
+        <i data-lucide="circle-user-round"></i>
+        <span>Crear perfil</span>
+      </button>
+
+      <button class="menu-toggle" aria-label="Abrir men&uacute;" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
   </header>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html#inicio">Inicio</a>
-    <a href="soluciones.html" class="nav-active">Soluciones</a>
-    <a href="identidad.html">Qu&eacute; hacemos</a>
-    <a href="experiencias.html">Experiencias</a>
-    <a href="quienes-somos.html">Qui&eacute;nes somos</a>
+  <div class="mobile-menu mobile-menu-pro" id="mobileMenu">
+    <a href="index.html#inicio" class="">Inicio</a>
+    <span class="mobile-menu-label">Soluciones</span>
+    <a href="soluciones.html" class="nav-active">Vista general</a>
+    <a href="pymes.html">Pyme o emprendedor</a>
+    <a href="empresas.html?tipo=interno">Empresa interna</a>
+    <a href="empresas.html?tipo=externo">Cliente externo</a>
+    <span class="mobile-menu-label">Diagn&oacute;sticos</span>
+    <a href="pymes.html#diagnostico-pyme">Diagn&oacute;stico pyme</a>
+    <a href="empresas.html#diagnostico-empresa">Diagn&oacute;stico empresa</a>
+    <span class="mobile-menu-label">Marca y confianza</span>
+    <a href="identidad.html" class="">Qu&eacute; hacemos</a>
+    <a href="experiencias.html" class="">Experiencias</a>
+    <a href="quienes-somos.html" class="">Qui&eacute;nes somos</a>
     <a href="index.html#contacto">Contacto</a>
+    <button type="button" class="mobile-profile-btn" data-profile-open>Crear perfil gratuito</button>
   </div>
 
-  <main class="diagnostic-main pyme-v2-main">
+  
+  <div class="profile-modal" id="profileModal" hidden aria-hidden="true">
+    <div class="profile-modal-backdrop" data-profile-close></div>
+    <section class="profile-modal-card" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
+      <button type="button" class="profile-modal-close" aria-label="Cerrar perfil" data-profile-close>
+        <i data-lucide="x"></i>
+      </button>
+
+      <div class="profile-modal-grid">
+        <div class="profile-modal-copy">
+          <span class="eyebrow"><i data-lucide="user-round-plus"></i> Perfil gratuito SAO</span>
+          <h2 id="profileModalTitle">Pronto podr&aacute;s guardar tus diagn&oacute;sticos y continuar desde tu perfil.</h2>
+          <p>
+            Esta primera versi&oacute;n prepara la experiencia de usuario. Por ahora todo sigue siendo gratis y sin cuenta obligatoria.
+            En la siguiente etapa conectaremos el inicio real con Google para guardar avances, rutas y planes.
+          </p>
+
+          <div class="profile-benefits-grid">
+            <article><strong>Diagn&oacute;sticos guardados</strong><span>Pyme, empresa interna o cliente externo.</span></article>
+            <article><strong>Ruta recomendada</strong><span>Soluci&oacute;n sugerida y siguiente paso.</span></article>
+            <article><strong>Planes futuros</strong><span>Gratis, pro o empresa cuando est&eacute;n activos.</span></article>
+          </div>
+        </div>
+
+        <form class="profile-preview-form" id="profilePreviewForm">
+          <div class="google-preview-card">
+            <span class="google-preview-icon">G</span>
+            <div>
+              <strong>Continuar con Google</strong>
+              <small>Conexi&oacute;n real pendiente para la etapa Firebase.</small>
+            </div>
+          </div>
+
+          <label>
+            <span>Nombre o empresa</span>
+            <input id="profileName" type="text" placeholder="Ej. SAO Demo" autocomplete="name">
+          </label>
+
+          <label>
+            <span>Correo de contacto</span>
+            <input id="profileEmail" type="email" placeholder="nombre@empresa.com" autocomplete="email">
+          </label>
+
+          <label>
+            <span>Tipo de perfil</span>
+            <select id="profileType">
+              <option value="pyme">Pyme o emprendedor</option>
+              <option value="empresa">Empresa</option>
+              <option value="consultor">Consultor o aliado</option>
+              <option value="explorando">Estoy explorando soluciones</option>
+            </select>
+          </label>
+
+          <button type="submit" class="btn btn-primary profile-save-btn">
+            Guardar vista previa
+            <i data-lucide="check"></i>
+          </button>
+
+          <p class="profile-form-note" id="profileFormNote">
+            Se guardar&aacute; solo en este navegador. No se env&iacute;a informaci&oacute;n a ning&uacute;n servidor todav&iacute;a.
+          </p>
+        </form>
+      </div>
+    </section>
+  </div>
+
+<main class="diagnostic-main pyme-v2-main">
     <section class="pyme-v2-hero reveal">
       <div class="pyme-v2-copy">
         <div class="pyme-v2-brandline" aria-label="SAO - Soluciones y C&oacute;mo se podr&iacute;a resolveres Operativas">
