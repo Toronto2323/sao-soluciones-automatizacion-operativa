@@ -141,67 +141,67 @@
     <button type="button" class="mobile-profile-btn" data-profile-open>Crear perfil gratuito</button>
   </div>
 
-  
   <div class="profile-modal" id="profileModal" hidden aria-hidden="true">
     <div class="profile-modal-backdrop" data-profile-close></div>
-    <section class="profile-modal-card" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
+    <section class="profile-modal-card profile-auth-card" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
       <button type="button" class="profile-modal-close" aria-label="Cerrar perfil" data-profile-close>
         <i data-lucide="x"></i>
       </button>
 
-      <div class="profile-modal-grid">
+      <div class="profile-modal-grid profile-auth-grid">
         <div class="profile-modal-copy">
-          <span class="eyebrow"><i data-lucide="user-round-plus"></i> Perfil gratuito SAO</span>
-          <h2 id="profileModalTitle">Crea tu perfil gratuito para desbloquear el cat&aacute;logo privado SAO.</h2>
+          <span class="eyebrow"><i data-lucide="shield-check"></i> Perfil gratuito SAO</span>
+          <h2 id="profileModalTitle">Inicia sesión con Google para activar tu perfil SAO.</h2>
           <p>
-            Esta vista previa permite guardar un perfil local y acceder al cat&aacute;logo privado simulado. En la siguiente etapa conectaremos el inicio real con Google para proteger el acceso con autenticaci&oacute;n.
+            Esta etapa conecta autenticación real con Firebase. El catálogo seguirá cargando desde un archivo público,
+            pero la experiencia ya reconoce usuarios reales y prepara la base para diagnósticos, favoritos y planes futuros.
           </p>
 
           <div class="profile-benefits-grid">
-            <article><strong>Diagn&oacute;sticos guardados</strong><span>Pyme, empresa interna o cliente externo.</span></article>
-            <article><strong>Ruta recomendada</strong><span>Soluci&oacute;n sugerida y siguiente paso.</span></article>
-            <article><strong>Cat&aacute;logo privado</strong><span>Soluciones, precios base y tiempos estimados.</span></article>
+            <article><strong>Acceso real</strong><span>Inicio de sesión con cuenta de Google.</span></article>
+            <article><strong>Perfil local</strong><span>Nombre, correo y foto quedan disponibles en la web.</span></article>
+            <article><strong>Base futura</strong><span>Lista para conectar Firestore cuando quieras guardar datos centrales.</span></article>
           </div>
         </div>
 
-        <form class="profile-preview-form" id="profilePreviewForm">
-          <div class="google-preview-card">
+        <div class="profile-auth-panel">
+          <div class="auth-state-card" data-auth-guest>
             <span class="google-preview-icon">G</span>
             <div>
               <strong>Continuar con Google</strong>
-              <small>Hoy es vista previa local. Luego ser&aacute; acceso real con Firebase.</small>
+              <small>Firebase Authentication validará tu cuenta en una ventana segura.</small>
             </div>
           </div>
 
-          <label>
-            <span>Nombre o empresa</span>
-            <input id="profileName" type="text" placeholder="Ej. SAO Demo" autocomplete="name">
-          </label>
-
-          <label>
-            <span>Correo de contacto</span>
-            <input id="profileEmail" type="email" placeholder="nombre@empresa.com" autocomplete="email">
-          </label>
-
-          <label>
-            <span>Tipo de perfil</span>
-            <select id="profileType">
-              <option value="pyme">Pyme o emprendedor</option>
-              <option value="empresa">Empresa</option>
-              <option value="consultor">Consultor o aliado</option>
-              <option value="explorando">Estoy explorando soluciones</option>
-            </select>
-          </label>
-
-          <button type="submit" class="btn btn-primary profile-save-btn">
-            Guardar vista previa
-            <i data-lucide="check"></i>
+          <button type="button" class="btn btn-primary profile-save-btn google-login-btn" data-google-login data-auth-guest>
+            Continuar con Google
+            <i data-lucide="log-in"></i>
           </button>
 
+          <div class="auth-user-card" data-auth-user hidden>
+            <img data-auth-photo alt="" />
+            <div>
+              <small>Sesión activa</small>
+              <strong data-auth-name></strong>
+              <span data-auth-email></span>
+            </div>
+          </div>
+
+          <div class="auth-actions" data-auth-user hidden>
+            <a class="btn btn-primary" href="catalogo.html">
+              Ver catálogo
+              <i data-lucide="book-open"></i>
+            </a>
+            <button type="button" class="btn btn-secondary" data-google-logout>
+              Cerrar sesión
+              <i data-lucide="log-out"></i>
+            </button>
+          </div>
+
           <p class="profile-form-note" id="profileFormNote">
-            Se guardar&aacute; solo en este navegador. No se env&iacute;a informaci&oacute;n a ning&uacute;n servidor todav&iacute;a.
+            No se guardan datos en una base central todavía. La sesión se valida con Firebase y el perfil se refleja localmente en el navegador.
           </p>
-        </form>
+        </div>
       </div>
     </section>
   </div>
@@ -486,5 +486,6 @@
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="script.js"></script>
+  <script type="module" src="auth.js"></script>
 </body>
 </html>
