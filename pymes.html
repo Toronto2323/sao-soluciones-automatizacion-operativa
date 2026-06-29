@@ -4,18 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Diagnóstico para pymes y emprendedores | SAO</title>
-  <link rel="icon" type="image/svg+xml" href="assets/icons/11_favicon_sao.svg" />
-  <link rel="shortcut icon" href="assets/icons/11_favicon_sao.svg" type="image/svg+xml" />
+  <title>Diagn&oacute;stico para pymes y emprendedores | SAO</title>
+  <meta
+    name="description"
+    content="Diagn&oacute;stico guiado para pymes, emprendedores y negocios peque&ntilde;os. Identifica qu&eacute; proceso puedes automatizar y qu&eacute; soluci&oacute;n digital podr&iacute;a construir SAO."
+  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
 
+  <link rel="icon" type="image/png" href="assets/brand/isotipo_transparente_128.png">
+  <link rel="preload" as="image" href="assets/brand/isotipo_transparente_128.png">
+  <link rel="preload" as="image" href="assets/brand/logo_sin_descriptor_transparente_400px.png">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
 
@@ -25,23 +29,23 @@
   <canvas id="particles"></canvas>
 
   <header class="header">
-    <a href="index.html#inicio" class="brand brand-logo" aria-label="Ir al inicio">
-      <span class="brand-mark" aria-hidden="true">
-        <img src="assets/icons/05_isotipo_sao.svg" alt="" />
+    <a href="index.html#inicio" class="brand brand-with-logo brand-full-mark" aria-label="Ir al inicio">
+      <span class="brand-logo-frame">
+        <img src="assets/brand/isotipo_transparente_128.png" alt="Isotipo SAO">
       </span>
       <span class="brand-short">SAO</span>
     </a>
 
-    <nav class="nav">
+    <nav class="nav" aria-label="Navegaci&oacute;n principal">
       <a href="index.html#inicio">Inicio</a>
       <a href="soluciones.html" class="nav-active">Soluciones</a>
-      <a href="identidad.html">Qué hacemos</a>
+      <a href="identidad.html">Qu&eacute; hacemos</a>
       <a href="experiencias.html">Experiencias</a>
-      <a href="quienes-somos.html">Quiénes somos</a>
+      <a href="quienes-somos.html">Qui&eacute;nes somos</a>
       <a href="index.html#contacto">Contacto</a>
     </nav>
 
-    <button class="menu-toggle" aria-label="Abrir menú">
+    <button class="menu-toggle" aria-label="Abrir men&uacute;">
       <i data-lucide="menu"></i>
     </button>
   </header>
@@ -49,158 +53,698 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html#inicio">Inicio</a>
     <a href="soluciones.html" class="nav-active">Soluciones</a>
-    <a href="identidad.html">Qué hacemos</a>
+    <a href="identidad.html">Qu&eacute; hacemos</a>
     <a href="experiencias.html">Experiencias</a>
-    <a href="quienes-somos.html">Quiénes somos</a>
+    <a href="quienes-somos.html">Qui&eacute;nes somos</a>
     <a href="index.html#contacto">Contacto</a>
   </div>
 
-  <main class="diagnostic-main">
-    <section class="page-hero diagnostic-hero reveal">
-      <div class="page-hero-content">
+  <main class="diagnostic-main pyme-v2-main">
+    <section class="pyme-v2-hero reveal">
+      <div class="pyme-v2-copy">
+        <div class="pyme-v2-brandline" aria-label="SAO - Soluciones y C&oacute;mo se podr&iacute;a resolveres Operativas">
+          <img src="assets/brand/logo_sin_descriptor_transparente_400px.png" alt="SAO">
+          <span>Diagn&oacute;stico para negocios peque&ntilde;os</span>
+        </div>
+
         <span class="eyebrow">
           <i data-lucide="store"></i>
-          Pymes · emprendedores · negocios pequeños
+          Pymes &middot; emprendedores &middot; negocios locales
         </span>
-        <h1>Identifica una solución práctica para ordenar tu negocio.</h1>
+
+        <h1>Descubre qu&eacute; proceso de tu negocio podr&iacute;a convertirse en una herramienta digital.</h1>
+
         <p>
-          Ideal para tatuadores, barberías, tiendas de barrio, emprendimientos por redes, restaurantes pequeños
-          y profesionales independientes que necesitan ahorrar tiempo sin sistemas complejos.
+          Responde cuatro preguntas y mira una recomendaci&oacute;n inmediata: qu&eacute; podr&iacute;amos construir,
+          cu&aacute;nto tiempo podr&iacute;as recuperar y c&oacute;mo se ver&iacute;a una primera soluci&oacute;n para tu operaci&oacute;n.
         </p>
+
+        <div class="pyme-v2-hero-actions">
+          <a href="#diagnostico-pyme" class="btn btn-primary">
+            Iniciar diagn&oacute;stico
+            <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="soluciones.html" class="btn btn-secondary">Ver otras rutas</a>
+        </div>
       </div>
 
-      <aside class="mini-summary tilt-card">
-        <span><i data-lucide="timer-reset"></i></span>
-        <strong>Resultado inmediato</strong>
-        <p>Solución sugerida, tiempo recuperable, aplicaciones posibles y contacto directo.</p>
+      <aside class="pyme-v2-demo-card tilt-card" aria-label="Vista previa del resultado">
+        <div class="pyme-v2-demo-top">
+          <span></span><span></span><span></span>
+          <small>Resultado vivo</small>
+        </div>
+
+        <div class="pyme-v2-demo-body">
+          <div class="pyme-v2-demo-icon">
+            <i data-lucide="wand-sparkles"></i>
+          </div>
+
+          <small>La web funciona como una mini consultor&iacute;a</small>
+          <h2>Tu respuesta cambia la recomendaci&oacute;n en tiempo real.</h2>
+          <p>
+            Si tu mayor problema son citas, ventas, inventario, pedidos o mensajes repetidos,
+            el diagn&oacute;stico ajusta la soluci&oacute;n sugerida y prepara un contacto con contexto.
+          </p>
+
+          <div class="pyme-v2-demo-metrics">
+            <div>
+              <strong>4</strong>
+              <span>preguntas</span>
+            </div>
+            <div>
+              <strong>1</strong>
+              <span>recomendaci&oacute;n</span>
+            </div>
+            <div>
+              <strong>WA</strong>
+              <span>contacto listo</span>
+            </div>
+          </div>
+        </div>
       </aside>
     </section>
 
-    <section class="section reveal">
-      <div class="diagnostic-shell">
-        <form class="diagnostic-form-panel" id="pymeForm">
-          <div class="panel-label">
-            <span class="eyebrow"><i data-lucide="list-checks"></i> Cuestionario breve</span>
-            <h2>Cuéntanos cómo funciona hoy</h2>
-            <p>Selecciona las opciones más cercanas a tu realidad. El resultado se actualiza automáticamente.</p>
+    <section class="pyme-v2-proof reveal" aria-label="Beneficios principales del diagn&oacute;stico">
+      <article>
+        <i data-lucide="clock-3"></i>
+        <div>
+          <strong>Tiempo recuperable</strong>
+          <p>Visualiza una estimaci&oacute;n mensual para entender si vale la pena automatizar.</p>
+        </div>
+      </article>
+
+      <article>
+        <i data-lucide="layout-dashboard"></i>
+        <div>
+          <strong>Soluci&oacute;n concreta</strong>
+          <p>La recomendaci&oacute;n se traduce en una app, agenda, control, formulario o tablero.</p>
+        </div>
+      </article>
+
+      <article>
+        <i data-lucide="message-circle"></i>
+        <div>
+          <strong>WhatsApp con contexto</strong>
+          <p>El contacto final evita empezar desde cero y facilita aterrizar el alcance.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section pyme-v2-diagnostic-section reveal" id="diagnostico-pyme">
+      <div class="section-heading pyme-v2-heading">
+        <span class="eyebrow">
+          <i data-lucide="list-checks"></i>
+          Diagn&oacute;stico interactivo
+        </span>
+        <h2>Cu&eacute;ntanos c&oacute;mo trabajas hoy y mira qu&eacute; podr&iacute;a construir SAO.</h2>
+        <p>
+          Este diagn&oacute;stico no reemplaza una reuni&oacute;n, pero s&iacute; ayuda a identificar una primera ruta de valor:
+          ordenar informaci&oacute;n, reducir tareas repetidas y convertir procesos manuales en herramientas simples.
+        </p>
+      </div>
+
+      <div class="diagnostic-shell pyme-v2-shell">
+        <form class="diagnostic-form-panel pyme-v2-form pyme-balanced-form" id="pymeForm">
+          <div class="panel-label pyme-v2-panel-label pyme-balanced-label">
+            <span class="eyebrow"><i data-lucide="mouse-pointer-click"></i> Diagnostico guiado</span>
+            <h2>Arma una lectura rapida de tu operacion.</h2>
+            <p>La idea no es llenar un formulario largo: elige lo mas parecido a tu realidad y mira como cambia la recomendacion.</p>
           </div>
 
-          <label class="field-card">
+          <label class="field-card pyme-v2-field pyme-compact-field">
             <span class="field-index">01</span>
             <span class="field-content">
-              <span class="field-title">¿Qué tipo de negocio tienes?</span>
+              <span class="field-title">Primero, ubicamos el tipo de negocio.</span>
               <select id="pymeBusiness">
-                <option value="tattoo">Tatuador, barbería o estética</option>
-                <option value="store">Tienda de barrio o minimercado</option>
-                <option value="social">Emprendimiento por redes sociales</option>
-                <option value="food">Restaurante, comidas o domicilios</option>
-                <option value="services">Servicios profesionales</option>
-                <option value="other">Otro negocio pequeño</option>
+                <option value="tattoo">Trabajo con citas: tatuaje, barberia o estetica</option>
+                <option value="store">Vendo productos en tienda o minimercado</option>
+                <option value="social">Vendo por redes sociales o WhatsApp</option>
+                <option value="food">Manejo pedidos de comida o domicilios</option>
+                <option value="services">Presto servicios profesionales</option>
+                <option value="other">Tengo otro tipo de negocio pequeno</option>
               </select>
             </span>
           </label>
 
-          <label class="field-card">
+          <div class="field-card pyme-v2-field pyme-choice-field">
             <span class="field-index">02</span>
-            <span class="field-content">
-              <span class="field-title">¿Qué proceso te consume más tiempo?</span>
-              <select id="pymeChallenge">
-                <option value="agenda">Agendar clientes o citas</option>
-                <option value="sales">Registrar ventas y pagos</option>
-                <option value="inventory">Controlar inventario</option>
-                <option value="messages">Responder mensajes repetitivos</option>
-                <option value="orders">Organizar pedidos</option>
-                <option value="reports">Hacer reportes o cuentas</option>
-              </select>
-            </span>
-          </label>
+            <div class="field-content">
+              <span class="field-title">Que quieres ordenar primero?</span>
+              <div class="pyme-choice-grid" role="radiogroup" aria-label="Proceso principal">
+                <label class="pyme-radio-card">
+                  <input type="radio" name="pymeChallenge" value="agenda" checked>
+                  <span><i data-lucide="calendar-check"></i><strong>Citas</strong><small>agenda, clientes y confirmaciones</small></span>
+                </label>
+                <label class="pyme-radio-card">
+                  <input type="radio" name="pymeChallenge" value="sales">
+                  <span><i data-lucide="receipt-text"></i><strong>Ventas</strong><small>pagos, cierre y registro diario</small></span>
+                </label>
+                <label class="pyme-radio-card">
+                  <input type="radio" name="pymeChallenge" value="inventory">
+                  <span><i data-lucide="package-check"></i><strong>Inventario</strong><small>stock, entradas y alertas</small></span>
+                </label>
+                <label class="pyme-radio-card">
+                  <input type="radio" name="pymeChallenge" value="messages">
+                  <span><i data-lucide="messages-square"></i><strong>Mensajes</strong><small>respuestas repetidas y seguimiento</small></span>
+                </label>
+                <label class="pyme-radio-card">
+                  <input type="radio" name="pymeChallenge" value="orders">
+                  <span><i data-lucide="clipboard-list"></i><strong>Pedidos</strong><small>solicitudes, estados y entregas</small></span>
+                </label>
+                <label class="pyme-radio-card">
+                  <input type="radio" name="pymeChallenge" value="reports">
+                  <span><i data-lucide="bar-chart-3"></i><strong>Control</strong><small>resumen de resultados y decisiones</small></span>
+                </label>
+              </div>
+            </div>
+          </div>
 
-          <label class="field-card">
-            <span class="field-index">03</span>
-            <span class="field-content">
-              <span class="field-title">¿Cuántas horas semanales dedicas a esa tarea?</span>
-              <select id="pymeHours">
-                <option value="3">Menos de 3 horas</option>
-                <option value="6">3 a 6 horas</option>
-                <option value="12" selected>6 a 12 horas</option>
-                <option value="20">12 a 20 horas</option>
-                <option value="35">Más de 20 horas</option>
-              </select>
-            </span>
-          </label>
+          <div class="pyme-two-fields">
+            <label class="field-card pyme-v2-field pyme-compact-field">
+              <span class="field-index">03</span>
+              <span class="field-content">
+                <span class="field-title">Cuanto tiempo consume?</span>
+                <select id="pymeHours">
+                  <option value="3">Poco: menos de 3 horas por semana</option>
+                  <option value="6">Moderado: 3 a 6 horas por semana</option>
+                  <option value="12" selected>Alto: 6 a 12 horas por semana</option>
+                  <option value="20">Muy alto: 12 a 20 horas por semana</option>
+                  <option value="35">Critico: mas de 20 horas por semana</option>
+                </select>
+              </span>
+            </label>
 
-          <label class="field-card">
-            <span class="field-index">04</span>
-            <span class="field-content">
-              <span class="field-title">¿Qué herramientas usas hoy?</span>
-              <select id="pymeTools">
-                <option value="notes">Cuaderno, notas o memoria</option>
-                <option value="sheets">Excel o Google Sheets</option>
-                <option value="whatsapp" selected>WhatsApp e Instagram</option>
-                <option value="pos">Sistema básico de ventas</option>
-                <option value="mixed">Varias herramientas sin conexión</option>
-              </select>
-            </span>
-          </label>
+            <label class="field-card pyme-v2-field pyme-compact-field">
+              <span class="field-index">04</span>
+              <span class="field-content">
+                <span class="field-title">Donde esta hoy la informacion?</span>
+                <select id="pymeTools">
+                  <option value="notes">En cuaderno, notas o memoria</option>
+                  <option value="sheets">En Excel o Google Sheets</option>
+                  <option value="whatsapp" selected>En WhatsApp, Instagram o chats</option>
+                  <option value="pos">En un sistema basico de ventas</option>
+                  <option value="mixed">En varias partes sin conexion</option>
+                </select>
+              </span>
+            </label>
+          </div>
+
+          <div class="field-card pyme-v2-field pyme-range-field">
+            <span class="field-index">05</span>
+            <div class="field-content">
+              <div class="pyme-range-head">
+                <span class="field-title">Que tan urgente es ordenarlo?</span>
+                <strong id="pymeUrgencyLabel">Prioridad media</strong>
+              </div>
+              <input id="pymeUrgency" type="range" min="1" max="5" value="3" aria-label="Urgencia de automatizacion">
+              <div class="pyme-range-scale"><span>Puede esperar</span><span>Lo necesito pronto</span></div>
+            </div>
+          </div>
+
+          <div class="field-card pyme-v2-field pyme-choice-field pyme-goal-field">
+            <span class="field-index">06</span>
+            <div class="field-content">
+              <span class="field-title">Que resultado quieres ver primero?</span>
+              <div class="pyme-goal-grid" role="radiogroup" aria-label="Objetivo principal">
+                <label class="pyme-goal-card">
+                  <input type="radio" name="pymeGoal" value="save" checked>
+                  <span>Ahorrar tiempo</span>
+                </label>
+                <label class="pyme-goal-card">
+                  <input type="radio" name="pymeGoal" value="control">
+                  <span>Tener control</span>
+                </label>
+                <label class="pyme-goal-card">
+                  <input type="radio" name="pymeGoal" value="sell">
+                  <span>Vender mejor</span>
+                </label>
+                <label class="pyme-goal-card">
+                  <input type="radio" name="pymeGoal" value="experience">
+                  <span>Atender mejor</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="pyme-v2-form-note">
+            <i data-lucide="shield-check"></i>
+            <p>No necesitas compartir datos privados. Con estas respuestas solo buscamos entender el proceso para proponer una primera version util.</p>
+          </div>
         </form>
 
-        <aside class="diagnostic-result-panel pyme-result-panel">
+        <aside class="diagnostic-result-panel pyme-result-panel pyme-v2-result pyme-balanced-result" aria-live="polite">
           <div class="result-topline">
-            <span>Lectura del diagnóstico</span>
+            <span>Lectura del diagnostico</span>
             <i data-lucide="sparkles"></i>
           </div>
 
           <h2 id="pymeSolution">Construiremos una agenda digital y base de clientes.</h2>
           <p id="pymeSummary">
-            Te podría funcionar si hoy confirmas citas por WhatsApp, guardas datos en conversaciones
-            y te cuesta hacer seguimiento a clientes, pagos o recordatorios.
+            Una primera version podria ayudarte a ordenar citas, clientes y recordatorios sin depender solo del chat del dia.
           </p>
 
-          <div class="impact-meter impact-meter-featured">
-            <div class="impact-head">
-              <span>Potencial estimado</span>
-              <strong class="score-display"><span id="pymePotential">0</span><em>%</em></strong>
-            </div>
+          <div class="pyme-result-kpis">
+            <article>
+              <span>Potencial</span>
+              <strong><span id="pymePotential">0</span>%</strong>
+            </article>
+            <article>
+              <span>Tiempo recuperable</span>
+              <strong id="pymeHoursRange">8 a 18 h</strong>
+            </article>
+            <article>
+              <span>Prioridad</span>
+              <strong id="pymePriority">Media</strong>
+            </article>
+          </div>
+
+          <div class="impact-meter impact-meter-featured pyme-v2-impact pyme-slim-meter">
             <div class="meter-track">
               <div class="meter-fill" id="pymeBar"></div>
             </div>
             <div class="meter-copy" id="pymeMeterCopy">
-              La oportunidad está en ordenar información y reducir pasos repetidos.
+              La oportunidad esta en ordenar informacion y reducir pasos repetidos.
             </div>
           </div>
 
-          <div class="estimate-box estimate-box-featured">
-            <span>Tiempo que podrías recuperar</span>
-            <strong id="pymeHoursRange">8 a 18 h / mes</strong>
-            <small>Estimación orientativa. El valor real depende del volumen, la disciplina de uso y el alcance final.</small>
+          <div class="result-section application-section pyme-balanced-section">
+            <span class="result-label">Primera version sugerida</span>
+            <div class="application-list pyme-balanced-apps" id="pymeApps"></div>
           </div>
 
-          <div class="result-section application-section">
-            <span class="result-label">Qué podríamos construir</span>
-            <div class="application-list" id="pymeApps"></div>
-          </div>
-
-          <div class="result-section human-benefits-section">
-            <span class="result-label">Cómo te ayudaría en la operación</span>
+          <div class="result-section human-benefits-section pyme-balanced-section pyme-benefit-compact">
+            <span class="result-label">Beneficio esperado</span>
             <ul class="benefit-list human-benefit-list" id="pymeBenefits"></ul>
           </div>
 
           <div class="analysis-note" id="pymeInsight">
             <i data-lucide="info"></i>
-            <p>Con tus respuestas, la prioridad sería crear una herramienta simple, fácil de alimentar y útil desde el primer día.</p>
+            <p>Empezariamos con una herramienta simple, facil de alimentar y util desde el primer dia.</p>
           </div>
 
-          <a id="pymeCta" class="btn btn-primary diagnostic-cta" href="#" target="_blank">
-            Quiero aterrizar esta solución
+          <a id="pymeCta" class="btn btn-primary diagnostic-cta pyme-v2-cta" href="#" target="_blank" rel="noopener">
+            Quiero aterrizar esta solucion
             <i data-lucide="send"></i>
           </a>
         </aside>
       </div>
     </section>
+
+
+
+    <section class="section pyme-lab-invite reveal" id="laboratorio-pyme">
+      <div class="pyme-lab-invite-card">
+        <div class="pyme-lab-invite-copy">
+          <span class="eyebrow">
+            <i data-lucide="cpu"></i>
+            Laboratorio operativo para pymes
+          </span>
+          <h2>Explora ejemplos breves de herramientas, sin saturar la pagina.</h2>
+          <p>
+            El diagnostico sigue siendo el foco principal. El laboratorio se abre como una ventana emergente para mostrar,
+            de forma ordenada, algunas aplicaciones que SAO podria construir: calculadoras, tableros, flujos y mensajes guiados.
+          </p>
+        </div>
+
+        <div class="pyme-lab-invite-preview" aria-label="Herramientas disponibles en el laboratorio">
+          <article>
+            <span>01</span>
+            <strong>Tiempo perdido</strong>
+            <small>Calcula horas recuperables.</small>
+          </article>
+          <article>
+            <span>02</span>
+            <strong>Mini tablero</strong>
+            <small>Resume ventas y pendientes.</small>
+          </article>
+          <article>
+            <span>03</span>
+            <strong>Flujo operativo</strong>
+            <small>Ordena estados de trabajo.</small>
+          </article>
+          <article>
+            <span>04</span>
+            <strong>Mensaje WhatsApp</strong>
+            <small>Genera respuestas listas.</small>
+          </article>
+        </div>
+
+        <button type="button" class="btn btn-primary pyme-lab-open" id="openPymeLab">
+          Abrir laboratorio
+          <i data-lucide="external-link"></i>
+        </button>
+      </div>
+    </section>
+
+    <div class="pyme-lab-modal" id="pymeLabModal" hidden aria-hidden="true">
+      <div class="pyme-lab-modal-backdrop" data-close-pyme-lab></div>
+
+      <section class="pyme-lab-modal-shell pyme-lab-modal-shell-advanced" role="dialog" aria-modal="true" aria-labelledby="pymeLabTitle">
+        <header class="pyme-lab-modal-header pyme-lab-modal-header-advanced">
+          <div>
+            <span class="eyebrow"><i data-lucide="blocks"></i> Laboratorio operativo</span>
+            <h2 id="pymeLabTitle">Herramientas pr&aacute;cticas para imaginar tu primera automatizaci&oacute;n</h2>
+            <p>
+              Explora ejemplos simples de c&oacute;mo una tarea diaria puede pasar de estar dispersa en chats, hojas o memoria a funcionar con m&aacute;s orden, seguimiento y claridad.
+            </p>
+          </div>
+          <button type="button" class="pyme-lab-close" id="closePymeLab" aria-label="Cerrar laboratorio">
+            <i data-lucide="x"></i>
+          </button>
+        </header>
+
+        <div class="pyme-lab-modal-body pyme-lab-modal-body-advanced">
+          <nav class="pyme-lab-tabs pyme-lab-tabs-advanced" aria-label="Herramientas del laboratorio">
+            <button type="button" class="is-active" data-lab-tab="time">
+              <span>01</span>
+              <strong>Tiempo recuperable</strong>
+              <small>Comparaci&oacute;n sencilla</small>
+            </button>
+            <button type="button" data-lab-tab="dashboard">
+              <span>02</span>
+              <strong>Tablero diario</strong>
+              <small>Lectura del negocio</small>
+            </button>
+            <button type="button" data-lab-tab="flow">
+              <span>03</span>
+              <strong>Flujo guiado</strong>
+              <small>Del desorden al control</small>
+            </button>
+            <button type="button" data-lab-tab="whatsapp">
+              <span>04</span>
+              <strong>Asistente WhatsApp</strong>
+              <small>Respuesta al cliente</small>
+            </button>
+          </nav>
+
+          <div class="pyme-lab-workspace pyme-lab-workspace-advanced">
+            <article class="pyme-lab-panel is-active" data-lab-panel="time">
+              <div class="pyme-lab-panel-grid">
+                <div class="pyme-lab-panel-copy">
+                  <span class="eyebrow"><i data-lucide="timer-reset"></i> Tiempo que podr&iacute;as recuperar</span>
+                  <h3>Mira cu&aacute;nto cambia una tarea cuando deja de depender solo de memoria, chat o Excel.</h3>
+                  <p>
+                    Este ejemplo compara c&oacute;mo se trabaja hoy contra una versi&oacute;n m&aacute;s ordenada: datos claros, respuesta lista, registro y seguimiento.
+                  </p>
+
+                  <div class="pyme-tool-form pyme-tool-form-modal pyme-tool-form-stacked">
+                    <label>
+                      <span>Tarea que m&aacute;s se repite</span>
+                      <select id="pymeTimeTask">
+                        <option value="messages">Responder mensajes repetidos</option>
+                        <option value="appointments">Confirmar citas</option>
+                        <option value="sales">Registrar ventas</option>
+                        <option value="inventory">Actualizar inventario</option>
+                        <option value="orders">Organizar pedidos</option>
+                      </select>
+                    </label>
+                    <label>
+                      <span>Cu&aacute;ntas veces pasa por semana</span>
+                      <select id="pymeTimeTimes">
+                        <option value="5">5 veces</option>
+                        <option value="10">10 veces</option>
+                        <option value="20" selected>20 veces</option>
+                        <option value="35">35 veces</option>
+                        <option value="60">60 veces</option>
+                      </select>
+                    </label>
+                    <label>
+                      <span>Minutos que toma cada vez</span>
+                      <select id="pymeTimeMinutes">
+                        <option value="3">3 min</option>
+                        <option value="5" selected>5 min</option>
+                        <option value="8">8 min</option>
+                        <option value="12">12 min</option>
+                        <option value="20">20 min</option>
+                      </select>
+                    </label>
+                    <label>
+                      <span>Forma de mejorar el proceso</span>
+                      <select id="pymeTimeAutomation">
+                        <option value="guided" selected>Formulario + respuesta lista</option>
+                        <option value="alerts">Estados + alertas de seguimiento</option>
+                        <option value="dashboard">Registro + tablero simple</option>
+                        <option value="template">Plantillas + lista de control</option>
+                      </select>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="pyme-time-simulator">
+                  <div class="pyme-time-kpis">
+                    <div>
+                      <small>Hoy</small>
+                      <strong id="pymeLostHours">7 h</strong>
+                      <span>/ mes</span>
+                    </div>
+                    <div>
+                      <small>Con mejora</small>
+                      <strong id="pymeOptimizedHours">3 h</strong>
+                      <span>/ mes</span>
+                    </div>
+                    <div class="is-highlighted">
+                      <small>Tiempo libre</small>
+                      <strong id="pymeSavedHours">4 h</strong>
+                      <span>/ mes</span>
+                    </div>
+                  </div>
+
+                  <div class="pyme-time-bars" aria-label="Comparacion de tiempo">
+                    <div>
+                      <span>Como se hace hoy</span>
+                      <div><i id="pymeComo se hace hoyBar" style="--value: 86%"></i></div>
+                    </div>
+                    <div>
+                      <span>Con flujo guiado</span>
+                      <div><i id="pymeAutoBar" style="--value: 38%"></i></div>
+                    </div>
+                  </div>
+
+                  <div class="pyme-auto-pipeline" id="pymeTimePipeline">
+                    <span>Entrada</span><span>Validacion</span><span>Registro</span><span>Alerta</span><span>Reporte</span>
+                  </div>
+
+                  <div class="pyme-time-result pyme-time-result-modal pyme-time-result-advanced">
+                    <small>Lectura clara</small>
+                    <p id="pymeTimeCopy">La idea no es reemplazar tu forma de trabajar, sino quitar pasos repetidos para que puedas atender mejor y decidir con m&aacute;s calma.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="pyme-lab-panel" data-lab-panel="dashboard">
+              <div class="pyme-lab-panel-copy pyme-dashboard-head">
+                <div>
+                  <span class="eyebrow"><i data-lucide="layout-dashboard"></i> Tablero para ver el d&iacute;a</span>
+                  <h3>Una pantalla para saber qu&eacute; est&aacute; pasando sin revisar diez conversaciones.</h3>
+                  <p>Este tablero re&uacute;ne lo importante del d&iacute;a: ventas, citas, pedidos, pendientes y alertas que necesitan atenci&oacute;n.</p>
+                </div>
+                <label class="dashboard-scenario-select">
+                  <span>Tipo de operaci&oacute;n</span>
+                  <select id="pymeDashboardScenario">
+                    <option value="appointments">Agenda y servicios</option>
+                    <option value="store">Tienda e inventario</option>
+                    <option value="orders">Pedidos por WhatsApp</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="pyme-dashboard-realistic">
+                <div class="pyme-dashboard-topbar">
+                  <strong id="pymeDashboardTitle">Agenda y servicios de hoy</strong>
+                  <span id="pymeDashboardUpdated">Actualizado hace unos minutos</span>
+                </div>
+
+                <div class="pyme-dashboard-kpis" id="pymeDashboardKpis">
+                  <article><small>Ingresos estimados</small><strong>$480k</strong><span>+12% vs ayer</span></article>
+                  <article><small>Citas del dia</small><strong>12</strong><span>4 pendientes</span></article>
+                  <article><small>Clientes por confirmar</small><strong>8</strong><span>requieren seguimiento</span></article>
+                  <article><small>Alertas</small><strong>4</strong><span>prioridad media</span></article>
+                </div>
+
+                <div class="pyme-dashboard-grid-real">
+                  <section class="pyme-dashboard-card chart-card">
+                    <div class="dashboard-card-head"><strong>Movimiento del d&iacute;a</strong><span>&Uacute;ltimas horas</span></div>
+                    <div class="pyme-chart-bars" id="pymeDashboardBars"></div>
+                  </section>
+
+                  <section class="pyme-dashboard-card donut-card">
+                    <div class="dashboard-card-head"><strong>Estado del trabajo</strong><span id="pymeDashboardRatio">72% activo</span></div>
+                    <div class="pyme-donut-wrap">
+                      <div class="pyme-donut" id="pymeDashboardDonut" style="--done: 72%"><span>72%</span></div>
+                      <ul id="pymeDashboardLegend"></ul>
+                    </div>
+                  </section>
+
+                  <section class="pyme-dashboard-card table-card">
+                    <div class="dashboard-card-head"><strong>Qu&eacute; atender primero</strong><span>Siguiente acci&oacute;n</span></div>
+                    <div class="pyme-dashboard-table" id="pymeDashboardTable"></div>
+                  </section>
+                </div>
+              </div>
+            </article>
+
+            <article class="pyme-lab-panel" data-lab-panel="flow">
+              <div class="pyme-lab-panel-copy pyme-flow-head">
+                <div>
+                  <span class="eyebrow"><i data-lucide="git-branch"></i> Flujo paso a paso</span>
+                  <h3>De una necesidad diaria a un resultado claro para el negocio.</h3>
+                  <p>Aqu&iacute; se ve c&oacute;mo una solicitud suelta puede convertirse en un proceso con entrada, regla, responsable y resultado.</p>
+                </div>
+                <div class="pyme-tool-form pyme-tool-form-compact pyme-flow-selectors">
+                  <label>
+                    <span>Qu&eacute; necesitas ordenar</span>
+                    <select id="pymeFlowNeed">
+                      <option value="appointment">Confirmar citas</option>
+                      <option value="order">Ordenar pedidos</option>
+                      <option value="inventory">Reposici&oacute;n de inventario</option>
+                      <option value="quote">Solicitud de cotizaci&oacute;n</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>C&oacute;mo se podr&iacute;a resolver</span>
+                    <select id="pymeFlowMethod">
+                      <option value="form">Formulario guiado</option>
+                      <option value="whatsapp">WhatsApp con preguntas claras</option>
+                      <option value="alerts">Alertas y estados visibles</option>
+                      <option value="dashboard">Tablero de seguimiento</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+
+              <div class="pyme-flow-advanced">
+                <div class="flow-column need">
+                  <small>01 · Qu&eacute; necesitas ordenar inicial</small>
+                  <strong id="pymeFlowNeedTitle">Confirmar citas sin perder clientes</strong>
+                  <p id="pymeFlowNeedCopy">Hoy las confirmaciones viven en chats y se olvidan seguimientos.</p>
+                </div>
+                <div class="flow-column method">
+                  <small>02 · C&oacute;mo lo ordenar&iacute;amos</small>
+                  <strong id="pymeFlowMethodTitle">Formulario guiado</strong>
+                  <p id="pymeFlowMethodCopy">Captura datos minimos, valida campos y crea un registro central.</p>
+                </div>
+                <div class="flow-column output">
+                  <small>03 · Qu&eacute; recibe el negocio</small>
+                  <div class="flow-output-list" id="pymeFlowOutputs"></div>
+                </div>
+              </div>
+
+              <div class="pyme-flow-engine">
+                <div><span>Entrada</span><strong id="pymeFlowInput">Cliente solicita una cita</strong></div>
+                <i data-lucide="arrow-right"></i>
+                <div><span>Regla simple</span><strong id="pymeFlowRule">Validar datos y disponibilidad</strong></div>
+                <i data-lucide="arrow-right"></i>
+                <div><span>Resultado</span><strong id="pymeFlowDelivery">Agenda + alerta + mensaje</strong></div>
+              </div>
+            </article>
+
+            <article class="pyme-lab-panel" data-lab-panel="whatsapp">
+              <div class="pyme-lab-panel-copy pyme-chatbot-head">
+                <div>
+                  <span class="eyebrow"><i data-lucide="bot-message-square"></i> Asistente para WhatsApp</span>
+                  <h3>Una conversaci&oacute;n simple para responder mejor sin perder el trato humano.</h3>
+                  <p>El ejemplo muestra c&oacute;mo una pregunta com&uacute;n puede recibir una primera respuesta clara y dejar una acci&oacute;n lista para el negocio.</p>
+                </div>
+                <div class="pyme-tool-form pyme-tool-form-compact pyme-chatbot-controls">
+                  <label>
+                    <span>Qu&eacute; pregunta el cliente</span>
+                    <select id="pymeWaContext">
+                      <option value="appointment">Quiere agendar o confirmar una cita</option>
+                      <option value="order">Pregunta por un pedido</option>
+                      <option value="payment">Pregunta por un pago</option>
+                      <option value="followup">Tiene dudas antes de comprar</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>Estilo de respuesta</span>
+                    <select id="pymeWaTone">
+                      <option value="friendly">Cercano y amable</option>
+                      <option value="formal">Formal y directo</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+
+              <div class="pyme-chatbot-sim">
+                <div class="chat-window-top"><span></span><strong>Asistente SAO demo</strong><small>Disponible</small></div>
+                <div class="chat-thread" id="pymeChatThread"></div>
+                <div class="chat-next-action">
+                  <span>Siguiente acci&oacute;n sugerida</span>
+                  <strong id="pymeChatAction">Guardar cita y avisar al responsable</strong>
+                </div>
+              </div>
+
+              <div class="wa-message-preview wa-message-preview-modal" id="pymeWaMessage">Hola, te confirmamos tu cita. Por favor responde este mensaje para dejarla agendada.</div>
+              <button type="button" class="btn btn-secondary pyme-copy-btn" id="pymeCopyMessage">
+                Copiar respuesta lista
+                <i data-lucide="copy"></i>
+              </button>
+            </article>
+          </div>
+        </div>
+
+        <footer class="pyme-lab-modal-footer">
+          <p>Estos ejemplos son una primera muestra. La versi&oacute;n real se dise&ntilde;a con tu proceso, tus usuarios, tus datos y el objetivo que quieras lograr.</p>
+          <a href="#diagnostico-pyme" class="btn btn-primary" data-close-pyme-lab>
+            Diagnosticar mi caso
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+        </footer>
+      </section>
+    </div>
+
+    <section class="section pyme-v2-examples reveal">
+      <div class="section-heading pyme-v2-heading">
+        <span class="eyebrow"><i data-lucide="boxes"></i> Lo que esta web quiere demostrar</span>
+        <h2>No solo hablamos de automatizaci&oacute;n: esta p&aacute;gina ya te deja probar una primera idea.</h2>
+        <p>
+          El diagn&oacute;stico y el laboratorio muestran una forma sencilla de convertir preguntas, reglas y resultados en una herramienta web &uacute;til para una pyme.
+        </p>
+      </div>
+
+      <div class="pyme-v2-example-grid">
+        <article class="tilt-card">
+          <span>01</span>
+          <h3>Formulario guiado</h3>
+          <p>Ayuda a recibir informaci&oacute;n completa desde el inicio, sin hacer siempre las mismas preguntas por chat.</p>
+        </article>
+
+        <article class="tilt-card">
+          <span>02</span>
+          <h3>Resultado entendible</h3>
+          <p>Transforma respuestas simples en una recomendaci&oacute;n que cualquier persona del negocio puede entender.</p>
+        </article>
+
+        <article class="tilt-card">
+          <span>03</span>
+          <h3>WhatsApp con contexto</h3>
+          <p>El mensaje final llega con contexto para conversar mejor sobre alcance, prioridad y primera versi&oacute;n.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta pyme-v2-final-cta reveal">
+      <span class="eyebrow">
+        <i data-lucide="rocket"></i>
+        Siguiente paso
+      </span>
+      <h2>Una buena automatizaci&oacute;n empieza por una tarea repetitiva bien identificada.</h2>
+      <p>
+        Usa el diagn&oacute;stico, revisa la recomendaci&oacute;n y cont&aacute;ctanos cuando quieras aterrizar el alcance de una primera versi&oacute;n.
+      </p>
+      <div class="pyme-v2-final-actions">
+        <a href="#diagnostico-pyme" class="btn btn-primary">
+          Volver al diagn&oacute;stico
+          <i data-lucide="arrow-up"></i>
+        </a>
+        <a href="https://wa.me/573116760185" class="btn btn-secondary" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
-    <p>© 2026 Soluciones de Automatización Operativa. Automatización, datos y productividad.</p>
+    <p>&copy; 2026 Soluciones de Automatizaci&oacute;n Operativa. Automatizaci&oacute;n, datos y productividad.</p>
   </footer>
 
   <script src="https://unpkg.com/lucide@latest"></script>
