@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Qué hacemos | SAO</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/11_favicon_sao.svg" />
+  <link rel="shortcut icon" href="assets/icons/11_favicon_sao.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <div class="mesh-bg"></div>
+  <div class="noise"></div>
+  <div class="spotlight"></div>
+  <canvas id="particles"></canvas>
+
+  <header class="header">
+    <a href="index.html#inicio" class="brand brand-logo" aria-label="Ir al inicio">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="assets/icons/05_isotipo_sao.svg" alt="" />
+      </span>
+      <span class="brand-short">SAO</span>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html#inicio">Inicio</a>
+      <a href="soluciones.html">Soluciones</a>
+      <a href="identidad.html" class="nav-active">Qué hacemos</a>
+      <a href="experiencias.html">Experiencias</a>
+      <a href="quienes-somos.html">Quiénes somos</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <i data-lucide="menu"></i>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#inicio">Inicio</a>
+    <a href="soluciones.html">Soluciones</a>
+    <a href="identidad.html" class="nav-active">Qué hacemos</a>
+    <a href="experiencias.html">Experiencias</a>
+    <a href="quienes-somos.html">Quiénes somos</a>
+    <a href="index.html#contacto">Contacto</a>
+  </div>
+
+  <main class="identity-main">
+    <section class="page-hero identity-hero reveal">
+      <div class="page-hero-content">
+        <span class="eyebrow">
+          <i data-lucide="fingerprint"></i>
+          Identidad de lo que hacemos
+        </span>
+        <h1>Construimos soluciones digitales para que la operación sea más clara, rápida y controlable.</h1>
+        <p>
+          Nuestra forma de trabajo combina automatización, análisis de datos y herramientas simples. No buscamos complicar la operación:
+          buscamos reducir tareas manuales, ordenar información y convertir procesos repetitivos en sistemas útiles.
+        </p>
+        <div class="hero-actions">
+          <a href="soluciones.html" class="btn btn-primary">Encontrar una solución <i data-lucide="arrow-right"></i></a>
+          <a href="quienes-somos.html" class="btn btn-secondary">Ver quiénes somos</a>
+        </div>
+      </div>
+
+      <aside class="identity-summary tilt-card">
+        <div class="summary-item">
+          <span class="summary-icon"><i data-lucide="workflow"></i></span>
+          <div>
+            <span>Enfoque</span>
+            <strong>Procesos reales, no plantillas genéricas</strong>
+          </div>
+        </div>
+        <div class="summary-item">
+          <span class="summary-icon"><i data-lucide="gauge"></i></span>
+          <div>
+            <span>Meta</span>
+            <strong>Menos reproceso, más trazabilidad</strong>
+          </div>
+        </div>
+        <div class="summary-item">
+          <span class="summary-icon"><i data-lucide="blocks"></i></span>
+          <div>
+            <span>Herramientas</span>
+            <strong>Excel, Power BI, Power Apps, web y flujos</strong>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-heading">
+        <span class="eyebrow"><i data-lucide="layers-3"></i> Catálogo base</span>
+        <h2>Soluciones que podemos adaptar a cada operación</h2>
+        <p>
+          Estas son las familias de soluciones que usamos como punto de partida. El alcance real depende del diagnóstico,
+          los archivos disponibles, los responsables y la frecuencia del proceso.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card tilt-card">
+          <span class="icon"><i data-lucide="file-spreadsheet"></i></span>
+          <h3>Automatización en Excel</h3>
+          <p>Macros, formularios, reportes automáticos, validaciones y consolidación de archivos.</p>
+          <a href="soluciones.html">Evaluar caso <i data-lucide="arrow-up-right"></i></a>
+        </article>
+
+        <article class="card tilt-card">
+          <span class="icon"><i data-lucide="bar-chart-3"></i></span>
+          <h3>Power BI</h3>
+          <p>Dashboards gerenciales para ventas, inventarios, productividad, logística y operación.</p>
+          <a href="soluciones.html">Evaluar caso <i data-lucide="arrow-up-right"></i></a>
+        </article>
+
+        <article class="card tilt-card">
+          <span class="icon"><i data-lucide="app-window"></i></span>
+          <h3>Power Apps</h3>
+          <p>Aplicaciones internas para captura de datos, aprobaciones y seguimiento operativo.</p>
+          <a href="soluciones.html">Evaluar caso <i data-lucide="arrow-up-right"></i></a>
+        </article>
+
+        <article class="card tilt-card">
+          <span class="icon"><i data-lucide="workflow"></i></span>
+          <h3>Power Automate</h3>
+          <p>Flujos automáticos para correos, alertas, registros, aprobaciones y tareas repetitivas.</p>
+          <a href="soluciones.html">Evaluar caso <i data-lucide="arrow-up-right"></i></a>
+        </article>
+
+        <article class="card tilt-card">
+          <span class="icon"><i data-lucide="database"></i></span>
+          <h3>Integración con SAP</h3>
+          <p>Consultas, extracción de datos, modelos analíticos y reportes conectados a la operación.</p>
+          <a href="soluciones.html">Evaluar caso <i data-lucide="arrow-up-right"></i></a>
+        </article>
+
+        <article class="card tilt-card">
+          <span class="icon"><i data-lucide="layout-template"></i></span>
+          <h3>Herramientas web internas</h3>
+          <p>Cotizadores, catálogos, formularios y soluciones web simples para procesos específicos.</p>
+          <a href="soluciones.html">Evaluar caso <i data-lucide="arrow-up-right"></i></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-heading">
+        <span class="eyebrow"><i data-lucide="route"></i> Método de trabajo</span>
+        <h2>Del diagnóstico a una solución usable</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="step">
+          <span>01</span>
+          <h3>Diagnóstico</h3>
+          <p>Entendemos el proceso, archivos, responsables, frecuencia y objetivo.</p>
+        </div>
+
+        <div class="step">
+          <span>02</span>
+          <h3>Diseño</h3>
+          <p>Definimos estructura, alcance, tiempos, costos y entregables.</p>
+        </div>
+
+        <div class="step">
+          <span>03</span>
+          <h3>Desarrollo</h3>
+          <p>Construimos la solución con pruebas, ajustes y validación funcional.</p>
+        </div>
+
+        <div class="step">
+          <span>04</span>
+          <h3>Entrega</h3>
+          <p>Entregamos herramienta, explicación de uso y documentación básica.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-heading">
+        <span class="eyebrow"><i data-lucide="monitor-dot"></i> Ejemplos de construcción</span>
+        <h2>Casos tipo que podemos convertir en soluciones reales</h2>
+        <p>
+          Cada caso puede iniciar como una automatización pequeña y evolucionar a una herramienta más robusta según el crecimiento del negocio.
+        </p>
+      </div>
+
+      <div class="case-grid">
+        <article class="case-card tilt-card">
+          <i data-lucide="gauge"></i>
+          <h3>Dashboard comercial</h3>
+          <p>Ventas, cumplimiento, rentabilidad, clientes, productos y comparativos mensuales.</p>
+        </article>
+
+        <article class="case-card tilt-card">
+          <i data-lucide="clipboard-check"></i>
+          <h3>Control operativo</h3>
+          <p>Registro de tareas, responsables, estados, alertas y trazabilidad por proceso.</p>
+        </article>
+
+        <article class="case-card tilt-card">
+          <i data-lucide="bot"></i>
+          <h3>Flujos automáticos</h3>
+          <p>Correos, aprobaciones, notificaciones y generación de reportes programados.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta reveal">
+      <span class="eyebrow"><i data-lucide="mouse-pointer-click"></i> Siguiente paso</span>
+      <h2>Si ya tienes claro qué quieres mejorar, inicia por Soluciones.</h2>
+      <p>El diagnóstico guiado te ayuda a convertir una necesidad general en una ruta inicial más concreta.</p>
+      <a class="btn btn-primary" href="soluciones.html">Ir a soluciones <i data-lucide="arrow-right"></i></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Soluciones de Automatización Operativa. Automatización, datos y productividad.</p>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>

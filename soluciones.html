@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Diagnóstico guiado de automatización para pymes, emprendedores y empresas. Encuentra una ruta según tu operación y recibe una recomendación inicial." />
+
+  <title>Soluciones por tipo de negocio | SAO</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/11_favicon_sao.svg" />
+  <link rel="shortcut icon" href="assets/icons/11_favicon_sao.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <div class="mesh-bg"></div>
+  <div class="noise"></div>
+  <div class="spotlight"></div>
+  <canvas id="particles"></canvas>
+
+  <header class="header">
+    <a href="index.html#inicio" class="brand brand-logo" aria-label="Ir al inicio">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="assets/icons/05_isotipo_sao.svg" alt="" />
+      </span>
+      <span class="brand-short">SAO</span>
+    </a>
+
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="index.html#inicio">Inicio</a>
+      <a href="soluciones.html" class="nav-active">Soluciones</a>
+      <a href="identidad.html">Qué hacemos</a>
+      <a href="experiencias.html">Experiencias</a>
+      <a href="quienes-somos.html">Quiénes somos</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <i data-lucide="menu"></i>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#inicio">Inicio</a>
+    <a href="soluciones.html" class="nav-active">Soluciones</a>
+    <a href="identidad.html">Qué hacemos</a>
+    <a href="experiencias.html">Experiencias</a>
+    <a href="quienes-somos.html">Quiénes somos</a>
+    <a href="index.html#contacto">Contacto</a>
+  </div>
+
+  <main class="solution-main solution-optimized">
+    <section class="page-hero route-hero solution-hero reveal">
+      <div class="page-hero-content solution-hero-copy">
+        <span class="eyebrow">
+          <i data-lucide="mouse-pointer-click"></i>
+          Diagnóstico guiado SAO
+        </span>
+
+        <h1>Encuentra una solución útil para el proceso que hoy te quita tiempo.</h1>
+
+        <p>
+          No necesitas saber qué herramienta pedir. Elige el escenario más cercano a tu operación y te guiamos con una ruta inicial: qué podríamos construir, para qué serviría y qué tipo de mejora podrías esperar.
+        </p>
+
+        <div class="solution-hero-points" aria-label="Beneficios del diagnóstico">
+          <span><i data-lucide="check-circle-2"></i> Preguntas simples</span>
+          <span><i data-lucide="check-circle-2"></i> Recomendación clara</span>
+          <span><i data-lucide="check-circle-2"></i> Contacto por WhatsApp</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="pymes.html" class="btn btn-primary">
+            Soy pyme o emprendedor
+            <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="empresas.html" class="btn btn-secondary">
+            Soy empresa
+          </a>
+        </div>
+      </div>
+
+      <aside class="solution-decision-card tilt-card" aria-label="Resumen del diagnóstico">
+        <div class="decision-orbit">
+          <span></span>
+          <span></span>
+          <span></span>
+          <i data-lucide="workflow"></i>
+        </div>
+
+        <div class="decision-card-copy">
+          <small>Ruta de decisión</small>
+          <h2>Del problema diario a una solución concreta</h2>
+          <p>
+            SAO traduce tareas repetitivas en herramientas simples: tableros, apps internas, flujos automáticos, formularios, catálogos o plataformas web ligeras.
+          </p>
+        </div>
+
+        <div class="decision-mini-grid">
+          <div>
+            <strong>01</strong>
+            <span>Entendemos tu proceso</span>
+          </div>
+          <div>
+            <strong>02</strong>
+            <span>Proponemos una ruta</span>
+          </div>
+          <div>
+            <strong>03</strong>
+            <span>Conversamos el alcance</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section solution-routes-section reveal" id="rutas">
+      <div class="section-heading solution-heading-wide">
+        <span class="eyebrow">
+          <i data-lucide="split"></i>
+          Selecciona tu escenario
+        </span>
+        <h2>Elige la ruta que más se parece a tu operación actual</h2>
+        <p>
+          Cada camino usa preguntas distintas porque una tienda pequeña, un equipo interno y un proceso de atención al cliente no necesitan la misma solución. La idea es que recibas una orientación comprensible, sin lenguaje técnico innecesario.
+        </p>
+      </div>
+
+      <div class="route-grid route-grid-human">
+        <a class="route-card solution-route-card tilt-card" href="pymes.html">
+          <span class="route-icon"><i data-lucide="store"></i></span>
+          <small>Ruta 01 · Negocios pequeños</small>
+          <h3>Pyme, emprendedor o negocio local</h3>
+          <p>
+            Te podría funcionar si hoy controlas citas, pedidos, ventas, clientes o inventario con WhatsApp, cuaderno, Excel o memoria.
+          </p>
+          <div class="route-solution-preview">
+            <strong>Podríamos construir:</strong>
+            <ul>
+              <li>Agenda o control de clientes.</li>
+              <li>Registro simple de ventas e inventario.</li>
+              <li>Catálogo o formulario conectado a WhatsApp.</li>
+            </ul>
+          </div>
+          <div class="route-meta">
+            <span>Tatuadores</span>
+            <span>Tiendas</span>
+            <span>Servicios</span>
+          </div>
+          <strong class="route-link">Iniciar diagnóstico <i data-lucide="arrow-up-right"></i></strong>
+        </a>
+
+        <a class="route-card solution-route-card tilt-card" href="empresas.html?tipo=interno">
+          <span class="route-icon"><i data-lucide="building-2"></i></span>
+          <small>Ruta 02 · Equipos internos</small>
+          <h3>Empresa con procesos operativos o administrativos</h3>
+          <p>
+            Ideal si tu equipo repite reportes, consolida archivos, envía correos manuales, hace seguimiento por chat o depende de aprobaciones lentas.
+          </p>
+          <div class="route-solution-preview">
+            <strong>Podríamos construir:</strong>
+            <ul>
+              <li>Dashboard ejecutivo o operativo.</li>
+              <li>App interna para captura y control.</li>
+              <li>Flujos automáticos de alertas, correos o aprobaciones.</li>
+            </ul>
+          </div>
+          <div class="route-meta">
+            <span>Operación</span>
+            <span>Logística</span>
+            <span>Gerencia</span>
+          </div>
+          <strong class="route-link">Iniciar diagnóstico <i data-lucide="arrow-up-right"></i></strong>
+        </a>
+
+        <a class="route-card solution-route-card tilt-card" href="empresas.html?tipo=externo">
+          <span class="route-icon"><i data-lucide="users-round"></i></span>
+          <small>Ruta 03 · Cliente externo</small>
+          <h3>Empresa que quiere ordenar solicitudes o atención</h3>
+          <p>
+            Aplica si recibes cotizaciones, pedidos, formularios, solicitudes o mensajes de clientes y necesitas trazabilidad desde el primer contacto.
+          </p>
+          <div class="route-solution-preview">
+            <strong>Podríamos construir:</strong>
+            <ul>
+              <li>Cotizador o formulario inteligente.</li>
+              <li>Portal básico de solicitudes.</li>
+              <li>Seguimiento comercial con estados y alertas.</li>
+            </ul>
+          </div>
+          <div class="route-meta">
+            <span>Clientes</span>
+            <span>Cotizaciones</span>
+            <span>Solicitudes</span>
+          </div>
+          <strong class="route-link">Iniciar diagnóstico <i data-lucide="arrow-up-right"></i></strong>
+        </a>
+      </div>
+    </section>
+
+    <section class="section solution-process-section reveal">
+      <div class="solution-process-head">
+        <span class="eyebrow">
+          <i data-lucide="list-checks"></i>
+          Cómo funciona
+        </span>
+        <h2>Un diagnóstico corto para iniciar una conversación con contexto</h2>
+        <p>
+          El resultado no reemplaza una revisión técnica, pero sí ayuda a llegar a WhatsApp con una necesidad más clara y una posible ruta de solución.
+        </p>
+      </div>
+
+      <div class="diagnostic-flow diagnostic-flow-human">
+        <div>
+          <span class="flow-badge">01</span>
+          <h3>Respondes preguntas simples</h3>
+          <p>Identificamos tipo de negocio, proceso que consume tiempo, herramientas actuales y frecuencia de uso.</p>
+        </div>
+        <div>
+          <span class="flow-badge">02</span>
+          <h3>Ves una solución sugerida</h3>
+          <p>La web te muestra qué podríamos construir y qué beneficios tendría para tu operación diaria.</p>
+        </div>
+        <div>
+          <span class="flow-badge">03</span>
+          <h3>Solicitas revisión por WhatsApp</h3>
+          <p>El mensaje llega con el contexto del diagnóstico para conversar sobre alcance, prioridad y próximos pasos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section solution-context-section reveal">
+      <div class="context-strip solution-context-strip">
+        <div>
+          <span class="eyebrow"><i data-lucide="fingerprint"></i> Antes de construir</span>
+          <h2>También puedes conocer nuestra forma de trabajo.</h2>
+          <p>
+            SAO trabaja desde el proceso real: entender cómo se hace hoy, detectar tareas repetitivas y convertirlas en herramientas simples, medibles y fáciles de usar.
+          </p>
+        </div>
+        <div class="context-actions">
+          <a class="btn btn-secondary" href="identidad.html">Qué hacemos</a>
+          <a class="btn btn-secondary" href="quienes-somos.html">Quiénes somos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta solution-final-cta reveal">
+      <span class="eyebrow">
+        <i data-lucide="sparkles"></i>
+        Diagnóstico inicial
+      </span>
+      <h2>Empieza por la ruta más cercana a tu operación.</h2>
+      <p>
+        La estimación es orientativa. El alcance real se define revisando archivos, responsables, frecuencia del proceso y objetivo del negocio.
+      </p>
+      <div class="solution-cta-actions">
+        <a class="btn btn-primary" href="pymes.html">
+          Comenzar como pyme
+          <i data-lucide="arrow-right"></i>
+        </a>
+        <a class="btn btn-secondary" href="empresas.html">
+          Comenzar como empresa
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Soluciones de Automatización Operativa. Automatización, datos y productividad.</p>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>

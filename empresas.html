@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Diagnóstico para empresas | SAO</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/11_favicon_sao.svg" />
+  <link rel="shortcut icon" href="assets/icons/11_favicon_sao.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <div class="mesh-bg"></div>
+  <div class="noise"></div>
+  <div class="spotlight"></div>
+  <canvas id="particles"></canvas>
+
+  <header class="header">
+    <a href="index.html#inicio" class="brand brand-logo" aria-label="Ir al inicio">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="assets/icons/05_isotipo_sao.svg" alt="" />
+      </span>
+      <span class="brand-short">SAO</span>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html#inicio">Inicio</a>
+      <a href="soluciones.html" class="nav-active">Soluciones</a>
+      <a href="identidad.html">Qué hacemos</a>
+      <a href="experiencias.html">Experiencias</a>
+      <a href="quienes-somos.html">Quiénes somos</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <i data-lucide="menu"></i>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#inicio">Inicio</a>
+    <a href="soluciones.html" class="nav-active">Soluciones</a>
+    <a href="identidad.html">Qué hacemos</a>
+    <a href="experiencias.html">Experiencias</a>
+    <a href="quienes-somos.html">Quiénes somos</a>
+    <a href="index.html#contacto">Contacto</a>
+  </div>
+
+  <main class="diagnostic-main">
+    <section class="page-hero diagnostic-hero reveal">
+      <div class="page-hero-content">
+        <span class="eyebrow">
+          <i data-lucide="building-2"></i>
+          Empresas · procesos · experiencia de cliente
+        </span>
+        <h1>Define una automatización según el frente que quieres mejorar.</h1>
+        <p>
+          Selecciona si la prioridad está en procesos internos o en interacciones de cara al cliente.
+          El diagnóstico propone una ruta inicial, aplicaciones posibles y beneficios esperados.
+        </p>
+      </div>
+
+      <aside class="mini-summary tilt-card">
+        <span><i data-lucide="workflow"></i></span>
+        <strong>Dos caminos</strong>
+        <p>Operación interna o experiencia externa, ambos con recomendación dinámica.</p>
+      </aside>
+    </section>
+
+    <section class="section reveal">
+      <div class="business-tabs" role="tablist" aria-label="Tipo de proceso empresarial">
+        <button type="button" class="business-tab active" data-mode="interno">
+          <i data-lucide="settings-2"></i>
+          Procesos internos
+        </button>
+        <button type="button" class="business-tab" data-mode="externo">
+          <i data-lucide="users-round"></i>
+          Cliente externo
+        </button>
+      </div>
+
+      <div class="diagnostic-shell enterprise-shell">
+        <div class="diagnostic-form-panel enterprise-mode-panel active" data-panel="interno">
+          <div class="panel-label">
+            <span class="eyebrow"><i data-lucide="list-checks"></i> Ruta interna</span>
+            <h2>Automatización de procesos internos</h2>
+            <p>Reportes, aprobaciones, seguimiento, consolidación, datos y control entre áreas.</p>
+          </div>
+
+          <label class="field-card">
+            <span class="field-index">01</span>
+            <span class="field-content">
+              <span class="field-title">¿Qué área quieres mejorar?</span>
+              <select id="enterpriseArea">
+                <option value="operations">Operaciones</option>
+                <option value="sales">Comercial</option>
+                <option value="finance">Finanzas</option>
+                <option value="logistics">Logística</option>
+                <option value="hr">Recursos humanos</option>
+                <option value="service">Servicio al cliente</option>
+                <option value="management">Dirección o gerencia</option>
+              </select>
+            </span>
+          </label>
+
+          <label class="field-card">
+            <span class="field-index">02</span>
+            <span class="field-content">
+              <span class="field-title">¿Qué proceso deseas automatizar?</span>
+              <select id="enterpriseProcess">
+                <option value="reports">Reportes recurrentes</option>
+                <option value="approvals">Aprobaciones internas</option>
+                <option value="files">Consolidación de archivos</option>
+                <option value="tracking">Seguimiento de tareas</option>
+                <option value="inventory">Inventario o pedidos</option>
+                <option value="analytics">Extracción o análisis de datos</option>
+              </select>
+            </span>
+          </label>
+
+          <label class="field-card">
+            <span class="field-index">03</span>
+            <span class="field-content">
+              <span class="field-title">¿Qué herramientas usa tu equipo?</span>
+              <select id="enterpriseTools">
+                <option value="excel">Excel</option>
+                <option value="powerbi">Power BI</option>
+                <option value="powerapps">Power Apps</option>
+                <option value="sap">SAP / ERP</option>
+                <option value="email">Correos y archivos compartidos</option>
+                <option value="mixed">Varias herramientas desconectadas</option>
+              </select>
+            </span>
+          </label>
+
+          <label class="field-card">
+            <span class="field-index">04</span>
+            <span class="field-content">
+              <span class="field-title">¿Cuánto tiempo consume?</span>
+              <select id="enterpriseHours">
+                <option value="5">Menos de 5 horas semanales</option>
+                <option value="15" selected>5 a 15 horas semanales</option>
+                <option value="30">15 a 30 horas semanales</option>
+                <option value="55">Más de 30 horas semanales</option>
+              </select>
+            </span>
+          </label>
+        </div>
+
+        <div class="diagnostic-form-panel enterprise-mode-panel" data-panel="externo">
+          <div class="panel-label">
+            <span class="eyebrow"><i data-lucide="list-checks"></i> Ruta externa</span>
+            <h2>Mejora de procesos de cara al cliente</h2>
+            <p>Solicitudes, cotizaciones, atención, seguimiento comercial, formularios y portales simples.</p>
+          </div>
+
+          <label class="field-card">
+            <span class="field-index">01</span>
+            <span class="field-content">
+              <span class="field-title">¿Qué interacción quieres mejorar?</span>
+              <select id="externalInteraction">
+                <option value="requests">Solicitudes de clientes</option>
+                <option value="quotes">Cotizaciones</option>
+                <option value="sales_followup">Seguimiento comercial</option>
+                <option value="after_sales">Atención posventa</option>
+                <option value="orders">Registro de pedidos</option>
+                <option value="forms">Formularios externos</option>
+              </select>
+            </span>
+          </label>
+
+          <label class="field-card">
+            <span class="field-index">02</span>
+            <span class="field-content">
+              <span class="field-title">¿Dónde ocurre hoy ese proceso?</span>
+              <select id="externalChannel">
+                <option value="whatsapp">WhatsApp</option>
+                <option value="email">Correo electrónico</option>
+                <option value="calls">Llamadas</option>
+                <option value="excel">Excel</option>
+                <option value="manual_form">Formulario manual</option>
+                <option value="system">Sistema interno</option>
+              </select>
+            </span>
+          </label>
+
+          <label class="field-card">
+            <span class="field-index">03</span>
+            <span class="field-content">
+              <span class="field-title">¿Qué problema se repite más?</span>
+              <select id="externalProblem">
+                <option value="lost">Se pierden solicitudes</option>
+                <option value="slow">Hay respuestas lentas</option>
+                <option value="traceability">No hay trazabilidad</option>
+                <option value="incomplete">La información llega incompleta</option>
+                <option value="duplicate">Se duplican tareas</option>
+                <option value="no_reports">No hay reportes claros</option>
+              </select>
+            </span>
+          </label>
+
+          <label class="field-card">
+            <span class="field-index">04</span>
+            <span class="field-content">
+              <span class="field-title">¿Cuál sería el resultado ideal?</span>
+              <select id="externalGoal">
+                <option value="speed">Responder más rápido</option>
+                <option value="register">Registrar todo automáticamente</option>
+                <option value="quote">Cotizar con menos errores</option>
+                <option value="measure">Medir solicitudes y clientes</option>
+                <option value="followup">Dar seguimiento comercial</option>
+                <option value="manual">Reducir tareas manuales</option>
+              </select>
+            </span>
+          </label>
+        </div>
+
+        <aside class="diagnostic-result-panel enterprise-result-panel">
+          <div class="result-topline">
+            <span id="enterpriseModeLabel">Ruta interna</span>
+            <i data-lucide="sparkles"></i>
+          </div>
+
+          <h2 id="enterpriseSolution">Dashboard ejecutivo en Power BI</h2>
+          <p id="enterpriseSummary">Una solución para consolidar indicadores, responsables y reportes recurrentes.</p>
+
+          <div class="impact-meter">
+            <div class="impact-head">
+              <span>Potencial visual</span>
+              <strong><span id="enterprisePotential">0</span>%</strong>
+            </div>
+            <div class="meter-track">
+              <div class="meter-fill" id="enterpriseBar"></div>
+            </div>
+          </div>
+
+          <div class="estimate-box">
+            <span id="enterpriseEstimateLabel">Tiempo recuperable estimado</span>
+            <strong id="enterpriseImpact">30 a 90 h / mes</strong>
+            <small id="enterpriseSubtext">Estimación orientativa según tus respuestas.</small>
+          </div>
+
+          <div class="result-section">
+            <span class="result-label">Aplicaciones posibles</span>
+            <div class="pill-list" id="enterpriseApps"></div>
+          </div>
+
+          <div class="result-section">
+            <span class="result-label">Beneficios esperados</span>
+            <ul class="benefit-list" id="enterpriseBenefits"></ul>
+          </div>
+
+          <a id="enterpriseCta" class="btn btn-primary diagnostic-cta" href="#" target="_blank">
+            Solicitar revisión por WhatsApp
+            <i data-lucide="send"></i>
+          </a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Soluciones de Automatización Operativa. Automatización, datos y productividad.</p>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+  <script src="diagnosticos.js"></script>
+</body>
+</html>

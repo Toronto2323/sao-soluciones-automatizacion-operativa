@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Quiénes somos | SAO</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/11_favicon_sao.svg" />
+  <link rel="shortcut icon" href="assets/icons/11_favicon_sao.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <div class="mesh-bg"></div>
+  <div class="noise"></div>
+  <div class="spotlight"></div>
+  <canvas id="particles"></canvas>
+
+  <header class="header">
+    <a href="index.html#inicio" class="brand brand-logo" aria-label="Ir al inicio">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="assets/icons/05_isotipo_sao.svg" alt="" />
+      </span>
+      <span class="brand-short">SAO</span>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html#inicio">Inicio</a>
+      <a href="soluciones.html">Soluciones</a>
+      <a href="identidad.html">Qué hacemos</a>
+      <a href="experiencias.html">Experiencias</a>
+      <a href="quienes-somos.html" class="nav-active">Quiénes somos</a>
+      <a href="https://wa.me/573116760185" target="_blank" rel="noopener">Contacto</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <i data-lucide="menu"></i>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#inicio">Inicio</a>
+    <a href="soluciones.html">Soluciones</a>
+    <a href="identidad.html">Qué hacemos</a>
+    <a href="experiencias.html">Experiencias</a>
+    <a href="quienes-somos.html" class="nav-active">Quiénes somos</a>
+    <a href="https://wa.me/573116760185" target="_blank" rel="noopener">Contacto</a>
+  </div>
+
+  <main class="about-main about-public">
+    <section class="page-hero about-hero about-public-hero reveal">
+      <div class="page-hero-content about-hero-copy">
+        <span class="eyebrow">
+          <i data-lucide="circle-user-round"></i>
+          Quiénes somos
+        </span>
+        <h1>Automatización práctica para procesos ofimáticos, logísticos y productivos.</h1>
+        <p>
+          SAO nace desde una visión de Ingeniería Industrial aplicada a la operación real: entender cómo trabaja un equipo,
+          detectar tareas repetitivas y construir herramientas digitales simples que ayuden a ahorrar tiempo, reducir errores
+          y mejorar la trazabilidad del día a día.
+        </p>
+
+        <div class="hero-actions about-actions">
+          <a href="soluciones.html" class="btn btn-primary">
+            Explorar soluciones
+            <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="https://wa.me/573116760185" target="_blank" rel="noopener" class="btn btn-secondary">
+            Conversar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <aside class="founder-profile-card tilt-card">
+        <div class="profile-photo-frame">
+          <img src="assets/img/perfil.jpg" alt="Perfil profesional de SAO" class="profile-photo" />
+        </div>
+
+        <div class="profile-content">
+          <small>Sebastián Machado Herrera</small>
+          <h3>Ingeniero Industrial enfocado en automatización de procesos</h3>
+          <p>
+            Especializado en soluciones ofimáticas y productivas: dashboards, aplicaciones internas, flujos de trabajo,
+            correos automatizados, generación de documentos y herramientas para operación logística.
+          </p>
+        </div>
+
+        <div class="profile-badge-grid">
+          <span>Excel avanzado</span>
+          <span>Power BI</span>
+          <span>Power Apps</span>
+          <span>Power Automate</span>
+          <span>Logística</span>
+          <span>CEDI / IT</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section reveal about-section-tight">
+      <div class="about-grid about-principles-grid">
+        <article class="about-card tilt-card">
+          <span class="icon"><i data-lucide="target"></i></span>
+          <h3>Misión</h3>
+          <p>
+            Ayudar a emprendedores, pymes y empresas a reducir tareas manuales mediante soluciones digitales claras,
+            medibles y ajustadas a su forma real de trabajar.
+          </p>
+        </article>
+
+        <article class="about-card tilt-card">
+          <span class="icon"><i data-lucide="telescope"></i></span>
+          <h3>Visión</h3>
+          <p>
+            Convertirnos en un aliado de automatización accesible, capaz de transformar procesos cotidianos en sistemas
+            más ordenados, trazables y escalables.
+          </p>
+        </article>
+
+        <article class="about-card tilt-card">
+          <span class="icon"><i data-lucide="handshake"></i></span>
+          <h3>Lo que buscamos</h3>
+          <p>
+            Construir confianza desde el diagnóstico, explicar con claridad las posibilidades y entregar herramientas que
+            realmente se usen en la operación diaria.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-heading about-heading-wide">
+        <span class="eyebrow"><i data-lucide="briefcase-business"></i> Experiencia aplicada</span>
+        <h2>Experiencia construyendo soluciones dentro de operaciones reales</h2>
+        <p>
+          La automatización no empieza en el código: empieza entendiendo el proceso, el flujo de información,
+          los responsables, los tiempos, los errores frecuentes y las decisiones que el negocio necesita tomar.
+        </p>
+      </div>
+
+      <div class="career-timeline">
+        <article class="career-card tilt-card">
+          <div class="career-marker">01</div>
+          <div class="career-content">
+            <small>Soberana SAS · Analista logístico</small>
+            <h3>Dashboards y automatizaciones para análisis operativo</h3>
+            <p>
+              Desarrollo de tableros, reportes y herramientas de seguimiento para facilitar el análisis logístico,
+              mejorar la visibilidad de indicadores y reducir trabajo repetitivo en la consolidación de información.
+            </p>
+            <div class="career-tags">
+              <span>Dashboards</span>
+              <span>Indicadores logísticos</span>
+              <span>Reportes</span>
+              <span>Automatización ofimática</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="career-card tilt-card">
+          <div class="career-marker">02</div>
+          <div class="career-content">
+            <small>Darrow SAS · Analista de CEDI / Analista de IT</small>
+            <h3>Aplicaciones, flujos de trabajo y automatización de procesos internos</h3>
+            <p>
+              Creación de aplicaciones internas, automatización de flujos operativos, envíos de correos automáticos,
+              generación de guías y herramientas para conectar tareas, datos y responsables dentro del proceso.
+            </p>
+            <div class="career-tags">
+              <span>Power Apps</span>
+              <span>Power Automate</span>
+              <span>Correos automáticos</span>
+              <span>Generación de guías</span>
+              <span>CEDI</span>
+              <span>IT</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-heading about-heading-wide">
+        <span class="eyebrow"><i data-lucide="workflow"></i> Enfoque de trabajo</span>
+        <h2>Construimos herramientas desde el proceso, no desde la plantilla</h2>
+        <p>
+          Cada solución debe tener sentido para quien la usa. Por eso el trabajo se enfoca en escuchar, simplificar,
+          construir, probar y dejar una herramienta clara para el equipo.
+        </p>
+      </div>
+
+      <div class="work-method-grid">
+        <article class="method-card tilt-card">
+          <span>01</span>
+          <h3>Entender</h3>
+          <p>Revisamos cómo ocurre el proceso hoy: archivos, responsables, tiempos, pasos manuales y puntos de dolor.</p>
+        </article>
+
+        <article class="method-card tilt-card">
+          <span>02</span>
+          <h3>Ordenar</h3>
+          <p>Definimos qué información se necesita, qué se puede automatizar y qué debe quedar visible para tomar decisiones.</p>
+        </article>
+
+        <article class="method-card tilt-card">
+          <span>03</span>
+          <h3>Construir</h3>
+          <p>Desarrollamos dashboards, apps, flujos, plantillas o formularios según la necesidad real del negocio.</p>
+        </article>
+
+        <article class="method-card tilt-card">
+          <span>04</span>
+          <h3>Acompañar</h3>
+          <p>Entregamos la solución con explicación clara, validaciones y ajustes para que pueda usarse en el día a día.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="founder-layout founder-public-layout">
+        <div class="founder-copy-card founder-story-card">
+          <span class="eyebrow"><i data-lucide="pen-line"></i> Perfil profesional</span>
+          <h2>Una mirada industrial aplicada a la automatización</h2>
+          <p>
+            Mi rol como Ingeniero Industrial me permite analizar los procesos desde la operación: identificar desperdicios de tiempo,
+            reprocesos, tareas repetitivas, puntos sin trazabilidad y oportunidades para estructurar mejor la información.
+          </p>
+          <p>
+            A partir de esa lectura, diseño soluciones ofimáticas y digitales que pueden ir desde un tablero ejecutivo hasta una app interna,
+            un flujo automático de correos, una plantilla inteligente o una herramienta de control para áreas logísticas, productivas o administrativas.
+          </p>
+          <p>
+            El objetivo no es construir tecnología compleja por apariencia, sino herramientas prácticas que ayuden a trabajar mejor,
+            ahorrar tiempo y tomar decisiones con información más confiable.
+          </p>
+        </div>
+
+        <div class="founder-list-card skill-card">
+          <h3>Enfoques que podemos aportar</h3>
+          <ul>
+            <li>Automatización de tareas repetitivas en Excel, archivos compartidos y flujos manuales.</li>
+            <li>Dashboards en Power BI para seguimiento operativo, logístico y gerencial.</li>
+            <li>Aplicaciones internas para captura de datos, control de estados y trazabilidad.</li>
+            <li>Flujos de trabajo con correos, alertas, aprobaciones y generación de documentos.</li>
+            <li>Mejoras para procesos de CEDI, logística, inventario, guías, reportes y operación diaria.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta reveal about-public-cta">
+      <span class="eyebrow"><i data-lucide="arrow-right"></i> Siguiente paso</span>
+      <h2>Cuéntanos qué proceso quieres ordenar y revisamos qué solución podría funcionar.</h2>
+      <p>
+        Podemos iniciar con un diagnóstico sencillo: qué tarea consume tiempo, cómo la realizan hoy y qué resultado esperas lograr.
+      </p>
+      <div class="hero-actions cta-actions-centered">
+        <a class="btn btn-primary" href="soluciones.html">
+          Ir a soluciones
+          <i data-lucide="arrow-right"></i>
+        </a>
+        <a class="btn btn-secondary" href="https://wa.me/573116760185" target="_blank" rel="noopener">
+          Contactar por WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Soluciones de Automatización Operativa. Automatización, datos y productividad.</p>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>

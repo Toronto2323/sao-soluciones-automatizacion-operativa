@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Soluciones de Automatización Operativa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="assets/brand/isotipo_transparente_128.png">
+  <link rel="preload" as="image" href="assets/brand/logo_principal_transparente_900px.png">
+  <link rel="preload" as="image" href="assets/brand/logo_sin_descriptor_transparente_400px.png">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <div class="mesh-bg"></div>
+  <div class="noise"></div>
+  <div class="spotlight"></div>
+  <canvas id="particles"></canvas>
+
+  <header class="header">
+    <a href="#inicio" class="brand brand-with-logo brand-full-mark" aria-label="Ir al inicio">
+      <span class="brand-logo-frame">
+        <img src="assets/brand/isotipo_transparente_128.png" alt="Isotipo SAO">
+      </span>
+      <span class="brand-short">SAO</span>
+    </a>
+
+    <nav class="nav">
+      <a href="#inicio" class="nav-active">Inicio</a>
+      <a href="soluciones.html">Soluciones</a>
+      <a href="identidad.html">Qué hacemos</a>
+      <a href="experiencias.html">Experiencias</a>
+      <a href="quienes-somos.html">Quiénes somos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <i data-lucide="menu"></i>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#inicio" class="nav-active">Inicio</a>
+    <a href="soluciones.html">Soluciones</a>
+    <a href="identidad.html">Qué hacemos</a>
+    <a href="experiencias.html">Experiencias</a>
+    <a href="quienes-somos.html">Quiénes somos</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+
+  <main>
+    <section id="inicio" class="hero reveal home-hero home-hero-logo-motion">
+      <div class="hero-content">
+        <div class="home-logo-showcase" aria-label="SAO - Soluciones y Automatizaciones Operativas">
+          <span class="home-logo-kicker">Soluciones y Automatizaciones Operativas</span>
+          <img src="assets/brand/logo_principal_transparente_900px.png" alt="SAO - Soluciones y Automatizaciones Operativas">
+        </div>
+
+        <div class="eyebrow">
+          <i data-lucide="sparkles"></i>
+          Diagnóstico guiado · Automatización real
+        </div>
+
+        <h1>
+          Cuéntanos cómo trabaja tu negocio y te mostramos una ruta de automatización.
+        </h1>
+
+        <p>
+          Te guiamos con preguntas simples para identificar si necesitas una agenda, un control de ventas,
+          un dashboard, una app interna, un flujo automático o una solución web para tus clientes.
+        </p>
+
+        <div class="hero-actions">
+          <a href="soluciones.html" class="btn btn-primary">
+            Encontrar mi solución
+            <i data-lucide="arrow-right"></i>
+          </a>
+
+          <a href="identidad.html" class="btn btn-secondary">
+            Conocer qué hacemos
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero-panel home-guide-panel">
+        <div class="panel-top">
+          <span></span>
+          <span></span>
+          <span></span>
+          <small>Ruta inicial</small>
+        </div>
+
+        <div class="panel-body home-guide-body">
+          <div class="guide-brand-seal" aria-hidden="true">
+            <img src="assets/brand/isotipo_transparente_128.png" alt="">
+            <span>Diagnóstico SAO</span>
+          </div>
+
+          <div class="guide-intro">
+            <span class="eyebrow"><i data-lucide="mouse-pointer-click"></i> Empieza aquí</span>
+            <h2>Elige el contexto más parecido al tuyo.</h2>
+            <p>La siguiente pantalla te hace un diagnóstico breve y te muestra posibilidades reales de construcción.</p>
+          </div>
+
+          <a href="pymes.html" class="guide-option">
+            <span>01</span>
+            <div>
+              <strong>Pyme o emprendedor</strong>
+              <p>Agenda, ventas, inventario, pedidos, clientes y WhatsApp.</p>
+            </div>
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+
+          <a href="empresas.html?tipo=interno" class="guide-option">
+            <span>02</span>
+            <div>
+              <strong>Empresa · operación interna</strong>
+              <p>Reportes, aprobaciones, Power BI, Power Apps, Excel y SAP.</p>
+            </div>
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+
+          <a href="empresas.html?tipo=externo" class="guide-option">
+            <span>03</span>
+            <div>
+              <strong>Empresa · cliente externo</strong>
+              <p>Formularios, cotizadores, solicitudes y seguimiento comercial.</p>
+            </div>
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+
+          <a class="btn btn-primary guide-main-cta" href="soluciones.html">
+            Ir a soluciones
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section reveal home-bridge">
+      <div class="section-heading">
+        <span class="eyebrow">
+          <i data-lucide="route"></i>
+          Una entrada más simple
+        </span>
+        <h2>En lugar de mostrarte una lista fría de servicios, empezamos por tu realidad.</h2>
+        <p>
+          La web te guía según tu tipo de negocio, el proceso que más tiempo consume y la forma en que trabajas hoy.
+          Luego te muestra una recomendación inicial y una invitación directa al contacto.
+        </p>
+      </div>
+
+      <div class="home-route-grid">
+        <article class="home-route-card tilt-card">
+          <span class="icon"><i data-lucide="store"></i></span>
+          <h3>Negocios pequeños</h3>
+          <p>Para ordenar agenda, clientes, inventario, ventas, pedidos y reportes simples.</p>
+          <a href="pymes.html">Resolver como pyme <i data-lucide="arrow-up-right"></i></a>
+        </article>
+
+        <article class="home-route-card tilt-card">
+          <span class="icon"><i data-lucide="building-2"></i></span>
+          <h3>Empresas</h3>
+          <p>Para automatizar reportes, aprobaciones, consolidaciones, indicadores y seguimiento entre áreas.</p>
+          <a href="empresas.html?tipo=interno">Resolver internamente <i data-lucide="arrow-up-right"></i></a>
+        </article>
+
+        <article class="home-route-card tilt-card">
+          <span class="icon"><i data-lucide="users-round"></i></span>
+          <h3>Cliente externo</h3>
+          <p>Para mejorar solicitudes, cotizaciones, formularios, portales y trazabilidad comercial.</p>
+          <a href="empresas.html?tipo=externo">Resolver atención externa <i data-lucide="arrow-up-right"></i></a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" class="cta reveal">
+      <span class="eyebrow">
+        <i data-lucide="message-circle"></i>
+        Contacto
+      </span>
+      <h2>¿Prefieres conversar antes de responder el diagnóstico?</h2>
+      <p>
+        También podemos iniciar por WhatsApp. Cuéntame qué tarea se repite, qué herramientas usas y qué te gustaría mejorar.
+      </p>
+
+      <a class="btn btn-primary" href="https://wa.me/573116760185" target="_blank">
+        Contactar por WhatsApp
+        <i data-lucide="send"></i>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Soluciones de Automatización Operativa. Automatización, datos y productividad.</p>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>

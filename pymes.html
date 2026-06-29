@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Diagnóstico para pymes y emprendedores | SAO</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/11_favicon_sao.svg" />
+  <link rel="shortcut icon" href="assets/icons/11_favicon_sao.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <div class="mesh-bg"></div>
+  <div class="noise"></div>
+  <div class="spotlight"></div>
+  <canvas id="particles"></canvas>
+
+  <header class="header">
+    <a href="index.html#inicio" class="brand brand-logo" aria-label="Ir al inicio">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="assets/icons/05_isotipo_sao.svg" alt="" />
+      </span>
+      <span class="brand-short">SAO</span>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html#inicio">Inicio</a>
+      <a href="soluciones.html" class="nav-active">Soluciones</a>
+      <a href="identidad.html">Qué hacemos</a>
+      <a href="experiencias.html">Experiencias</a>
+      <a href="quienes-somos.html">Quiénes somos</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <i data-lucide="menu"></i>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#inicio">Inicio</a>
+    <a href="soluciones.html" class="nav-active">Soluciones</a>
+    <a href="identidad.html">Qué hacemos</a>
+    <a href="experiencias.html">Experiencias</a>
+    <a href="quienes-somos.html">Quiénes somos</a>
+    <a href="index.html#contacto">Contacto</a>
+  </div>
+
+  <main class="diagnostic-main">
+    <section class="page-hero diagnostic-hero reveal">
+      <div class="page-hero-content">
+        <span class="eyebrow">
+          <i data-lucide="store"></i>
+          Pymes · emprendedores · negocios pequeños
+        </span>
+        <h1>Identifica una solución práctica para ordenar tu negocio.</h1>
+        <p>
+          Ideal para tatuadores, barberías, tiendas de barrio, emprendimientos por redes, restaurantes pequeños
+          y profesionales independientes que necesitan ahorrar tiempo sin sistemas complejos.
+        </p>
+      </div>
+
+      <aside class="mini-summary tilt-card">
+        <span><i data-lucide="timer-reset"></i></span>
+        <strong>Resultado inmediato</strong>
+        <p>Solución sugerida, tiempo recuperable, aplicaciones posibles y contacto directo.</p>
+      </aside>
+    </section>
+
+    <section class="section reveal">
+      <div class="diagnostic-shell">
+        <form class="diagnostic-form-panel" id="pymeForm">
+          <div class="panel-label">
+            <span class="eyebrow"><i data-lucide="list-checks"></i> Cuestionario breve</span>
+            <h2>Cuéntanos cómo funciona hoy</h2>
+            <p>Selecciona las opciones más cercanas a tu realidad. El resultado se actualiza automáticamente.</p>
+          </div>
+
+          <label class="field-card">
+            <span class="field-index">01</span>
+            <span class="field-content">
+              <span class="field-title">¿Qué tipo de negocio tienes?</span>
+              <select id="pymeBusiness">
+                <option value="tattoo">Tatuador, barbería o estética</option>
+                <option value="store">Tienda de barrio o minimercado</option>
+                <option value="social">Emprendimiento por redes sociales</option>
+                <option value="food">Restaurante, comidas o domicilios</option>
+                <option value="services">Servicios profesionales</option>
+                <option value="other">Otro negocio pequeño</option>
+              </select>
+            </span>
+          </label>
+
+          <label class="field-card">
+            <span class="field-index">02</span>
+            <span class="field-content">
+              <span class="field-title">¿Qué proceso te consume más tiempo?</span>
+              <select id="pymeChallenge">
+                <option value="agenda">Agendar clientes o citas</option>
+                <option value="sales">Registrar ventas y pagos</option>
+                <option value="inventory">Controlar inventario</option>
+                <option value="messages">Responder mensajes repetitivos</option>
+                <option value="orders">Organizar pedidos</option>
+                <option value="reports">Hacer reportes o cuentas</option>
+              </select>
+            </span>
+          </label>
+
+          <label class="field-card">
+            <span class="field-index">03</span>
+            <span class="field-content">
+              <span class="field-title">¿Cuántas horas semanales dedicas a esa tarea?</span>
+              <select id="pymeHours">
+                <option value="3">Menos de 3 horas</option>
+                <option value="6">3 a 6 horas</option>
+                <option value="12" selected>6 a 12 horas</option>
+                <option value="20">12 a 20 horas</option>
+                <option value="35">Más de 20 horas</option>
+              </select>
+            </span>
+          </label>
+
+          <label class="field-card">
+            <span class="field-index">04</span>
+            <span class="field-content">
+              <span class="field-title">¿Qué herramientas usas hoy?</span>
+              <select id="pymeTools">
+                <option value="notes">Cuaderno, notas o memoria</option>
+                <option value="sheets">Excel o Google Sheets</option>
+                <option value="whatsapp" selected>WhatsApp e Instagram</option>
+                <option value="pos">Sistema básico de ventas</option>
+                <option value="mixed">Varias herramientas sin conexión</option>
+              </select>
+            </span>
+          </label>
+        </form>
+
+        <aside class="diagnostic-result-panel pyme-result-panel">
+          <div class="result-topline">
+            <span>Lectura del diagnóstico</span>
+            <i data-lucide="sparkles"></i>
+          </div>
+
+          <h2 id="pymeSolution">Construiremos una agenda digital y base de clientes.</h2>
+          <p id="pymeSummary">
+            Te podría funcionar si hoy confirmas citas por WhatsApp, guardas datos en conversaciones
+            y te cuesta hacer seguimiento a clientes, pagos o recordatorios.
+          </p>
+
+          <div class="impact-meter impact-meter-featured">
+            <div class="impact-head">
+              <span>Potencial estimado</span>
+              <strong class="score-display"><span id="pymePotential">0</span><em>%</em></strong>
+            </div>
+            <div class="meter-track">
+              <div class="meter-fill" id="pymeBar"></div>
+            </div>
+            <div class="meter-copy" id="pymeMeterCopy">
+              La oportunidad está en ordenar información y reducir pasos repetidos.
+            </div>
+          </div>
+
+          <div class="estimate-box estimate-box-featured">
+            <span>Tiempo que podrías recuperar</span>
+            <strong id="pymeHoursRange">8 a 18 h / mes</strong>
+            <small>Estimación orientativa. El valor real depende del volumen, la disciplina de uso y el alcance final.</small>
+          </div>
+
+          <div class="result-section application-section">
+            <span class="result-label">Qué podríamos construir</span>
+            <div class="application-list" id="pymeApps"></div>
+          </div>
+
+          <div class="result-section human-benefits-section">
+            <span class="result-label">Cómo te ayudaría en la operación</span>
+            <ul class="benefit-list human-benefit-list" id="pymeBenefits"></ul>
+          </div>
+
+          <div class="analysis-note" id="pymeInsight">
+            <i data-lucide="info"></i>
+            <p>Con tus respuestas, la prioridad sería crear una herramienta simple, fácil de alimentar y útil desde el primer día.</p>
+          </div>
+
+          <a id="pymeCta" class="btn btn-primary diagnostic-cta" href="#" target="_blank">
+            Quiero aterrizar esta solución
+            <i data-lucide="send"></i>
+          </a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Soluciones de Automatización Operativa. Automatización, datos y productividad.</p>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+  <script src="diagnosticos.js"></script>
+</body>
+</html>

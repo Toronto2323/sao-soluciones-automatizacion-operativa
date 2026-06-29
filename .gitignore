@@ -1,0 +1,72 @@
+# ===============================
+# Sistema operativo
+# ===============================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===============================
+# Editores / IDE
+# ===============================
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+
+# ===============================
+# Logs
+# ===============================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===============================
+# Dependencias futuras
+# ===============================
+node_modules/
+
+# ===============================
+# Builds / distribución
+# ===============================
+dist/
+build/
+.cache/
+.parcel-cache/
+.vite/
+
+# ===============================
+# Variables de entorno / secretos
+# ===============================
+.env
+.env.*
+!.env.example
+
+# ===============================
+# Archivos temporales
+# ===============================
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+
+# ===============================
+# Archivos comprimidos generados
+# ===============================
+*.zip
+*.rar
+*.7z
+
+# ===============================
+# Reportes futuros de calidad
+# ===============================
+.lighthouseci/
+coverage/
+reports/
+
+# ===============================
+# Netlify local
+# ===============================
+.netlify/
