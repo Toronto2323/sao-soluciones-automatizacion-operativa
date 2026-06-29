@@ -370,6 +370,7 @@ const setupProfilePreview = () => {
       note.classList.add('is-saved');
     }
     updateButtonState();
+    window.dispatchEvent(new CustomEvent('sao-profile-updated', { detail: payload }));
   });
 
   updateButtonState();
