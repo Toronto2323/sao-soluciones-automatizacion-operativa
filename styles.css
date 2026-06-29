@@ -2007,25 +2007,28 @@ main {
 .score-display {
   display: inline-flex;
   align-items: flex-start;
-  gap: 2px;
+  justify-content: flex-end;
+  gap: 5px;
   color: var(--color-text);
   line-height: 0.88;
+  min-width: 148px;
 }
 
 .score-display span {
   display: inline-block;
-  min-width: 76px;
+  min-width: 96px;
   text-align: right;
-  font-size: clamp(54px, 4.7vw, 76px);
+  font-size: clamp(66px, 5.6vw, 92px);
   font-weight: 900;
-  letter-spacing: -0.085em;
+  letter-spacing: -0.09em;
 }
 
 .score-display em {
-  margin-top: 6px;
+  display: inline-block;
+  margin-top: 7px;
   color: rgba(255, 255, 255, 0.94);
   font-style: normal;
-  font-size: clamp(28px, 2.1vw, 38px);
+  font-size: clamp(32px, 2.6vw, 46px);
   font-weight: 900;
   letter-spacing: -0.05em;
 }
@@ -2147,12 +2150,21 @@ main {
 
 @media (max-width: 720px) {
   .pyme-result-panel h2 {
-    font-size: 30px;
+    font-size: 70px;
+  }
+
+  .score-display {
+    min-width: 118px;
   }
 
   .score-display span {
-    min-width: 62px;
-    font-size: 58px;
+    min-width: 78px;
+    font-size: 100px;
+  }
+
+  .score-display em {
+    margin-top: 6px;
+    font-size: 34px;
   }
 
   .application-item {
@@ -5281,5 +5293,2314 @@ main {
 
   .solution-v2-decision-list strong {
     white-space: normal;
+  }
+}
+
+
+/* ===============================
+   Pymes diagnostic V2 - commercial web app experience
+   Goal: show SAO as a practical diagnostic tool, not only a static landing.
+   =============================== */
+.pyme-v2-main {
+  position: relative;
+  z-index: 1;
+}
+
+.pyme-v2-hero {
+  width: min(var(--max-width), calc(100% - 96px));
+  min-height: 92vh;
+  margin: 0 auto;
+  padding: 142px 0 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(410px, 0.62fr);
+  gap: 76px;
+  align-items: center;
+}
+
+.pyme-v2-copy {
+  position: relative;
+}
+
+.pyme-v2-copy::before {
+  content: "";
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  left: -170px;
+  top: 12%;
+  z-index: -1;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 109, 41, 0.14), transparent 68%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.pyme-v2-brandline {
+  width: fit-content;
+  max-width: 100%;
+  min-height: 58px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 26px;
+  padding: 10px 16px 10px 12px;
+  border: 1px solid rgba(255, 177, 139, 0.18);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 12% 50%, rgba(255, 109, 41, 0.14), transparent 40%),
+    linear-gradient(135deg, rgba(255, 109, 41, 0.075), rgba(255, 255, 255, 0.034)),
+    rgba(18, 14, 16, 0.44);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(18px);
+}
+
+.pyme-v2-brandline img {
+  width: 118px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 18px rgba(255, 109, 41, 0.12));
+}
+
+.pyme-v2-brandline span {
+  color: rgba(255, 177, 139, 0.84);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pyme-v2-copy h1 {
+  max-width: 960px;
+  margin-bottom: 26px;
+  font-size: clamp(44px, 4.72vw, 78px);
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.pyme-v2-copy p {
+  max-width: 790px;
+  margin-bottom: 28px;
+  color: rgba(255, 255, 255, 0.67);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.pyme-v2-hero-actions,
+.pyme-v2-final-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pyme-v2-demo-card {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 88% 14%, rgba(255, 109, 41, 0.26), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.035)),
+    rgba(12, 10, 10, 0.58);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 32px 110px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.pyme-v2-demo-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.pyme-v2-demo-top span {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.pyme-v2-demo-top small {
+  margin-left: auto;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.pyme-v2-demo-body {
+  padding: 28px;
+  display: grid;
+  gap: 20px;
+}
+
+.pyme-v2-demo-icon {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 177, 139, 0.18);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle, rgba(255, 109, 41, 0.22), transparent 66%),
+    rgba(255, 255, 255, 0.045);
+}
+
+.pyme-v2-demo-icon svg {
+  width: 34px;
+  height: 34px;
+  color: var(--color-primary-soft);
+}
+
+.pyme-v2-demo-body small {
+  color: var(--color-primary-soft);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pyme-v2-demo-body h2 {
+  max-width: 520px;
+  font-size: clamp(28px, 2.6vw, 42px);
+  line-height: 1.02;
+  letter-spacing: -0.052em;
+}
+
+.pyme-v2-demo-body p {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 14px;
+  line-height: 1.62;
+}
+
+.pyme-v2-demo-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.pyme-v2-demo-metrics div {
+  min-height: 92px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 17px;
+  background: rgba(10, 9, 10, 0.36);
+}
+
+.pyme-v2-demo-metrics strong {
+  display: block;
+  margin-bottom: 7px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.pyme-v2-demo-metrics span {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.pyme-v2-proof {
+  width: min(var(--max-width), calc(100% - 96px));
+  margin: -18px auto 38px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.pyme-v2-proof article {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 13px;
+  align-items: start;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(16px);
+}
+
+.pyme-v2-proof svg {
+  width: 42px;
+  height: 42px;
+  padding: 11px;
+  border-radius: 14px;
+  color: var(--color-primary-soft);
+  background: rgba(255, 109, 41, 0.14);
+}
+
+.pyme-v2-proof strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.pyme-v2-proof p {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 13px;
+  line-height: 1.48;
+}
+
+.pyme-v2-diagnostic-section {
+  padding-top: 52px;
+  padding-bottom: 64px;
+}
+
+.pyme-v2-heading {
+  max-width: 960px;
+}
+
+.pyme-v2-heading h2 {
+  text-wrap: balance;
+}
+
+.pyme-v2-shell {
+  grid-template-columns: minmax(0, 0.9fr) minmax(430px, 0.78fr);
+  gap: 24px;
+}
+
+.pyme-v2-form,
+.pyme-v2-result {
+  border-color: rgba(255, 255, 255, 0.13);
+  background:
+    radial-gradient(circle at 88% 8%, rgba(255, 109, 41, 0.1), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035)),
+    rgba(10, 9, 10, 0.18);
+}
+
+.pyme-v2-panel-label h2 {
+  max-width: 680px;
+  font-size: clamp(26px, 2vw, 36px);
+}
+
+.pyme-v2-field {
+  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+
+.pyme-v2-field:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 177, 139, 0.25);
+  background: rgba(255, 255, 255, 0.052);
+}
+
+.pyme-v2-form-note {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 15px;
+  border: 1px solid rgba(255, 177, 139, 0.16);
+  border-radius: var(--radius-md);
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255, 109, 41, 0.12), transparent 32%),
+    rgba(255, 255, 255, 0.035);
+}
+
+.pyme-v2-form-note svg {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  color: var(--color-primary-soft);
+}
+
+.pyme-v2-form-note p {
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.pyme-v2-result {
+  top: 96px;
+}
+
+.pyme-v2-impact,
+.pyme-v2-estimate {
+  border-color: rgba(255, 177, 139, 0.14);
+}
+
+.pyme-v2-cta {
+  min-height: 52px;
+  font-size: 13px;
+}
+
+.pyme-v2-examples {
+  padding-top: 52px;
+  padding-bottom: 60px;
+}
+
+.pyme-v2-example-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.pyme-v2-example-grid article {
+  min-height: 250px;
+  padding: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(255, 109, 41, 0.1), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.032)),
+    rgba(10, 9, 10, 0.22);
+  backdrop-filter: blur(18px);
+}
+
+.pyme-v2-example-grid span {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 22px;
+  border-radius: 16px;
+  background: rgba(255, 109, 41, 0.16);
+  color: var(--color-primary-soft);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.pyme-v2-example-grid h3 {
+  font-size: 24px;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  margin-bottom: 12px;
+}
+
+.pyme-v2-example-grid p {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 14px;
+  line-height: 1.62;
+}
+
+.pyme-v2-final-cta {
+  margin-top: 52px;
+  margin-bottom: 92px;
+  padding: 70px 42px;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255, 109, 41, 0.2), transparent 34%),
+    radial-gradient(circle at 88% 30%, rgba(143, 148, 156, 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(255, 109, 41, 0.12), rgba(255, 255, 255, 0.034));
+}
+
+.pyme-v2-final-cta h2 {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pyme-v2-final-actions {
+  justify-content: center;
+}
+
+@media (max-width: 1180px) {
+  .pyme-v2-hero,
+  .pyme-v2-shell,
+  .pyme-v2-proof,
+  .pyme-v2-example-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pyme-v2-demo-card,
+  .pyme-v2-result {
+    max-width: 780px;
+  }
+
+  .pyme-v2-result {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .pyme-v2-hero,
+  .pyme-v2-proof,
+  .pyme-v2-main .section,
+  .pyme-v2-main .cta,
+  .pyme-v2-main .footer {
+    width: calc(100% - 28px);
+  }
+
+  .pyme-v2-hero {
+    min-height: auto;
+    padding-top: 120px;
+    padding-bottom: 38px;
+    gap: 34px;
+  }
+
+  .pyme-v2-brandline {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    border-radius: 22px;
+  }
+
+  .pyme-v2-brandline span {
+    white-space: normal;
+    line-height: 1.25;
+  }
+
+  .pyme-v2-copy h1 {
+    font-size: 39px;
+    letter-spacing: -0.035em;
+  }
+
+  .pyme-v2-copy p {
+    font-size: 15px;
+  }
+
+  .pyme-v2-demo-body,
+  .pyme-v2-form,
+  .pyme-v2-result,
+  .pyme-v2-example-grid article,
+  .pyme-v2-final-cta {
+    padding: 22px;
+  }
+
+  .pyme-v2-demo-metrics,
+  .pyme-v2-proof article {
+    grid-template-columns: 1fr;
+  }
+
+  .pyme-v2-proof {
+    margin-top: 0;
+  }
+
+  .pyme-v2-panel-label h2 {
+    font-size: 26px;
+  }
+}
+
+
+/* ===============================
+   Pymes tools lab - operational demo modules
+   Goal: demonstrate practical web-app components without weakening lead capture.
+   =============================== */
+.pyme-tools-lab {
+  padding-top: 54px;
+  padding-bottom: 62px;
+}
+
+.pyme-lab-heading {
+  max-width: 980px;
+}
+
+.pyme-lab-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr 0.85fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.pyme-lab-card {
+  min-height: 340px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(255, 109, 41, 0.1), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.032)),
+    rgba(10, 9, 10, 0.22);
+  backdrop-filter: blur(18px);
+  transition: transform 0.18s ease, background 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+  transform-style: preserve-3d;
+}
+
+.pyme-lab-card:hover {
+  border-color: rgba(255, 177, 139, 0.42);
+  background:
+    radial-gradient(circle at 88% 8%, rgba(255, 109, 41, 0.16), transparent 34%),
+    rgba(255, 255, 255, 0.07);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+}
+
+.pyme-lab-card-featured {
+  grid-row: span 2;
+  min-height: 700px;
+  border-color: rgba(255, 177, 139, 0.22);
+  background:
+    radial-gradient(circle at 86% 10%, rgba(255, 109, 41, 0.2), transparent 36%),
+    linear-gradient(180deg, rgba(255, 109, 41, 0.09), rgba(255, 255, 255, 0.034)),
+    rgba(10, 9, 10, 0.2);
+}
+
+.pyme-lab-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.pyme-lab-card-head > span {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 17px;
+  background: rgba(255, 109, 41, 0.16);
+  color: var(--color-primary-soft);
+  box-shadow: inset 0 0 0 1px rgba(255, 177, 139, 0.14);
+}
+
+.pyme-lab-card-head svg {
+  width: 22px;
+  height: 22px;
+}
+
+.pyme-lab-card-head small,
+.pyme-time-result small,
+.mini-dashboard-preview small {
+  color: var(--color-primary-soft);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pyme-lab-card h3 {
+  font-size: clamp(23px, 1.9vw, 32px);
+  line-height: 1.06;
+  letter-spacing: -0.045em;
+  margin-bottom: 13px;
+}
+
+.pyme-lab-card p {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 14px;
+  line-height: 1.62;
+  margin-bottom: 20px;
+}
+
+.pyme-tool-form {
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.pyme-tool-form label {
+  display: grid;
+  gap: 8px;
+}
+
+.pyme-tool-form label > span {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.pyme-tool-form select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(6, 5, 6, 0.72);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  outline: none;
+}
+
+.pyme-tool-form select:focus {
+  border-color: rgba(255, 177, 139, 0.58);
+  box-shadow: 0 0 0 3px rgba(255, 109, 41, 0.1);
+}
+
+.pyme-time-result {
+  margin-top: auto;
+  padding: 20px;
+  border: 1px solid rgba(255, 177, 139, 0.16);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 92% 20%, rgba(255, 109, 41, 0.2), transparent 34%),
+    linear-gradient(135deg, rgba(255, 109, 41, 0.13), rgba(10, 9, 10, 0.45));
+}
+
+.pyme-time-result strong {
+  display: block;
+  margin: 8px 0 8px;
+  font-size: clamp(42px, 4vw, 62px);
+  line-height: 0.95;
+  letter-spacing: -0.075em;
+}
+
+.pyme-time-result p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.mini-dashboard-preview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: auto;
+}
+
+.mini-dashboard-preview div {
+  min-height: 96px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 17px;
+  background: rgba(10, 9, 10, 0.36);
+}
+
+.mini-dashboard-preview strong {
+  display: block;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.mini-dashboard-bars {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.mini-dashboard-bars div {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.mini-dashboard-bars span {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.mini-dashboard-bars i {
+  display: block;
+  width: var(--value);
+  height: 9px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-soft));
+  box-shadow: 0 0 18px rgba(255, 109, 41, 0.28);
+}
+
+.pyme-flow-list {
+  display: grid;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.pyme-flow-list div {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  background: rgba(10, 9, 10, 0.34);
+}
+
+.pyme-flow-list div.is-active {
+  border-color: rgba(255, 177, 139, 0.25);
+  background: linear-gradient(135deg, rgba(255, 109, 41, 0.16), rgba(255, 255, 255, 0.04));
+}
+
+.pyme-flow-list span {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: rgba(255, 109, 41, 0.15);
+  color: var(--color-primary-soft);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.pyme-flow-list strong {
+  display: block;
+  margin-bottom: 4px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 14px;
+}
+
+.pyme-flow-list small {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.pyme-tool-form-compact {
+  grid-template-columns: 1fr 0.8fr;
+}
+
+.wa-message-preview {
+  min-height: 112px;
+  margin-top: auto;
+  padding: 16px;
+  border: 1px solid rgba(255, 177, 139, 0.16);
+  border-radius: 18px;
+  background: rgba(10, 9, 10, 0.42);
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.pyme-copy-btn {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.pyme-copy-btn.is-copied {
+  border-color: rgba(255, 177, 139, 0.36);
+  background: rgba(255, 109, 41, 0.18);
+}
+
+.pyme-lab-closing {
+  margin-top: 18px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 109, 41, 0.16), transparent 34%),
+    rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(18px);
+}
+
+.pyme-lab-closing h3 {
+  max-width: 920px;
+  margin-bottom: 10px;
+  font-size: clamp(26px, 2.6vw, 42px);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.pyme-lab-closing p {
+  max-width: 780px;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1180px) {
+  .pyme-lab-grid,
+  .pyme-lab-closing {
+    grid-template-columns: 1fr;
+  }
+
+  .pyme-lab-card-featured {
+    grid-row: auto;
+    min-height: auto;
+  }
+
+  .pyme-lab-closing {
+    align-items: start;
+  }
+}
+
+@media (max-width: 720px) {
+  .pyme-tools-lab,
+  .pyme-lab-closing {
+    width: calc(100% - 28px);
+  }
+
+  .pyme-lab-card,
+  .pyme-lab-closing {
+    padding: 22px;
+  }
+
+  .mini-dashboard-preview,
+  .pyme-tool-form-compact,
+  .mini-dashboard-bars div,
+  .pyme-flow-list div {
+    grid-template-columns: 1fr;
+  }
+
+  .pyme-time-result strong {
+    font-size: 46px;
+  }
+}
+
+
+/* ===============================
+   Pymes lab modal refinement
+   Keeps the main page focused and moves operational demos into a clean popup.
+   =============================== */
+.pyme-tools-lab {
+  display: none !important;
+}
+
+.pyme-lab-invite {
+  padding-top: 48px;
+  padding-bottom: 42px;
+}
+
+.pyme-lab-invite-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(430px, 0.78fr) auto;
+  gap: 24px;
+  align-items: center;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 8% 22%, rgba(255, 109, 41, 0.16), transparent 34%),
+    radial-gradient(circle at 88% 22%, rgba(143, 148, 156, 0.1), transparent 34%),
+    linear-gradient(135deg, rgba(255, 109, 41, 0.08), rgba(255, 255, 255, 0.034)),
+    rgba(10, 9, 10, 0.24);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 26px 88px rgba(0, 0, 0, 0.24);
+}
+
+.pyme-lab-invite-copy h2 {
+  max-width: 760px;
+  margin-bottom: 12px;
+  font-size: clamp(30px, 3.1vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.pyme-lab-invite-copy p {
+  max-width: 780px;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.pyme-lab-invite-preview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.pyme-lab-invite-preview article {
+  min-height: 96px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  background: rgba(10, 9, 10, 0.34);
+}
+
+.pyme-lab-invite-preview span {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+  border-radius: 11px;
+  background: rgba(255, 109, 41, 0.16);
+  color: var(--color-primary-soft);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.pyme-lab-invite-preview strong,
+.pyme-lab-invite-preview small {
+  display: block;
+}
+
+.pyme-lab-invite-preview strong {
+  margin-bottom: 4px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 13px;
+}
+
+.pyme-lab-invite-preview small {
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 11.5px;
+  line-height: 1.35;
+}
+
+.pyme-lab-open {
+  white-space: nowrap;
+}
+
+body.pyme-modal-open {
+  overflow: hidden;
+}
+
+.pyme-lab-modal[hidden] {
+  display: none !important;
+}
+
+.pyme-lab-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 30px;
+}
+
+.pyme-lab-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 109, 41, 0.16), transparent 36%),
+    rgba(5, 4, 6, 0.78);
+  backdrop-filter: blur(16px);
+}
+
+.pyme-lab-modal-shell {
+  position: relative;
+  width: min(1120px, 100%);
+  max-height: min(88vh, 860px);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 88% 10%, rgba(255, 109, 41, 0.2), transparent 36%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.035)),
+    rgba(12, 10, 10, 0.88);
+  box-shadow: 0 40px 140px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.pyme-lab-modal-header,
+.pyme-lab-modal-footer {
+  padding: 24px 26px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pyme-lab-modal-header {
+  display: grid;
+  grid-template-columns: 1fr 44px;
+  gap: 18px;
+  align-items: start;
+}
+
+.pyme-lab-modal-header .eyebrow {
+  margin-bottom: 10px;
+}
+
+.pyme-lab-modal-header h2 {
+  margin-bottom: 8px;
+  font-size: clamp(28px, 2.7vw, 44px);
+  line-height: 1.04;
+  letter-spacing: -0.05em;
+}
+
+.pyme-lab-modal-header p,
+.pyme-lab-modal-footer p {
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.pyme-lab-close {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text);
+}
+
+.pyme-lab-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+.pyme-lab-modal-body {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 18px;
+  padding: 20px;
+  overflow: auto;
+}
+
+.pyme-lab-tabs {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  display: grid;
+  gap: 10px;
+}
+
+.pyme-lab-tabs button {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 10px;
+  align-items: center;
+  min-height: 76px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--color-text);
+  font-family: inherit;
+  text-align: left;
+  transition: 0.22s ease;
+}
+
+.pyme-lab-tabs button:hover,
+.pyme-lab-tabs button.is-active {
+  border-color: rgba(255, 177, 139, 0.32);
+  background:
+    linear-gradient(135deg, rgba(255, 109, 41, 0.16), rgba(255, 255, 255, 0.052));
+  transform: translateX(3px);
+}
+
+.pyme-lab-tabs span {
+  grid-row: span 2;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(255, 109, 41, 0.16);
+  color: var(--color-primary-soft);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.pyme-lab-tabs strong,
+.pyme-lab-tabs small {
+  display: block;
+}
+
+.pyme-lab-tabs strong {
+  font-size: 13px;
+}
+
+.pyme-lab-tabs small {
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 11.5px;
+}
+
+.pyme-lab-workspace {
+  min-height: 520px;
+}
+
+.pyme-lab-panel {
+  display: none;
+  min-height: 520px;
+  padding: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(255, 109, 41, 0.12), transparent 34%),
+    rgba(255, 255, 255, 0.04);
+}
+
+.pyme-lab-panel.is-active {
+  display: grid;
+  align-content: start;
+  gap: 22px;
+}
+
+.pyme-lab-panel-copy h3 {
+  max-width: 760px;
+  margin-bottom: 12px;
+  font-size: clamp(28px, 2.8vw, 44px);
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.pyme-lab-panel-copy p {
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.pyme-tool-form-modal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.pyme-tool-form-modal label {
+  display: grid;
+  gap: 7px;
+}
+
+.pyme-tool-form-modal label span {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 11.5px;
+  font-weight: 900;
+}
+
+.pyme-tool-form-modal select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(6, 5, 6, 0.74);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  outline: none;
+}
+
+.pyme-time-result-modal {
+  margin-top: 4px;
+  padding: 24px;
+  border: 1px solid rgba(255, 177, 139, 0.16);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 84% 18%, rgba(255, 109, 41, 0.18), transparent 34%),
+    rgba(10, 9, 10, 0.42);
+}
+
+.pyme-time-result-modal strong {
+  display: block;
+  margin: 8px 0 8px;
+  font-size: clamp(54px, 5.5vw, 82px);
+  line-height: 0.92;
+  letter-spacing: -0.08em;
+}
+
+.mini-dashboard-preview-modal {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.mini-dashboard-preview-modal div {
+  min-height: 110px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  background: rgba(10, 9, 10, 0.38);
+}
+
+.mini-dashboard-preview-modal small,
+.mini-dashboard-preview-modal strong {
+  display: block;
+}
+
+.mini-dashboard-preview-modal small {
+  margin-bottom: 12px;
+  color: var(--color-primary-soft);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.mini-dashboard-preview-modal strong {
+  font-size: clamp(30px, 3vw, 48px);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.mini-dashboard-bars-modal {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  background: rgba(10, 9, 10, 0.34);
+}
+
+.mini-dashboard-bars-modal div {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  align-items: center;
+  gap: 14px;
+}
+
+.mini-dashboard-bars-modal span {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.mini-dashboard-bars-modal i {
+  display: block;
+  width: var(--value);
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-soft));
+  box-shadow: 0 0 18px rgba(255, 109, 41, 0.34);
+}
+
+.pyme-flow-list-modal {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.pyme-flow-list-modal div {
+  min-height: 180px;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  background: rgba(10, 9, 10, 0.35);
+}
+
+.pyme-flow-list-modal div.is-active {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 109, 41, 0.18), transparent 36%),
+    rgba(255, 109, 41, 0.075);
+  border-color: rgba(255, 177, 139, 0.22);
+}
+
+.pyme-flow-list-modal span {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(255, 109, 41, 0.16);
+  color: var(--color-primary-soft);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.pyme-flow-list-modal strong {
+  font-size: 16px;
+}
+
+.pyme-flow-list-modal small {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.wa-message-preview-modal {
+  min-height: 132px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  background: rgba(10, 9, 10, 0.42);
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 14px;
+  line-height: 1.58;
+}
+
+.pyme-copy-btn.is-copied {
+  border-color: rgba(255, 177, 139, 0.32);
+  background: rgba(255, 109, 41, 0.18);
+}
+
+.pyme-lab-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 0;
+}
+
+@media (max-width: 1180px) {
+  .pyme-lab-invite-card {
+    grid-template-columns: 1fr;
+  }
+
+  .pyme-lab-open {
+    width: fit-content;
+  }
+
+  .pyme-lab-modal-body {
+    grid-template-columns: 1fr;
+  }
+
+  .pyme-lab-tabs {
+    position: relative;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .pyme-lab-tabs button {
+    min-height: 86px;
+  }
+
+  .mini-dashboard-preview-modal,
+  .pyme-flow-list-modal {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .pyme-lab-invite,
+  .pyme-lab-invite-card {
+    width: calc(100% - 28px);
+  }
+
+  .pyme-lab-invite-card {
+    padding: 22px;
+    margin: 0 auto;
+  }
+
+  .pyme-lab-invite-preview,
+  .pyme-lab-tabs,
+  .pyme-tool-form-modal,
+  .mini-dashboard-preview-modal,
+  .pyme-flow-list-modal,
+  .mini-dashboard-bars-modal div {
+    grid-template-columns: 1fr;
+  }
+
+  .pyme-lab-modal {
+    padding: 10px;
+    align-items: end;
+  }
+
+  .pyme-lab-modal-shell {
+    max-height: 92vh;
+    border-radius: 26px 26px 0 0;
+  }
+
+  .pyme-lab-modal-header,
+  .pyme-lab-modal-footer {
+    padding: 20px;
+  }
+
+  .pyme-lab-modal-body {
+    padding: 14px;
+  }
+
+  .pyme-lab-panel {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .pyme-lab-modal-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .pyme-lab-modal-footer .btn,
+  .pyme-lab-open {
+    width: 100%;
+  }
+}
+
+
+/* ===============================
+   Pymes lab modal V3 - technical demos
+   More operational examples without expanding page length.
+   =============================== */
+.pyme-lab-modal-shell-advanced {
+  width: min(1180px, calc(100vw - 84px));
+  max-height: min(840px, calc(100vh - 92px));
+}
+
+.pyme-lab-modal-header-advanced {
+  background:
+    radial-gradient(circle at 86% 18%, rgba(255, 109, 41, 0.16), transparent 36%),
+    rgba(255, 255, 255, 0.035);
+}
+
+.pyme-lab-modal-body-advanced {
+  grid-template-columns: 290px 1fr;
+  min-height: 500px;
+  max-height: calc(100vh - 280px);
+  overflow: auto;
+}
+
+.pyme-lab-tabs-advanced {
+  position: sticky;
+  top: 0;
+  align-self: start;
+}
+
+.pyme-lab-workspace-advanced {
+  min-width: 0;
+}
+
+.pyme-lab-panel-grid {
+  display: grid;
+  grid-template-columns: minmax(270px, 0.78fr) minmax(360px, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.pyme-tool-form-stacked {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 22px;
+}
+
+.pyme-time-simulator {
+  display: grid;
+  gap: 16px;
+}
+
+.pyme-time-kpis,
+.pyme-dashboard-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.pyme-time-kpis div,
+.pyme-dashboard-kpis article {
+  min-height: 112px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  background: rgba(10, 9, 10, 0.34);
+}
+
+.pyme-time-kpis small,
+.pyme-dashboard-kpis small {
+  display: block;
+  color: var(--color-primary-soft);
+  font-size: 10.5px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.pyme-time-kpis strong,
+.pyme-dashboard-kpis strong {
+  display: inline-block;
+  color: var(--color-text);
+  font-size: clamp(36px, 3.3vw, 56px);
+  line-height: 0.9;
+  letter-spacing: -0.075em;
+}
+
+.pyme-time-kpis span,
+.pyme-dashboard-kpis span {
+  display: block;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.pyme-time-kpis .is-highlighted {
+  background:
+    radial-gradient(circle at 86% 16%, rgba(255, 109, 41, 0.2), transparent 38%),
+    linear-gradient(135deg, rgba(255, 109, 41, 0.16), rgba(10, 9, 10, 0.38));
+  border-color: rgba(255, 177, 139, 0.24);
+}
+
+.pyme-time-bars {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  background: rgba(10, 9, 10, 0.32);
+}
+
+.pyme-time-bars > div {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.pyme-time-bars span {
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.pyme-time-bars div div {
+  height: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.075);
+}
+
+.pyme-time-bars i {
+  display: block;
+  width: var(--value);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ff6d29, #ffb18b);
+  box-shadow: 0 0 26px rgba(255, 109, 41, 0.36);
+  transition: width 0.45s ease;
+}
+
+.pyme-time-bars > div:nth-child(2) i {
+  background: linear-gradient(90deg, rgba(143, 148, 156, 0.85), #ffb18b);
+}
+
+.pyme-auto-pipeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.pyme-auto-pipeline span {
+  min-height: 52px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 9px;
+  border: 1px solid rgba(255, 177, 139, 0.13);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.pyme-time-result-advanced p {
+  margin-top: 8px;
+}
+
+.pyme-dashboard-head,
+.pyme-flow-head,
+.pyme-chatbot-head {
+  display: grid;
+  grid-template-columns: 1fr minmax(230px, 0.34fr);
+  gap: 18px;
+  align-items: end;
+}
+
+.dashboard-scenario-select,
+.pyme-flow-selectors label,
+.pyme-chatbot-controls label {
+  display: grid;
+  gap: 7px;
+}
+
+.dashboard-scenario-select span,
+.pyme-flow-selectors span,
+.pyme-chatbot-controls span {
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.dashboard-scenario-select select,
+.pyme-flow-selectors select,
+.pyme-chatbot-controls select {
+  min-height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 14px;
+  background: rgba(6, 5, 6, 0.74);
+  color: var(--color-text);
+  font-family: inherit;
+  font-weight: 800;
+  padding: 0 12px;
+}
+
+.pyme-dashboard-realistic {
+  display: grid;
+  gap: 14px;
+}
+
+.pyme-dashboard-topbar,
+.dashboard-card-head,
+.chat-window-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pyme-dashboard-topbar {
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  background: rgba(10, 9, 10, 0.34);
+}
+
+.pyme-dashboard-topbar strong {
+  font-size: 15px;
+}
+
+.pyme-dashboard-topbar span,
+.dashboard-card-head span {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.pyme-dashboard-kpis {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.pyme-dashboard-kpis article {
+  min-height: 104px;
+}
+
+.pyme-dashboard-kpis strong {
+  font-size: clamp(28px, 2.4vw, 42px);
+}
+
+.pyme-dashboard-grid-real {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 14px;
+}
+
+.pyme-dashboard-card {
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  background: rgba(10, 9, 10, 0.34);
+}
+
+.table-card {
+  grid-column: 1 / -1;
+}
+
+.pyme-chart-bars {
+  height: 210px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  align-items: end;
+  gap: 9px;
+  padding-top: 18px;
+}
+
+.pyme-chart-bars i {
+  position: relative;
+  display: block;
+  min-height: 18px;
+  height: var(--value);
+  border-radius: 10px 10px 4px 4px;
+  background: linear-gradient(180deg, #ffb18b, #ff6d29);
+  box-shadow: 0 0 22px rgba(255, 109, 41, 0.25);
+}
+
+.pyme-chart-bars span {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.pyme-donut-wrap {
+  display: grid;
+  grid-template-columns: 144px 1fr;
+  gap: 16px;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.pyme-donut {
+  width: 132px;
+  height: 132px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at center, rgba(10, 9, 10, 0.9) 0 54%, transparent 56%),
+    conic-gradient(#ff6d29 var(--done), rgba(255, 255, 255, 0.09) 0);
+}
+
+.pyme-donut span {
+  color: white;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+}
+
+.pyme-donut-wrap ul {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+}
+
+.pyme-donut-wrap li,
+.pyme-dashboard-table div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 12px;
+}
+
+.pyme-donut-wrap li strong,
+.pyme-dashboard-table strong {
+  color: white;
+}
+
+.pyme-dashboard-table {
+  display: grid;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.pyme-dashboard-table div {
+  align-items: center;
+  padding: 11px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.032);
+}
+
+.pyme-dashboard-table em {
+  min-width: 58px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(255, 109, 41, 0.14);
+  color: var(--color-primary-soft);
+  text-align: center;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.pyme-flow-advanced {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.flow-column {
+  min-height: 210px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  background: rgba(10, 9, 10, 0.34);
+}
+
+.flow-column small {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--color-primary-soft);
+  font-size: 10.5px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.flow-column strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.flow-column p {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 13px;
+  line-height: 1.52;
+}
+
+.flow-output-list {
+  display: grid;
+  gap: 10px;
+}
+
+.flow-output-list div {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.032);
+}
+
+.flow-output-list span {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 11px;
+  background: rgba(255, 109, 41, 0.15);
+  color: var(--color-primary-soft);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.pyme-flow-engine {
+  display: grid;
+  grid-template-columns: 1fr 34px 1fr 34px 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid rgba(255, 177, 139, 0.14);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 109, 41, 0.08), rgba(255, 255, 255, 0.026));
+}
+
+.pyme-flow-engine div {
+  min-height: 86px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(10, 9, 10, 0.34);
+}
+
+.pyme-flow-engine span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-primary-soft);
+  font-size: 10.5px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.pyme-flow-engine strong {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.pyme-flow-engine svg {
+  color: var(--color-primary-soft);
+}
+
+.pyme-chatbot-sim {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  background: rgba(10, 9, 10, 0.34);
+}
+
+.chat-window-top {
+  padding: 13px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.075);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.chat-window-top > span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #ff6d29;
+  box-shadow: 0 0 18px rgba(255, 109, 41, 0.8);
+}
+
+.chat-window-top strong {
+  margin-right: auto;
+  font-size: 13px;
+}
+
+.chat-window-top small {
+  color: rgba(255, 255, 255, 0.56);
+  font-weight: 800;
+}
+
+.chat-thread {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+
+.bubble {
+  max-width: 78%;
+  padding: 12px 14px;
+  border-radius: 18px;
+}
+
+.bubble span {
+  display: block;
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 10.5px;
+  font-weight: 900;
+}
+
+.bubble p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.bubble.user {
+  justify-self: start;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.bubble.bot {
+  justify-self: end;
+  background: linear-gradient(135deg, rgba(255, 109, 41, 0.22), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 177, 139, 0.14);
+}
+
+.chat-quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chat-quick-replies button {
+  min-height: 32px;
+  padding: 0 11px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+  color: rgba(255, 255, 255, 0.72);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.chat-next-action {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 13px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.075);
+}
+
+.chat-next-action span {
+  color: var(--color-primary-soft);
+  font-size: 10.5px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.chat-next-action strong {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  text-align: right;
+}
+
+.pyme-copy-btn.is-copied {
+  border-color: rgba(255, 177, 139, 0.4);
+  background: rgba(255, 109, 41, 0.18);
+}
+
+@media (max-width: 1180px) {
+  .pyme-lab-modal-body-advanced,
+  .pyme-lab-panel-grid,
+  .pyme-dashboard-head,
+  .pyme-flow-head,
+  .pyme-chatbot-head,
+  .pyme-flow-advanced,
+  .pyme-flow-engine {
+    grid-template-columns: 1fr;
+  }
+
+  .pyme-lab-tabs-advanced {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pyme-flow-engine svg {
+    transform: rotate(90deg);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .pyme-lab-modal-shell-advanced {
+    width: calc(100vw - 22px);
+    max-height: calc(100vh - 22px);
+  }
+
+  .pyme-lab-modal-body-advanced {
+    max-height: calc(100vh - 230px);
+  }
+
+  .pyme-tool-form-stacked,
+  .pyme-time-kpis,
+  .pyme-dashboard-kpis,
+  .pyme-dashboard-grid-real,
+  .pyme-donut-wrap,
+  .pyme-lab-tabs-advanced {
+    grid-template-columns: 1fr;
+  }
+
+  .pyme-auto-pipeline {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pyme-chart-bars {
+    height: 160px;
+  }
+
+  .bubble {
+    max-width: 92%;
+  }
+}
+
+/* ===============================
+   Pymes diagnostic V5 - balanced guided form
+   Purpose: diversify input types and make the result panel lighter.
+   =============================== */
+.pyme-balanced-form,
+.pyme-balanced-result {
+  align-self: start;
+}
+
+.pyme-balanced-label {
+  padding: 17px;
+}
+
+.pyme-balanced-label h2 {
+  max-width: 640px;
+}
+
+.pyme-compact-field,
+.pyme-choice-field,
+.pyme-range-field,
+.pyme-goal-field {
+  align-items: start;
+}
+
+.pyme-two-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.pyme-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.pyme-radio-card,
+.pyme-goal-card {
+  display: block;
+  cursor: none;
+}
+
+.pyme-radio-card input,
+.pyme-goal-card input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pyme-radio-card > span {
+  min-height: 116px;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  background: rgba(8, 7, 8, 0.46);
+  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+}
+
+.pyme-radio-card svg {
+  width: 24px;
+  height: 24px;
+  padding: 5px;
+  border-radius: 10px;
+  color: var(--color-primary-soft);
+  background: rgba(255, 109, 41, 0.14);
+}
+
+.pyme-radio-card strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  line-height: 1.1;
+}
+
+.pyme-radio-card small {
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 11.5px;
+  line-height: 1.35;
+}
+
+.pyme-radio-card:hover > span,
+.pyme-goal-card:hover > span {
+  transform: translateY(-2px);
+  border-color: rgba(255, 177, 139, 0.26);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.pyme-radio-card input:checked + span,
+.pyme-goal-card input:checked + span {
+  border-color: rgba(255, 177, 139, 0.44);
+  background:
+    radial-gradient(circle at 92% 10%, rgba(255, 109, 41, 0.18), transparent 35%),
+    linear-gradient(135deg, rgba(255, 109, 41, 0.12), rgba(255, 255, 255, 0.04));
+  box-shadow: inset 0 0 0 1px rgba(255, 177, 139, 0.08), 0 12px 34px rgba(0, 0, 0, 0.16);
+}
+
+.pyme-goal-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.pyme-goal-card > span {
+  min-height: 42px;
+  display: grid;
+  place-items: center;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 999px;
+  background: rgba(8, 7, 8, 0.46);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
+  font-weight: 900;
+  text-align: center;
+  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+
+.pyme-range-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pyme-range-head strong {
+  color: var(--color-primary-soft);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.pyme-range-field input[type="range"] {
+  width: 100%;
+  height: 8px;
+  margin: 8px 0 0;
+  appearance: none;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255,109,41,0.9), rgba(255,177,139,0.7), rgba(255,255,255,0.12));
+  outline: none;
+}
+
+.pyme-range-field input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid rgba(255, 177, 139, 0.72);
+  border-radius: 999px;
+  background: #ff6d29;
+  box-shadow: 0 0 22px rgba(255, 109, 41, 0.42);
+}
+
+.pyme-range-scale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.46);
+  font-size: 10.5px;
+  font-weight: 800;
+}
+
+.pyme-balanced-result {
+  gap: 14px;
+}
+
+.pyme-balanced-result h2 {
+  font-size: clamp(27px, 2.3vw, 37px);
+}
+
+.pyme-balanced-result > p {
+  padding: 15px;
+  margin: 0;
+}
+
+.pyme-result-kpis {
+  display: grid;
+  grid-template-columns: 0.82fr 1.12fr 0.82fr;
+  gap: 10px;
+}
+
+.pyme-result-kpis article {
+  min-height: 86px;
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025)),
+    rgba(10, 9, 10, 0.38);
+}
+
+.pyme-result-kpis span {
+  display: block;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 10.5px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pyme-result-kpis strong {
+  display: block;
+  color: var(--color-text);
+  font-size: clamp(23px, 2.1vw, 34px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.pyme-slim-meter {
+  padding: 14px;
+}
+
+.pyme-slim-meter .meter-copy {
+  margin-top: 10px;
+}
+
+.pyme-balanced-section {
+  padding: 14px;
+}
+
+.pyme-balanced-apps {
+  gap: 8px;
+}
+
+.pyme-balanced-apps .application-item {
+  grid-template-columns: 32px 1fr;
+  padding: 10px;
+}
+
+.pyme-balanced-apps .application-item span {
+  width: 26px;
+  height: 26px;
+  border-radius: 9px;
+  font-size: 10px;
+}
+
+.pyme-benefit-compact .human-benefit-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.pyme-benefit-compact .human-benefit-list li {
+  font-size: 12.7px;
+  line-height: 1.42;
+}
+
+@media (max-width: 1180px) {
+  .pyme-two-fields,
+  .pyme-choice-grid,
+  .pyme-goal-grid,
+  .pyme-result-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .pyme-radio-card > span {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .pyme-choice-field,
+  .pyme-range-field,
+  .pyme-goal-field {
+    grid-template-columns: 1fr;
+  }
+
+  .pyme-range-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pyme-goal-card > span {
+    min-height: 40px;
   }
 }
