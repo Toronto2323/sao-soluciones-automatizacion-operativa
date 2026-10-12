@@ -1,358 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0909" />
+    <title>SAO | Soluciones y Automatizaciones Operativas</title>
+    <meta name="description" content="WMS, aplicaciones a medida y automatizaciones para operaciones reales." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet" />
+    <link rel="icon" href="assets/brand/isotipo_transparente_128.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="cursor-dot" aria-hidden="true"></div><div class="cursor-ring" aria-hidden="true"></div>
+    <div class="mesh-bg" aria-hidden="true"></div><div class="noise" aria-hidden="true"></div><div class="spotlight" aria-hidden="true"></div>
+    <canvas id="particles" aria-hidden="true"></canvas>
 
-  <title>SAO | Soluciones y Automatizaciones Operativas</title>
-  <meta name="description" content="Diagnóstico guiado para pymes y empresas que buscan automatizar procesos, dashboards, aplicaciones internas, flujos de trabajo y herramientas web." />
+    <header class="header">
+      <a class="brand" href="#inicio" aria-label="SAO, ir al inicio"><span class="brand-logo-frame"><img src="assets/brand/isotipo_transparente_128.png" alt="" /></span><span>SAO</span></a>
+      <nav aria-label="Navegación principal"><a href="#soluciones">Soluciones</a><a href="#contacto">Contacto</a></nav>
+      <a class="header-cta" href="https://wa.me/573116760185?text=Hola%20SAO%2C%20quiero%20hablar%20sobre%20una%20soluci%C3%B3n." target="_blank" rel="noopener">Hablemos <span>↗</span></a>
+    </header>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
-
-  <link rel="icon" type="image/png" href="assets/brand/isotipo_transparente_128.png">
-  <link rel="preload" as="image" href="assets/brand/logo_principal_transparente_900px.png">
-  <link rel="preload" as="image" href="assets/brand/logo_sin_descriptor_transparente_400px.png">
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-
-  <div class="mesh-bg"></div>
-  <div class="noise"></div>
-  <div class="spotlight"></div>
-  <canvas id="particles"></canvas>
-
-  <header class="header header-pro">
-    <a href="#inicio" class="brand brand-with-logo brand-full-mark nav-brand-pro" aria-label="Ir al inicio">
-      <span class="brand-logo-frame">
-        <img src="assets/brand/isotipo_transparente_128.png" alt="Isotipo SAO">
-      </span>
-      <span class="brand-short">SAO</span>
-    </a>
-
-    <nav class="nav nav-pro" aria-label="Navegaci&oacute;n principal">
-      <a href="#inicio" class="nav-link nav-active">Inicio</a>
-
-      <div class="nav-dropdown">
-        <button type="button" class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
-          Soluciones
-          <i data-lucide="chevron-down"></i>
-        </button>
-        <div class="nav-dropdown-menu" role="menu">
-          <a href="soluciones.html" role="menuitem">
-            <span>Vista general</span>
-            <small>Todas las rutas SAO</small>
-          </a>
-          <a href="pymes.html" role="menuitem">
-            <span>Pyme o emprendedor</span>
-            <small>Agenda, ventas, pedidos y clientes</small>
-          </a>
-          <a href="empresas.html?tipo=interno" role="menuitem">
-            <span>Empresa interna</span>
-            <small>Reportes, aprobaciones y control</small>
-          </a>
-          <a href="empresas.html?tipo=externo" role="menuitem">
-            <span>Cliente externo</span>
-            <small>Solicitudes, cotizaciones y seguimiento</small>
-          </a>
+    <main>
+      <section class="hero reveal" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Soluciones y automatizaciones operativas</p>
+          <h1>Tecnología que<br /><em>mueve</em> tu operación.</h1>
+          <p class="hero-text">Diseñamos sistemas claros para que tu operación tenga más control, menos fricción y mejores decisiones.</p>
+          <a class="btn btn-primary" href="#soluciones">Ver soluciones <span>↓</span></a>
         </div>
-      </div>
 
-      <div class="nav-dropdown">
-        <button type="button" class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
-          Diagn&oacute;sticos
-          <i data-lucide="chevron-down"></i>
-        </button>
-        <div class="nav-dropdown-menu nav-dropdown-menu-compact" role="menu">
-          <a href="pymes.html#diagnostico-pyme" role="menuitem">
-            <span>Diagn&oacute;stico pyme</span>
-            <small>Respuesta r&aacute;pida para negocios peque&ntilde;os</small>
-          </a>
-          <a href="empresas.html#diagnostico-empresa" role="menuitem">
-            <span>Diagn&oacute;stico empresa</span>
-            <small>Proceso interno o cliente externo</small>
-          </a>
-        </div>
-      </div>
-
-      <div class="nav-dropdown">
-        <button type="button" class="nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
-          Qu&eacute; hacemos
-          <i data-lucide="chevron-down"></i>
-        </button>
-        <div class="nav-dropdown-menu nav-dropdown-menu-compact" role="menu">
-          <a href="identidad.html" role="menuitem">
-            <span>Identidad y servicios</span>
-            <small>Qu&eacute; construimos y c&oacute;mo lo hacemos</small>
-          </a>
-          <a href="experiencias.html" role="menuitem">
-            <span>Experiencias</span>
-            <small>Trabajo aplicado en operaci&oacute;n real</small>
-          </a>
-          <a href="quienes-somos.html" role="menuitem">
-            <span>Qui&eacute;nes somos</span>
-            <small>Perfil, enfoque y forma de trabajo</small>
-          </a>
-        </div>
-      </div>
-
-      <a href="catalogo.html" class="nav-link">Cat&aacute;logo</a>
-      <a href="pymes.html#laboratorio-pyme" class="nav-link">Laboratorio</a>
-      <a href="#contacto" class="nav-link">Contacto</a>
-    </nav>
-
-    <div class="header-actions-pro">
-      <button type="button" class="profile-entry-btn" data-profile-open>
-        <i data-lucide="circle-user-round"></i>
-        <span>Crear perfil</span>
-      </button>
-
-      <button class="menu-toggle" aria-label="Abrir men&uacute;" aria-expanded="false">
-        <i data-lucide="menu"></i>
-      </button>
-    </div>
-  </header>
-
-  <div class="mobile-menu mobile-menu-pro" id="mobileMenu">
-    <a href="#inicio" class="nav-active">Inicio</a>
-    <span class="mobile-menu-label">Soluciones</span>
-    <a href="soluciones.html" class="">Vista general</a>
-    <a href="pymes.html">Pyme o emprendedor</a>
-    <a href="empresas.html?tipo=interno">Empresa interna</a>
-    <a href="empresas.html?tipo=externo">Cliente externo</a>
-    <span class="mobile-menu-label">Diagn&oacute;sticos</span>
-    <a href="pymes.html#diagnostico-pyme">Diagn&oacute;stico pyme</a>
-    <a href="empresas.html#diagnostico-empresa">Diagn&oacute;stico empresa</a>
-    <a href="catalogo.html">Cat&aacute;logo privado</a>
-    <span class="mobile-menu-label">Marca y confianza</span>
-    <a href="identidad.html" class="">Qu&eacute; hacemos</a>
-    <a href="experiencias.html" class="">Experiencias</a>
-    <a href="quienes-somos.html" class="">Qui&eacute;nes somos</a>
-    <a href="#contacto">Contacto</a>
-    <button type="button" class="mobile-profile-btn" data-profile-open>Crear perfil gratuito</button>
-  </div>
-
-  <div class="profile-modal" id="profileModal" hidden aria-hidden="true">
-    <div class="profile-modal-backdrop" data-profile-close></div>
-    <section class="profile-modal-card profile-auth-card" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
-      <button type="button" class="profile-modal-close" aria-label="Cerrar perfil" data-profile-close>
-        <i data-lucide="x"></i>
-      </button>
-
-      <div class="profile-modal-grid profile-auth-grid">
-        <div class="profile-modal-copy">
-          <span class="eyebrow"><i data-lucide="shield-check"></i> Perfil gratuito SAO</span>
-          <h2 id="profileModalTitle">Inicia sesión con Google para activar tu perfil SAO.</h2>
-          <p>
-            Esta etapa conecta autenticación real con Firebase. El catálogo seguirá cargando desde un archivo público,
-            pero la experiencia ya reconoce usuarios reales y prepara la base para diagnósticos, favoritos y planes futuros.
-          </p>
-
-          <div class="profile-benefits-grid">
-            <article><strong>Acceso real</strong><span>Inicio de sesión con cuenta de Google.</span></article>
-            <article><strong>Perfil local</strong><span>Nombre, correo y foto quedan disponibles en la web.</span></article>
-            <article><strong>Base futura</strong><span>Lista para conectar Firestore cuando quieras guardar datos centrales.</span></article>
+        <aside class="hero-panel" aria-label="Resumen de soluciones SAO">
+          <div class="panel-top"><i></i><i></i><i></i><small>SAO / catálogo</small></div>
+          <div class="panel-body">
+            <div class="panel-seal"><img src="assets/brand/isotipo_transparente_128.png" alt="" /><span>Operación conectada</span></div>
+            <div class="panel-intro"><p>Tecnología aplicada</p><h2>Lo que tu operación necesita, sin excesos.</h2></div>
+            <div class="mini-card"><b>01</b><span><strong>WMS</strong><small>Inventario, ubicaciones y movimientos</small></span><em>↗</em></div>
+            <div class="mini-card"><b>02</b><span><strong>Aplicaciones</strong><small>Android, iOS y web</small></span><em>↗</em></div>
+            <div class="mini-card"><b>03</b><span><strong>Automatizaciones</strong><small>Procesos conectados</small></span><em>↗</em></div>
           </div>
+        </aside>
+      </section>
+
+      <section class="solutions reveal" id="soluciones">
+        <div class="section-heading"><p class="eyebrow"><span></span> Catálogo SAO</p><h2>Tres soluciones.<br />Una operación más clara.</h2></div>
+        <div class="product-grid">
+          <article class="product-card tilt-card product-card--featured"><div class="card-top"><span>01</span><i>⌘</i></div><div><p>Operación logística</p><h3>WMS</h3><span>Controla inventario, ubicaciones y movimientos en un solo flujo operativo.</span></div><a href="https://wa.me/573116760185?text=Hola%20SAO%2C%20quiero%20conocer%20la%20soluci%C3%B3n%20WMS." target="_blank" rel="noopener">Conocer <b>↗</b></a></article>
+          <article class="product-card tilt-card"><div class="card-top"><span>02</span><i>◫</i></div><div><p>Software a medida</p><h3>Aplicaciones</h3><span>Herramientas Android, iOS y web diseñadas alrededor de tu proceso.</span></div><a href="https://wa.me/573116760185?text=Hola%20SAO%2C%20quiero%20conocer%20el%20desarrollo%20de%20aplicaciones." target="_blank" rel="noopener">Conocer <b>↗</b></a></article>
+          <article class="product-card tilt-card"><div class="card-top"><span>03</span><i>↺</i></div><div><p>Procesos conectados</p><h3>Automatizaciones</h3><span>Elimina tareas repetitivas y conecta las herramientas que ya usas.</span></div><a href="https://wa.me/573116760185?text=Hola%20SAO%2C%20quiero%20conocer%20las%20automatizaciones%20personalizadas." target="_blank" rel="noopener">Conocer <b>↗</b></a></article>
         </div>
+      </section>
 
-        <div class="profile-auth-panel">
-          <div class="auth-state-card" data-auth-guest>
-            <span class="google-preview-icon">G</span>
-            <div>
-              <strong>Continuar con Google</strong>
-              <small>Firebase Authentication validará tu cuenta en una ventana segura.</small>
-            </div>
-          </div>
-
-          <button type="button" class="btn btn-primary profile-save-btn google-login-btn" data-google-login data-auth-guest>
-            Continuar con Google
-            <i data-lucide="log-in"></i>
-          </button>
-
-          <div class="auth-user-card" data-auth-user hidden>
-            <img data-auth-photo alt="" />
-            <div>
-              <small>Sesión activa</small>
-              <strong data-auth-name></strong>
-              <span data-auth-email></span>
-            </div>
-          </div>
-
-          <div class="auth-actions" data-auth-user hidden>
-            <a class="btn btn-primary" href="catalogo.html">
-              Ver catálogo
-              <i data-lucide="book-open"></i>
-            </a>
-            <button type="button" class="btn btn-secondary" data-google-logout>
-              Cerrar sesión
-              <i data-lucide="log-out"></i>
-            </button>
-          </div>
-
-          <p class="profile-form-note" id="profileFormNote">
-            No se guardan datos en una base central todavía. La sesión se valida con Firebase y el perfil se refleja localmente en el navegador.
-          </p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-<main>
-    <section id="inicio" class="hero reveal home-hero home-hero-logo-motion">
-      <div class="hero-content">
-        <div class="home-logo-showcase home-logo-presence" aria-label="SAO - Soluciones y Automatizaciones Operativas">
-          <span class="home-logo-kicker">Automatización operativa para negocios reales</span>
-          <img
-            src="assets/brand/logo_principal_transparente_900px.png"
-            alt="SAO - Soluciones y Automatizaciones Operativas"
-          >
-        </div>
-
-        <div class="eyebrow">
-          <i data-lucide="sparkles"></i>
-          Diagnóstico guiado · Automatización real
-        </div>
-
-        <h1>
-          Cuéntanos cómo trabaja tu negocio y te mostramos una ruta de automatización.
-        </h1>
-
-        <p>
-          Te guiamos con preguntas simples para identificar si necesitas una agenda, un control de ventas,
-          un dashboard, una app interna, un flujo automático o una solución web para tus clientes.
-        </p>
-
-        <div class="hero-actions">
-          <a href="soluciones.html" class="btn btn-primary">
-            Encontrar mi solución
-            <i data-lucide="arrow-right"></i>
-          </a>
-
-          <a href="identidad.html" class="btn btn-secondary">
-            Conocer qué hacemos
-          </a>
-        </div>
-      </div>
-
-      <aside class="hero-panel home-guide-panel">
-        <div class="panel-top">
-          <span></span>
-          <span></span>
-          <span></span>
-          <small>Ruta inicial</small>
-        </div>
-
-        <div class="panel-body home-guide-body">
-          <div class="guide-brand-seal" aria-hidden="true">
-            <img src="assets/brand/isotipo_transparente_128.png" alt="">
-            <span>Diagnóstico SAO</span>
-          </div>
-
-          <div class="guide-intro">
-            <span class="eyebrow"><i data-lucide="mouse-pointer-click"></i> Empieza aquí</span>
-            <h2>Elige el contexto más parecido al tuyo.</h2>
-            <p>La siguiente pantalla te hace un diagnóstico breve y te muestra posibilidades reales de construcción.</p>
-          </div>
-
-          <a href="pymes.html" class="guide-option">
-            <span>01</span>
-            <div>
-              <strong>Pyme o emprendedor</strong>
-              <p>Agenda, ventas, inventario, pedidos, clientes y WhatsApp.</p>
-            </div>
-            <i data-lucide="arrow-up-right"></i>
-          </a>
-
-          <a href="empresas.html?tipo=interno" class="guide-option">
-            <span>02</span>
-            <div>
-              <strong>Empresa · operación interna</strong>
-              <p>Reportes, aprobaciones, Power BI, Power Apps, Excel y SAP.</p>
-            </div>
-            <i data-lucide="arrow-up-right"></i>
-          </a>
-
-          <a href="empresas.html?tipo=externo" class="guide-option">
-            <span>03</span>
-            <div>
-              <strong>Empresa · cliente externo</strong>
-              <p>Formularios, cotizadores, solicitudes y seguimiento comercial.</p>
-            </div>
-            <i data-lucide="arrow-up-right"></i>
-          </a>
-
-          <a class="btn btn-primary guide-main-cta" href="soluciones.html">
-            Ir a soluciones
-            <i data-lucide="arrow-right"></i>
-          </a>
-        </div>
-      </aside>
-    </section>
-
-    <section class="section reveal home-bridge">
-      <div class="section-heading">
-        <span class="eyebrow">
-          <i data-lucide="route"></i>
-          Una entrada más simple
-        </span>
-        <h2>En lugar de mostrarte una lista fría de servicios, empezamos por tu realidad.</h2>
-        <p>
-          La web te guía según tu tipo de negocio, el proceso que más tiempo consume y la forma en que trabajas hoy.
-          Luego te muestra una recomendación inicial y una invitación directa al contacto.
-        </p>
-      </div>
-
-      <div class="home-route-grid">
-        <article class="home-route-card tilt-card">
-          <span class="icon"><i data-lucide="store"></i></span>
-          <h3>Negocios pequeños</h3>
-          <p>Para ordenar agenda, clientes, inventario, ventas, pedidos y reportes simples.</p>
-          <a href="pymes.html">Resolver como pyme <i data-lucide="arrow-up-right"></i></a>
-        </article>
-
-        <article class="home-route-card tilt-card">
-          <span class="icon"><i data-lucide="building-2"></i></span>
-          <h3>Empresas</h3>
-          <p>Para automatizar reportes, aprobaciones, consolidaciones, indicadores y seguimiento entre áreas.</p>
-          <a href="empresas.html?tipo=interno">Resolver internamente <i data-lucide="arrow-up-right"></i></a>
-        </article>
-
-        <article class="home-route-card tilt-card">
-          <span class="icon"><i data-lucide="users-round"></i></span>
-          <h3>Cliente externo</h3>
-          <p>Para mejorar solicitudes, cotizaciones, formularios, portales y trazabilidad comercial.</p>
-          <a href="empresas.html?tipo=externo">Resolver atención externa <i data-lucide="arrow-up-right"></i></a>
-        </article>
-      </div>
-    </section>
-
-    <section id="contacto" class="cta reveal">
-      <span class="eyebrow">
-        <i data-lucide="message-circle"></i>
-        Contacto
-      </span>
-      <h2>¿Prefieres conversar antes de responder el diagnóstico?</h2>
-      <p>
-        También podemos iniciar por WhatsApp. Cuéntame qué tarea se repite, qué herramientas usas y qué te gustaría mejorar.
-      </p>
-
-      <a class="btn btn-primary" href="https://wa.me/573116760185" target="_blank">
-        Contactar por WhatsApp
-        <i data-lucide="send"></i>
-      </a>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>© 2026 Soluciones de Automatización Operativa. Automatización, datos y productividad.</p>
-  </footer>
-
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="script.js"></script>
-  <script type="module" src="auth.js"></script>
-</body>
+      <section class="contact reveal" id="contacto"><p class="eyebrow"><span></span> Empecemos</p><h2>Hablemos de lo que<br /><em>tu operación necesita.</em></h2><a class="btn btn-dark" href="https://wa.me/573116760185?text=Hola%20SAO%2C%20quiero%20contarles%20sobre%20mi%20operaci%C3%B3n." target="_blank" rel="noopener">Contactar por WhatsApp <span>↗</span></a></section>
+    </main>
+    <footer><strong>SAO</strong><span>Soluciones y Automatizaciones Operativas</span><small>© <span id="year"></span></small></footer>
+    <script src="script.js"></script>
+  </body>
 </html>
